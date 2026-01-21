@@ -17,7 +17,7 @@ from sklearn.metrics import (
     root_mean_squared_error,
 )
 from sklearn.model_selection import train_test_split
-
+from src.pipeline.feature_cleaning import FeaturePolicy, apply_feature_policy, drop_bad_name_columns, make_unique_columns
 from src.cohorts.targets import COHORT_TARGETS, CohortTarget
 
 
@@ -57,44 +57,43 @@ def _clean_multiclass_target(s: pd.Series) -> pd.Series:
 
 
 def _select_features(df: pd.DataFrame, cfg: CohortTarget) -> tuple[pd.DataFrame, list[str]]:
-    cat_cols = [c for c in cfg.cat_candidates if c in df.columns]
-    num_cols = df.select_dtypes(include=["number", "bool"]).columns.tolist()
+    # 1) Удаляем мусорные имена колонок
+    policy = FeaturePolicy(min_nonnull_frac=0.20, min_nonnull_count=10, drop_constant=True)
+    df2, _bad = drop_bad_name_columns(df, policy)
+
+    # 2) кандидаты
+    cat_cols = [c for c in cfg.cat_candidates if c in df2.columns]
+    num_cols = df2.select_dtypes(include=["number", "bool"]).columns.tolist()
     num_cols = [c for c in num_cols if c not in cat_cols]
 
     cols = [c for c in (num_cols + cat_cols) if c != cfg.target_col]
     cols = [c for c in cols if not _is_unnamed(c)]
     cols = list(dict.fromkeys(cols))
 
-    X = df[cols].copy()
+    X = df2[cols].copy()
 
-    # 1) Убираем pandas.NA -> np.nan (CatBoost иначе валится на NAType)
-    X = X.replace({pd.NA: np.nan})
+    # 3) Фильтрация по заполненности/константности + санитайз
+    X, cat_cols, stats = apply_feature_policy(X, cat_cols, policy)
 
-    # 2) Категориальные: только строки, без NAType
-    for c in cat_cols:
-        X[c] = X[c].astype("string").fillna("NA")
-
-    # 3) Числовые nullable-типы (Int64/Float64/boolean) приводим к обычным float,
-    # чтобы пропуски стали np.nan, а не <NA>
-    for c in X.columns:
-        if c in cat_cols:
-            continue
-        if str(X[c].dtype) in ("Int64", "Int32", "Int16", "Int8",
-                               "UInt64", "UInt32", "UInt16", "UInt8",
-                               "Float64", "Float32", "boolean"):
-            X[c] = X[c].astype("float64")
+    # 4) сохраним отчёт по фичам (будет очень полезно и для отладки, и для диплома)
+    from src.pipeline.train_all import REPORTS  # чтобы не тащить Path сюда
+    REPORTS.mkdir(parents=True, exist_ok=True)
+    stats.to_csv(REPORTS / f"features_{cfg.cohort}.csv", index=False, encoding="utf-8-sig")
 
     return X, cat_cols
 
 
 
 
+
 def train_one(cfg: CohortTarget, seed: int = 42, test_size: float = 0.2) -> dict[str, Any]:
     pq_path = DATA_PARQUET / f"{cfg.cohort}.parquet"
+
     if not pq_path.exists():
         return {"cohort": cfg.cohort, "status": "missing_parquet", "path": str(pq_path)}
 
     df = pd.read_parquet(pq_path)
+    df.columns = make_unique_columns(df.columns)
 
     if cfg.target_col not in df.columns:
         return {

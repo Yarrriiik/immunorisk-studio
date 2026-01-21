@@ -1,0 +1,741 @@
+﻿feature,dtype,nonnull_count,nonnull_ratio,nunique,drop_reason,kept
+Точка исследования,int64,50,1.0,1,const;,False
+Количество санаций на момент исследования,float64,50,1.0,8,,True
+Сопутствующая патология,float64,50,1.0,2,,True
+Продолжительность заболевания до госпитализации,float64,50,1.0,9,,True
+Причина перитонита,float64,50,1.0,13,,True
+Продолжительность пребывания в РО (сут.),float64,50,1.0,25,,True
+Продолжительность ИВЛ (Ч.),float64,41,0.82,28,,True
+Продолжительность пребывания в ХО (сут.),float64,50,1.0,23,,True
+Продолжительность лечения в ЦРБ,float64,50,1.0,16,,True
+продолжительность пребывания в РО (сут.) ЦРБ,float64,42,0.84,8,,True
+продолж-ть ИВЛ (Ч.) ЦРБ,float64,38,0.76,13,,True
+продол-ть пребыв. в ХО (сут.) ЦРБ,float64,42,0.84,8,,True
+Количество операций,float64,50,1.0,11,,True
+SIRS,float64,50,1.0,4,,True
+MIP,float64,50,1.0,11,,True
+ИБП,float64,50,1.0,17,,True
+Возбудитель,float64,50,1.0,5,,True
+Степень тяжести,float64,50,1.0,5,,True
+ИД течение,float64,18,0.36,2,,True
+ИД этиология,float64,18,0.36,2,,True
+Лейкоциты,float64,50,1.0,40,,True
+СОЭ,float64,50,1.0,30,,True
+юные %,float64,0,0.0,0,sparse;const;,False
+юные,float64,0,0.0,0,sparse;const;,False
+пал/яд %,float64,31,0.62,9,,True
+пал/яд,float64,26,0.52,19,,True
+сегм/ яд %,float64,31,0.62,21,,True
+сегм/ яд,float64,26,0.52,26,,True
+"Нейтрофилы, абс",float64,31,0.62,31,,True
+баз. %,float64,32,0.64,4,,True
+баз.,float64,27,0.54,17,,True
+эоз. %,float64,32,0.64,6,,True
+эоз.,float64,27,0.54,20,,True
+мон. %,float64,32,0.64,13,,True
+мон.,float64,27,0.54,24,,True
+лимф. %,float64,31,0.62,18,,True
+лимф.,float64,31,0.62,31,,True
+IgA,float64,22,0.44,22,,True
+IgG,float64,22,0.44,21,,True
+IgM,float64,22,0.44,22,,True
+IgE,float64,11,0.22,10,,True
+IL-1B,float64,9,0.18,9,sparse;,False
+IL-2,float64,7,0.14,7,sparse;,False
+IL-4,float64,8,0.16,8,sparse;,False
+INF-G,float64,9,0.18,9,sparse;,False
+FNO,float64,7,0.14,5,sparse;,False
+Hu IL-4,float64,5,0.1,5,sparse;,False
+Hu IL-6,float64,14,0.28,14,,True
+Hu IL-8,float64,14,0.28,14,,True
+Hu IL-10,float64,13,0.26,10,,True
+Hu GM-CSF,float64,5,0.1,5,sparse;,False
+Hu IFN-g,float64,5,0.1,5,sparse;,False
+Hu TNF-a,float64,11,0.22,8,,True
+CD3+CD25+,float64,38,0.76,38,,True
+CD3+CD4+CD127Low+CD25High+CD62l+,float64,33,0.66,33,,True
+CD3+CD4+CD62l+,float64,32,0.64,32,,True
+CD3+CD4+CD25+,float64,35,0.7,34,,True
+CD3+,float64,38,0.76,38,,True
+CD3+CD62l+,float64,33,0.66,33,,True
+CD3+CD4+CD127Low+CD25High+,float64,38,0.76,38,,True
+CD3+CD4+,float64,38,0.76,38,,True
+CD3+CD4+abs,float64,31,0.62,31,,True
+NeutCD62L+,float64,31,0.62,28,,True
+MonoCD62L+,float64,17,0.34,17,,True
+CD19+,float64,37,0.74,37,,True
+CD19+CD27+CD23+,float64,20,0.4,20,,True
+CD19+CD27-CD23+,float64,22,0.44,22,,True
+CD19+CD5+CD23+,float64,21,0.42,21,,True
+CD19+CD5-CD23+,float64,21,0.42,21,,True
+CD19+CD27-,float64,37,0.74,37,,True
+CD19+CD27+,float64,37,0.74,37,,True
+CD27-/CD27+,float64,36,0.72,36,,True
+CD19+CD27+CD38+,float64,5,0.1,5,sparse;,False
+CD19+CD27-CD38+,float64,5,0.1,5,sparse;,False
+CD19+CD5+,float64,37,0.74,37,,True
+CD19+CD5-,float64,37,0.74,37,,True
+CD5-/CD5+,float64,36,0.72,36,,True
+CD19+CD5+CD38+,float64,5,0.1,5,sparse;,False
+CD19+CD5-CD38+,float64,5,0.1,5,sparse;,False
+CD19+CD23+,float64,22,0.44,22,,True
+CD3+CD56+CD16-CD11b-,float64,31,0.62,13,,True
+CD3+CD56+CD16-CD11b+,float64,32,0.64,30,,True
+CD3+CD56-CD16+,float64,32,0.64,32,,True
+CD3+CD56+CD16+,float64,32,0.64,32,,True
+CD3+CD56+CD16+CD11b+,float64,31,0.62,27,,True
+CD3+CD56-CD16+CD11b+,float64,30,0.6,28,,True
+CD3+CD56+CD16-CD11b+.1,float64,31,0.62,31,,True
+CD3+CD56+CD16-,float64,32,0.64,32,,True
+CD16+CD56+CD11b+,float64,32,0.64,32,,True
+CD16+CD56-CD11b+,float64,31,0.62,29,,True
+CD16-CD56+CD11b+,float64,31,0.62,28,,True
+CD16+CD56+,float64,32,0.64,31,,True
+CD16+CD56-,float64,32,0.64,29,,True
+CD16-CD56+,float64,31,0.62,30,,True
+CD3+CD8+CD16+CD56+,float64,17,0.34,17,,True
+CD3+CD8+CD16+CD56-,float64,17,0.34,16,,True
+CD3+CD8+CD16-CD56+,float64,16,0.32,16,,True
+CD3+CD8+CD11b+,float64,17,0.34,17,,True
+CD3+CD8+,float64,21,0.42,21,,True
+CD3+CD8+abs,float64,0,0.0,0,sparse;const;,False
+CD3+CD8+CD16+,float64,15,0.3,15,,True
+CD16/56+CD28+,float64,29,0.58,26,,True
+CD3+CD16/56+CD28+,float64,30,0.6,29,,True
+CD16/56+CD57+,float64,29,0.58,29,,True
+CD3+CD16/56+CD57+,float64,30,0.6,29,,True
+CD3+CD28+,float64,30,0.6,30,,True
+CD3+CD57+,float64,30,0.6,29,,True
+CD16/56+,float64,34,0.68,34,,True
+CD3+CD16/56+,float64,34,0.68,32,,True
+MON=CD14+CD16+,float64,34,0.68,34,,True
+MON=HLA-DR+,float64,29,0.58,29,,True
+MON=CD14+CD16-,float64,33,0.66,32,,True
+MON=14Low+CD16+,float64,33,0.66,33,,True
+CD14-CD64+,float64,4,0.08,4,sparse;,False
+CD3+_CD62L,float64,29,0.58,27,,True
+Treg_CD62L,float64,29,0.58,27,,True
+CD4+CD62L,float64,29,0.58,28,,True
+CD19+CD23,float64,13,0.26,13,,True
+Наивные В-лимфоциты_CD23,float64,13,0.26,13,,True
+В-памяти_CD23,float64,12,0.24,12,,True
+B2-клетки_CD23,float64,9,0.18,8,sparse;,False
+B1-клетки_CD23,float64,12,0.24,12,,True
+CD3+_CD57,float64,27,0.54,27,,True
+NKT_CD57,float64,27,0.54,27,,True
+NK_CD57,float64,26,0.52,25,,True
+CD3+_CD28,float64,27,0.54,25,,True
+NKT_CD28,float64,27,0.54,26,,True
+NK_CD28,float64,26,0.52,25,,True
+CD3+_CD38,float64,0,0.0,0,sparse;const;,False
+CD19+_CD38,float64,0,0.0,0,sparse;const;,False
+NK_CD38,float64,0,0.0,0,sparse;const;,False
+NKT_CD38,float64,0,0.0,0,sparse;const;,False
+Neutrophil_CD62L+,float64,28,0.56,28,,True
+Neutrophil_CD62L+_abs1,float64,28,0.56,28,,True
+Neutrophil_CD23+,float64,13,0.26,13,,True
+Neutrophil_CD23+_abs1,float64,13,0.26,13,,True
+"Neu_CD11b+CD16Low, %",float64,13,0.26,13,,True
+Neu_CD11b+CD16Low,float64,13,0.26,13,,True
+"Neu_CD11b+CD16High, %",float64,17,0.34,15,,True
+Neu_CD11b+CD16High,float64,19,0.38,17,,True
+"Neu_CD57+, %",float64,27,0.54,27,,True
+Neu_CD57+,float64,27,0.54,27,,True
+"Neu_CD28+, %",float64,27,0.54,27,,True
+Neu_CD28+,float64,27,0.54,26,,True
+"Neu_HLA-DR+, %",float64,24,0.48,24,,True
+"Neu_HLA-DR+, abs",float64,24,0.48,24,,True
+Neu_HLA-DR+,float64,24,0.48,22,,True
+"Лимф=CD64+,%",float64,9,0.18,9,sparse;,False
+Лимф=CD64+,float64,9,0.18,9,sparse;,False
+"Neu=CD64+,%",float64,9,0.18,6,sparse;,False
+"Neu=CD64+,abs",float64,9,0.18,9,sparse;,False
+Neu=CD64+,float64,9,0.18,9,sparse;,False
+"Neu=HLA-DR+CD64+,%",float64,9,0.18,4,sparse;,False
+"Neu=CD64+CD16Low,%",float64,0,0.0,0,sparse;const;,False
+"Neu=CD64+CD16High,%",float64,9,0.18,9,sparse;,False
+"Mon=CD64+,%",float64,9,0.18,9,sparse;,False
+Mon=CD64+,float64,9,0.18,9,sparse;,False
+"Mon=HLA-DR+CD64+,%",float64,7,0.14,7,sparse;,False
+"Mon=CD14Low+CD16+CD64+,%",float64,9,0.18,9,sparse;,False
+Zr_neutr%,float64,1,0.02,1,sparse;const;,False
+IG%,float64,1,0.02,1,sparse;const;,False
+Eo%,float64,1,0.02,1,sparse;const;,False
+Mo_CD14lowCD16+,float64,1,0.02,1,sparse;const;,False
+Mo_CD14hiCD16+,float64,1,0.02,1,sparse;const;,False
+Mo_CD14hiCD16-,float64,1,0.02,1,sparse;const;,False
+fag_neutr%,float64,11,0.22,11,,True
+fag_neutr,float64,11,0.22,10,,True
+fag_mo%,float64,11,0.22,11,,True
+fag_mo,float64,11,0.22,11,,True
+fag_IG%,float64,1,0.02,1,sparse;const;,False
+fag_IG,float64,1,0.02,1,sparse;const;,False
+fag_Eo%,float64,1,0.02,1,sparse;const;,False
+fag_Eo,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14lowCD16+%,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14lowCD16+,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16+%,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16+,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16-%,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16-,float64,1,0.02,1,sparse;const;,False
+fag_neut_hi %,float64,10,0.2,10,,True
+fag_neut_hi,float64,10,0.2,9,,True
+fag_neut_low%,float64,10,0.2,10,,True
+fag_neut_low,float64,10,0.2,10,,True
+fag_mon_hi%,float64,10,0.2,10,,True
+fag_mon_hi,float64,10,0.2,10,,True
+fag_mon_low%,float64,10,0.2,10,,True
+fag_mon_low,float64,10,0.2,10,,True
+Tсп Люм,float64,24,0.48,24,,True
+Iсп Люм,float64,24,0.48,24,,True
+Sсп Люм,float64,24,0.48,23,,True
+Tинд Люм,float64,24,0.48,24,,True
+Iинд Люм,float64,24,0.48,24,,True
+Sинд Люм,float64,24,0.48,24,,True
+ИА Люм,float64,24,0.48,24,,True
+Tсп Люц,float64,24,0.48,24,,True
+Iсп Люц,float64,24,0.48,24,,True
+Sсп Люц,float64,24,0.48,24,,True
+Tинд Люц,float64,24,0.48,24,,True
+Iинд Люц,float64,24,0.48,24,,True
+Sинд Люц,float64,24,0.48,24,,True
+ИА Люц,float64,24,0.48,24,,True
+Точка исследования.1,int64,50,1.0,1,const;,False
+Лейкоциты.1,float64,30,0.6,30,,True
+СОЭ.1,float64,30,0.6,21,,True
+юные %.1,float64,13,0.26,13,,True
+юные.1,float64,13,0.26,1,const;,False
+пал/яд %.1,float64,42,0.84,24,,True
+пал/яд.1,float64,37,0.74,20,,True
+сегм/ яд %.1,float64,42,0.84,32,,True
+сегм/ яд.1,float64,37,0.74,24,,True
+Neutrophil_abs_2,float64,29,0.58,29,,True
+баз. %.1,float64,42,0.84,18,,True
+баз..1,float64,37,0.74,16,,True
+эоз. %.1,float64,42,0.84,21,,True
+эоз..1,float64,37,0.74,20,,True
+мон. %.1,float64,42,0.84,24,,True
+мон..1,float64,37,0.74,25,,True
+лимф. %.1,float64,42,0.84,29,,True
+лимф..1,float64,29,0.58,29,,True
+IgA.1,float64,14,0.28,14,,True
+IgG.1,float64,16,0.32,15,,True
+IgM.1,float64,16,0.32,16,,True
+IgE.1,float64,8,0.16,8,sparse;,False
+IL-1B.1,float64,7,0.14,6,sparse;,False
+IL-2.1,float64,4,0.08,4,sparse;,False
+IL-4.1,float64,7,0.14,7,sparse;,False
+INF-G.1,float64,7,0.14,7,sparse;,False
+FNO.1,float64,5,0.1,5,sparse;,False
+Hu IL-4.1,float64,6,0.12,5,sparse;,False
+Hu IL-6.1,float64,21,0.42,20,,True
+Hu IL-8.1,float64,21,0.42,21,,True
+Hu IL-10.1,float64,21,0.42,18,,True
+Hu GM-CSF.1,float64,6,0.12,6,sparse;,False
+Hu IFN-g.1,float64,9,0.18,6,sparse;,False
+Hu TNF-a.1,float64,18,0.36,8,,True
+CD3+CD25+.1,float64,43,0.86,43,,True
+CD3+CD4+CD127Low+CD25High+CD62l+.1,float64,29,0.58,29,,True
+CD3+CD4+CD62l+.1,float64,29,0.58,29,,True
+CD3+CD4+CD25+.1,float64,42,0.84,40,,True
+CD3+.1,float64,43,0.86,42,,True
+CD3+CD62l+.1,float64,29,0.58,29,,True
+CD3+CD4+CD127Low+CD25High+.1,float64,43,0.86,42,,True
+CD3+CD4+.1,float64,42,0.84,41,,True
+CD3+CD4+abs.1,float64,0,0.0,0,sparse;const;,False
+NeutCD62L+.1,float64,28,0.56,26,,True
+MonoCD62L+.1,float64,16,0.32,15,,True
+CD19+.1,float64,43,0.86,43,,True
+CD19+CD38+.1,float64,14,0.28,13,,True
+CD19+CD27+CD23+.1,float64,23,0.46,23,,True
+CD19+CD27-CD23+.1,float64,23,0.46,23,,True
+CD19+CD5+CD23+.1,float64,23,0.46,22,,True
+CD19+CD5-CD23+.1,float64,23,0.46,23,,True
+CD19+CD27-.1,float64,39,0.78,38,,True
+CD19+CD27+.1,float64,39,0.78,38,,True
+CD27-/CD27+.1,float64,39,0.78,39,,True
+CD19+CD27+CD38+.1,float64,10,0.2,9,,True
+CD19+CD27-CD38+.1,float64,10,0.2,10,,True
+CD19+CD5+.1,float64,39,0.78,37,,True
+CD19+CD5-.1,float64,39,0.78,39,,True
+CD5-/CD5+.1,float64,39,0.78,39,,True
+CD19+CD5+CD38+.1,float64,11,0.22,10,,True
+CD19+CD5-CD38+.1,float64,10,0.2,10,,True
+CD19+CD23+.1,float64,23,0.46,23,,True
+CD3+CD56+CD16-CD11b-.1,float64,28,0.56,14,,True
+CD3+CD56+CD16-CD11b+.2,float64,28,0.56,28,,True
+CD3+CD56-CD16+.1,float64,28,0.56,28,,True
+CD3+CD56+CD16+.1,float64,28,0.56,28,,True
+CD3+CD56+CD16+CD11b+.1,float64,27,0.54,21,,True
+CD3+CD56-CD16+CD11b+.1,float64,27,0.54,24,,True
+CD3+CD56+CD16-CD11b+.3,float64,28,0.56,28,,True
+CD3+CD56+CD16-.1,float64,29,0.58,28,,True
+CD16+CD56+CD11b+.1,float64,29,0.58,29,,True
+CD16+CD56-CD11b+.1,float64,28,0.56,26,,True
+CD16-CD56+CD11b+.1,float64,29,0.58,26,,True
+CD16+CD56+.1,float64,29,0.58,29,,True
+CD16+CD56-.1,float64,28,0.56,28,,True
+CD16-CD56+.1,float64,28,0.56,28,,True
+CD3+CD8+CD16+CD56+.1,float64,13,0.26,13,,True
+CD3+CD8+CD16+CD56-.1,float64,13,0.26,13,,True
+CD3+CD8+CD16-CD56+.1,float64,13,0.26,13,,True
+CD3+CD8+CD11b+.1,float64,12,0.24,12,,True
+CD3+CD8+.1,float64,16,0.32,16,,True
+CD3+CD8+abs.1,float64,0,0.0,0,sparse;const;,False
+CD3+CD8+CD16+.1,float64,13,0.26,13,,True
+CD16/56+CD28+.1,float64,23,0.46,20,,True
+CD3+CD16/56+CD28+.1,float64,24,0.48,24,,True
+CD16/56+CD57+.1,float64,24,0.48,24,,True
+CD3+CD16/56+CD57+.1,float64,24,0.48,24,,True
+CD3+CD28+.1,float64,24,0.48,24,,True
+CD3+CD57+.1,float64,24,0.48,24,,True
+CD16/56+.1,float64,39,0.78,39,,True
+CD3+CD16/56+.1,float64,39,0.78,37,,True
+MON=CD14+CD16+.1,float64,42,0.84,41,,True
+MON=HLA-DR+.1,float64,38,0.76,37,,True
+MON=CD14+CD16-.1,float64,43,0.86,43,,True
+MON=14Low+CD16+.1,float64,43,0.86,43,,True
+CD14-CD64+.1,float64,11,0.22,10,,True
+CD3+_CD62L.1,float64,26,0.52,26,,True
+Treg_CD62L.1,float64,26,0.52,26,,True
+CD4+CD62L.1,float64,26,0.52,25,,True
+CD19+CD23.1,float64,11,0.22,10,,True
+Наивные В-лимфоциты_CD23.1,float64,11,0.22,11,,True
+В-памяти_CD23.1,float64,10,0.2,10,,True
+B2-клетки_CD23.1,float64,8,0.16,8,sparse;,False
+B1-клетки_CD23.1,float64,10,0.2,10,,True
+CD3+_CD57.1,float64,22,0.44,22,,True
+NKT_CD57.1,float64,22,0.44,22,,True
+NK_CD57.1,float64,22,0.44,22,,True
+CD3+_CD28.1,float64,22,0.44,20,,True
+NKT_CD28.1,float64,22,0.44,22,,True
+NK_CD28.1,float64,21,0.42,21,,True
+CD3+_CD38.1,float64,0,0.0,0,sparse;const;,False
+CD19+_CD38.1,float64,0,0.0,0,sparse;const;,False
+NK_CD38.1,float64,0,0.0,0,sparse;const;,False
+NKT_CD38.1,float64,0,0.0,0,sparse;const;,False
+Neutrophil_CD62L+.1,float64,26,0.52,26,,True
+Neutrop62L+_abs,float64,25,0.5,25,,True
+Neutrophil_CD23+.1,float64,11,0.22,11,,True
+Neutrophil_CD23+_abs2,float64,11,0.22,11,,True
+"Neu_CD11b+CD16Low, %.1",float64,12,0.24,12,,True
+Neu_CD11b+CD16Low.1,float64,12,0.24,12,,True
+"Neu_CD11b+CD16High, %.1",float64,15,0.3,13,,True
+Neu_CD11b+CD16High.1,float64,17,0.34,17,,True
+"Neu_CD57+, %.1",float64,23,0.46,23,,True
+Neu_CD57+.1,float64,23,0.46,23,,True
+"Neu_CD28+, %.1",float64,23,0.46,23,,True
+Neu_CD28+.1,float64,23,0.46,23,,True
+"Neu_HLA-DR+, %.1",float64,21,0.42,21,,True
+"Neu_HLA-DR+, abs2",float64,20,0.4,20,,True
+Neu_HLA-DR+.1,float64,21,0.42,20,,True
+"Лимф=CD64+,%.1",float64,10,0.2,10,,True
+Лимф=CD64+.1,float64,10,0.2,10,,True
+"Neu=CD64+,%.1",float64,10,0.2,8,,True
+"Neu=CD64+,abs2",float64,9,0.18,9,sparse;,False
+Neu=CD64+.1,float64,10,0.2,10,,True
+"Neu=HLA-DR+CD64+,%.1",float64,10,0.2,5,,True
+"Neu=CD64+CD16Low,%.1",float64,0,0.0,0,sparse;const;,False
+"Neu=CD64+CD16High,%.1",float64,10,0.2,10,,True
+"Mon=CD64+,%.1",float64,10,0.2,10,,True
+Mon=CD64+.1,float64,10,0.2,10,,True
+"Mon=HLA-DR+CD64+,%.1",float64,8,0.16,8,sparse;,False
+"Mon=CD14Low+CD16+CD64+,%.1",float64,10,0.2,10,,True
+Zr_neutr%.1,float64,1,0.02,1,sparse;const;,False
+IG%.1,float64,1,0.02,1,sparse;const;,False
+Eo%.1,float64,1,0.02,1,sparse;const;,False
+Mo_CD14lowCD16+.1,float64,1,0.02,1,sparse;const;,False
+Mo_CD14hiCD16+.1,float64,1,0.02,1,sparse;const;,False
+Mo_CD14hiCD16-.1,float64,1,0.02,1,sparse;const;,False
+fag_neutr%.1,float64,9,0.18,9,sparse;,False
+fag_neutr.1,float64,9,0.18,9,sparse;,False
+fag_mo%.1,float64,9,0.18,9,sparse;,False
+fag_mo.1,float64,9,0.18,9,sparse;,False
+fag_IG%.1,float64,1,0.02,1,sparse;const;,False
+fag_IG.1,float64,1,0.02,1,sparse;const;,False
+fag_Eo%.1,float64,1,0.02,1,sparse;const;,False
+fag_Eo.1,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14lowCD16+%.1,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14lowCD16+.1,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16+%.1,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16+.1,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16-%.1,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16-.1,float64,1,0.02,1,sparse;const;,False
+fag_neut_hi %.1,float64,8,0.16,8,sparse;,False
+fag_neut_hi.1,float64,8,0.16,8,sparse;,False
+fag_neut_low%.1,float64,8,0.16,8,sparse;,False
+fag_neut_low.1,float64,8,0.16,8,sparse;,False
+fag_mon_hi%.1,float64,8,0.16,8,sparse;,False
+fag_mon_hi.1,float64,8,0.16,8,sparse;,False
+fag_mon_low%.1,float64,8,0.16,8,sparse;,False
+fag_mon_low.1,float64,8,0.16,8,sparse;,False
+Tсп Люм.1,float64,13,0.26,13,,True
+Iсп Люм.1,float64,13,0.26,13,,True
+Sсп Люм.1,float64,13,0.26,13,,True
+Tинд Люм.1,float64,13,0.26,13,,True
+Iинд Люм.1,float64,13,0.26,13,,True
+Sинд Люм.1,float64,13,0.26,13,,True
+ИА Люм.1,float64,13,0.26,13,,True
+Tсп Люц.1,float64,13,0.26,13,,True
+Iсп Люц.1,float64,13,0.26,13,,True
+Sсп Люц.1,float64,13,0.26,13,,True
+Tинд Люц.1,float64,13,0.26,13,,True
+Iинд Люц.1,float64,13,0.26,13,,True
+Sинд Люц.1,float64,13,0.26,13,,True
+ИА Люц.1,float64,13,0.26,13,,True
+Точка исследования.2,int64,50,1.0,1,const;,False
+Лейкоциты.2,float64,18,0.36,18,,True
+СОЭ.2,float64,18,0.36,16,,True
+юные %.2,float64,1,0.02,1,sparse;const;,False
+юные.2,float64,1,0.02,1,sparse;const;,False
+пал/яд %.2,float64,19,0.38,7,,True
+пал/яд.2,float64,14,0.28,11,,True
+сегм/ яд %.2,float64,19,0.38,16,,True
+сегм/ яд.2,float64,14,0.28,14,,True
+Neutrophil_abs,float64,18,0.36,18,,True
+баз. %.2,float64,19,0.38,4,,True
+баз..2,float64,14,0.28,7,,True
+эоз. %.2,float64,19,0.38,10,,True
+эоз..2,float64,14,0.28,14,,True
+мон. %.2,float64,19,0.38,13,,True
+мон..2,float64,14,0.28,14,,True
+лимф. %.2,float64,19,0.38,14,,True
+лимф..2,float64,18,0.36,18,,True
+IgA.2,float64,10,0.2,10,,True
+IgG.2,float64,10,0.2,10,,True
+IgM.2,float64,10,0.2,10,,True
+IgE.2,float64,6,0.12,6,sparse;,False
+IL-1B.2,float64,3,0.06,3,sparse;,False
+IL-2.2,float64,3,0.06,3,sparse;,False
+IL-4.2,float64,3,0.06,3,sparse;,False
+INF-G.2,float64,3,0.06,3,sparse;,False
+FNO.2,float64,2,0.04,2,sparse;,False
+Hu IL-8.2,float64,2,0.04,2,sparse;,False
+Hu IL-10.2,float64,2,0.04,2,sparse;,False
+CD3+CD25+.2,float64,22,0.44,22,,True
+CD3+CD4+CD127Low+CD25High+CD62l+.2,float64,20,0.4,20,,True
+CD3+CD4+CD62l+.2,float64,20,0.4,20,,True
+CD3+CD4+CD25+.2,float64,22,0.44,21,,True
+CD3+.2,float64,22,0.44,22,,True
+CD3+CD62l+.2,float64,20,0.4,19,,True
+CD3+CD4+CD127Low+CD25High+.2,float64,22,0.44,22,,True
+CD3+CD4+.2,float64,22,0.44,22,,True
+3_CD3+CD4+abs,float64,0,0.0,0,sparse;const;,False
+NeutCD62L+.2,float64,19,0.38,18,,True
+MonoCD62L+.2,float64,10,0.2,10,,True
+CD19+.2,float64,22,0.44,22,,True
+CD19+CD27+CD23+.2,float64,14,0.28,14,,True
+CD19+CD27-CD23+.2,float64,14,0.28,14,,True
+CD19+CD5+CD23+.2,float64,14,0.28,14,,True
+CD19+CD5-CD23+.2,float64,14,0.28,14,,True
+CD19+CD27-.2,float64,22,0.44,22,,True
+CD19+CD27+.2,float64,22,0.44,22,,True
+CD27-/CD27+.2,float64,22,0.44,22,,True
+CD19+CD27+CD38+.2,float64,2,0.04,1,sparse;const;,False
+CD19+CD27-CD38+.2,float64,2,0.04,2,sparse;,False
+CD19+CD5+.2,float64,22,0.44,22,,True
+CD19+CD5-.2,float64,22,0.44,22,,True
+CD5-/CD5+.2,float64,22,0.44,22,,True
+CD19+CD5+CD38+.2,float64,2,0.04,2,sparse;,False
+CD19+CD5-CD38+.2,float64,2,0.04,2,sparse;,False
+CD19+CD23+.2,float64,14,0.28,14,,True
+CD3+CD56+CD16-CD11b-.2,float64,20,0.4,13,,True
+CD3+CD56+CD16-CD11b+.4,float64,20,0.4,20,,True
+CD3+CD56-CD16+.2,float64,20,0.4,20,,True
+CD3+CD56+CD16+.2,float64,20,0.4,20,,True
+CD3+CD56+CD16+CD11b+.2,float64,20,0.4,18,,True
+CD3+CD56-CD16+CD11b+.2,float64,20,0.4,19,,True
+CD3+CD56+CD16-CD11b+.5,float64,20,0.4,20,,True
+CD3+CD56+CD16-.2,float64,20,0.4,20,,True
+CD16+CD56+CD11b+.2,float64,20,0.4,19,,True
+CD16+CD56-CD11b+.2,float64,20,0.4,19,,True
+CD16-CD56+CD11b+.2,float64,20,0.4,18,,True
+CD16+CD56+.2,float64,20,0.4,20,,True
+CD16+CD56-.2,float64,20,0.4,20,,True
+CD16-CD56+.2,float64,20,0.4,17,,True
+CD3+CD8+CD16+CD56+.2,float64,13,0.26,13,,True
+CD3+CD8+CD16+CD56-.2,float64,13,0.26,13,,True
+CD3+CD8+CD16-CD56+.2,float64,13,0.26,13,,True
+CD3+CD8+CD11b+.2,float64,13,0.26,13,,True
+CD3+CD8+.2,float64,15,0.3,15,,True
+3_CD3+CD8+abs,float64,0,0.0,0,sparse;const;,False
+CD3+CD8+CD16+.2,float64,13,0.26,13,,True
+CD16/56+CD28+.2,float64,17,0.34,17,,True
+CD3+CD16/56+CD28+.2,float64,17,0.34,17,,True
+CD16/56+CD57+.2,float64,17,0.34,17,,True
+CD3+CD16/56+CD57+.2,float64,17,0.34,16,,True
+CD3+CD28+.2,float64,17,0.34,17,,True
+CD3+CD57+.2,float64,17,0.34,17,,True
+CD16/56+.2,float64,19,0.38,19,,True
+CD3+CD16/56+.2,float64,19,0.38,19,,True
+MON=CD14+CD16+.2,float64,22,0.44,22,,True
+MON=HLA-DR+.2,float64,20,0.4,20,,True
+MON=CD14+CD16-.2,float64,22,0.44,22,,True
+MON=14Low+CD16+.2,float64,22,0.44,22,,True
+CD14-CD64+.2,float64,2,0.04,2,sparse;,False
+CD3+_CD62L.2,float64,15,0.3,15,,True
+Treg_CD62L.2,float64,15,0.3,15,,True
+CD4+CD62L.2,float64,15,0.3,15,,True
+CD19+CD23.2,float64,8,0.16,8,sparse;,False
+Наивные В-лимфоциты_CD23.2,float64,8,0.16,8,sparse;,False
+В-памяти_CD23.2,float64,8,0.16,8,sparse;,False
+B2-клетки_CD23.2,float64,7,0.14,7,sparse;,False
+B1-клетки_CD23.2,float64,8,0.16,8,sparse;,False
+CD3+_CD57.2,float64,12,0.24,12,,True
+NKT_CD57.2,float64,12,0.24,12,,True
+NK_CD57.2,float64,12,0.24,12,,True
+CD3+_CD28.2,float64,12,0.24,12,,True
+NKT_CD28.2,float64,12,0.24,12,,True
+NK_CD28.2,float64,12,0.24,11,,True
+CD3+_CD38.2,float64,0,0.0,0,sparse;const;,False
+CD19+_CD38.2,float64,0,0.0,0,sparse;const;,False
+NK_CD38.2,float64,0,0.0,0,sparse;const;,False
+NKT_CD38.2,float64,0,0.0,0,sparse;const;,False
+Neutrophil_CD62L+.2,float64,15,0.3,14,,True
+Neutrophil_CD62L+_abs3,float64,15,0.3,15,,True
+Neutrophil_CD23+.2,float64,8,0.16,8,sparse;,False
+Neutrophil_CD23+_abs,float64,8,0.16,8,sparse;,False
+"Neu_CD11b+CD16Low, %.2",float64,10,0.2,10,,True
+Neu_CD11b+CD16Low.2,float64,10,0.2,10,,True
+"Neu_CD11b+CD16High, %.2",float64,11,0.22,11,,True
+Neu_CD11b+CD16High.2,float64,11,0.22,11,,True
+"Neu_CD57+, %.2",float64,12,0.24,12,,True
+Neu_CD57+.2,float64,12,0.24,12,,True
+"Neu_CD28+, %.2",float64,12,0.24,12,,True
+Neu_CD28+.2,float64,12,0.24,12,,True
+"Neu_HLA-DR+, %.2",float64,14,0.28,14,,True
+"Neu_HLA-DR+, abs.1",float64,14,0.28,14,,True
+Neu_HLA-DR+.2,float64,14,0.28,13,,True
+"Лимф=CD64+,%.2",float64,5,0.1,5,sparse;,False
+Лимф=CD64+.2,float64,5,0.1,5,sparse;,False
+"Neu=CD64+,%.2",float64,5,0.1,5,sparse;,False
+"Neu=CD64+,abs.1",float64,5,0.1,5,sparse;,False
+Neu=CD64+.2,float64,5,0.1,5,sparse;,False
+"Neu=HLA-DR+CD64+,%.2",float64,5,0.1,5,sparse;,False
+"Neu=CD64+CD16Low,%.2",float64,0,0.0,0,sparse;const;,False
+"Neu=CD64+CD16High,%.2",float64,5,0.1,5,sparse;,False
+"Mon=CD64+,%.2",float64,5,0.1,5,sparse;,False
+Mon=CD64+.2,float64,5,0.1,5,sparse;,False
+"Mon=HLA-DR+CD64+,%.2",float64,4,0.08,4,sparse;,False
+"Mon=CD14Low+CD16+CD64+,%.2",float64,5,0.1,5,sparse;,False
+Zr_neutr%.2,float64,1,0.02,1,sparse;const;,False
+IG%.2,float64,1,0.02,1,sparse;const;,False
+Eo%.2,float64,1,0.02,1,sparse;const;,False
+Mo_CD14lowCD16+.2,float64,1,0.02,1,sparse;const;,False
+Mo_CD14hiCD16+.2,float64,1,0.02,1,sparse;const;,False
+Mo_CD14hiCD16-.2,float64,1,0.02,1,sparse;const;,False
+fag_neutr%.2,float64,6,0.12,6,sparse;,False
+fag_neutr.2,float64,6,0.12,6,sparse;,False
+fag_mo%.2,float64,6,0.12,6,sparse;,False
+fag_mo.2,float64,6,0.12,6,sparse;,False
+fag_IG%.2,float64,1,0.02,1,sparse;const;,False
+fag_IG.2,float64,1,0.02,1,sparse;const;,False
+fag_Eo%.2,float64,1,0.02,1,sparse;const;,False
+fag_Eo.2,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14lowCD16+%.2,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14lowCD16+.2,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16+%.2,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16+.2,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16-%.2,float64,1,0.02,1,sparse;const;,False
+fag_Mo_CD14hiCD16-.2,float64,1,0.02,1,sparse;const;,False
+fag_neut_hi %.2,float64,5,0.1,5,sparse;,False
+fag_neut_hi.2,float64,5,0.1,5,sparse;,False
+fag_neut_low%.2,float64,5,0.1,5,sparse;,False
+fag_neut_low.2,float64,5,0.1,5,sparse;,False
+fag_mon_hi%.2,float64,5,0.1,5,sparse;,False
+fag_mon_hi.2,float64,5,0.1,5,sparse;,False
+fag_mon_low%.2,float64,5,0.1,5,sparse;,False
+fag_mon_low.2,float64,5,0.1,4,sparse;,False
+Tсп Люм.2,float64,8,0.16,8,sparse;,False
+Iсп Люм.2,float64,8,0.16,8,sparse;,False
+Sсп Люм.2,float64,8,0.16,8,sparse;,False
+Tинд Люм.2,float64,8,0.16,8,sparse;,False
+Iинд Люм.2,float64,8,0.16,8,sparse;,False
+Sинд Люм.2,float64,8,0.16,8,sparse;,False
+ИА Люм.2,float64,8,0.16,8,sparse;,False
+Tсп Люц.2,float64,8,0.16,8,sparse;,False
+Iсп Люц.2,float64,8,0.16,8,sparse;,False
+Sсп Люц.2,float64,8,0.16,8,sparse;,False
+Tинд Люц.2,float64,8,0.16,8,sparse;,False
+Iинд Люц.2,float64,8,0.16,8,sparse;,False
+Sинд Люц.2,float64,8,0.16,8,sparse;,False
+ИА Люц.2,float64,8,0.16,8,sparse;,False
+Точка исследования.3,int64,50,1.0,1,const;,False
+Лейкоциты.3,float64,6,0.12,6,sparse;,False
+СОЭ.3,float64,6,0.12,6,sparse;,False
+юные %.3,float64,1,0.02,1,sparse;const;,False
+юные.3,float64,0,0.0,0,sparse;const;,False
+пал/яд %.3,float64,7,0.14,3,sparse;,False
+пал/яд.3,float64,2,0.04,2,sparse;,False
+сегм/ яд %.3,float64,7,0.14,7,sparse;,False
+сегм/ яд.3,float64,2,0.04,2,sparse;,False
+Neutrophil_abs.1,float64,7,0.14,7,sparse;,False
+баз. %.3,float64,7,0.14,3,sparse;,False
+баз..3,float64,3,0.06,3,sparse;,False
+эоз. %.3,float64,7,0.14,4,sparse;,False
+эоз..3,float64,3,0.06,3,sparse;,False
+мон. %.3,float64,7,0.14,6,sparse;,False
+мон..3,float64,3,0.06,3,sparse;,False
+лимф. %.3,float64,7,0.14,7,sparse;,False
+лимф..3,float64,6,0.12,6,sparse;,False
+IgA.3,float64,5,0.1,5,sparse;,False
+IgG.3,float64,6,0.12,6,sparse;,False
+IgM.3,float64,6,0.12,6,sparse;,False
+IgE.3,float64,4,0.08,4,sparse;,False
+IL-1B.3,float64,1,0.02,1,sparse;const;,False
+IL-2.3,float64,0,0.0,0,sparse;const;,False
+IL-4.3,float64,0,0.0,0,sparse;const;,False
+INF-G.3,float64,1,0.02,1,sparse;const;,False
+FNO.3,float64,1,0.02,1,sparse;const;,False
+Hu IL-8.3,float64,2,0.04,2,sparse;,False
+Hu IL-10.3,float64,2,0.04,2,sparse;,False
+CD3+CD25+.3,float64,11,0.22,11,,True
+CD3+CD4+CD127Low+CD25High+CD62l+.3,float64,10,0.2,10,,True
+CD3+CD4+CD62l+.3,float64,10,0.2,10,,True
+CD3+CD4+CD25+.3,float64,11,0.22,11,,True
+CD3+.3,float64,11,0.22,11,,True
+CD3+CD62l+.3,float64,10,0.2,10,,True
+CD3+CD4+CD127Low+CD25High+.3,float64,11,0.22,11,,True
+CD3+CD4+.3,float64,11,0.22,11,,True
+4_CD3+CD4+abs,float64,0,0.0,0,sparse;const;,False
+NeutCD62L+.3,float64,10,0.2,10,,True
+MonoCD62L+.3,float64,4,0.08,4,sparse;,False
+CD19+.3,float64,10,0.2,10,,True
+CD19+CD27+CD23+.3,float64,9,0.18,9,sparse;,False
+CD19+CD27-CD23+.3,float64,9,0.18,9,sparse;,False
+CD19+CD5+CD23+.3,float64,9,0.18,9,sparse;,False
+CD19+CD5-CD23+.3,float64,9,0.18,9,sparse;,False
+CD19+CD27-.3,float64,10,0.2,10,,True
+CD19+CD27+.3,float64,10,0.2,10,,True
+CD27-/CD27+.3,float64,10,0.2,10,,True
+CD19+CD27+CD38+.3,float64,1,0.02,1,sparse;const;,False
+CD19+CD27-CD38+.3,float64,1,0.02,1,sparse;const;,False
+CD19+CD5+.3,float64,10,0.2,10,,True
+CD19+CD5-.3,float64,10,0.2,10,,True
+CD5-/CD5+.3,float64,10,0.2,10,,True
+CD19+CD5+CD38+.3,float64,1,0.02,1,sparse;const;,False
+CD19+CD5-CD38+.3,float64,1,0.02,1,sparse;const;,False
+CD19+CD23+.3,float64,9,0.18,9,sparse;,False
+CD3+CD56+CD16-CD11b-.3,float64,10,0.2,7,,True
+CD3+CD56+CD16-CD11b+.6,float64,10,0.2,10,,True
+CD3+CD56-CD16+.3,float64,10,0.2,10,,True
+CD3+CD56+CD16+.3,float64,10,0.2,10,,True
+CD3+CD56+CD16+CD11b+.3,float64,9,0.18,9,sparse;,False
+CD3+CD56-CD16+CD11b+.3,float64,9,0.18,9,sparse;,False
+CD3+CD56+CD16-CD11b+.7,float64,9,0.18,9,sparse;,False
+CD3+CD56+CD16-.3,float64,10,0.2,10,,True
+CD16+CD56+CD11b+.3,float64,10,0.2,10,,True
+CD16+CD56-CD11b+.3,float64,10,0.2,10,,True
+CD16-CD56+CD11b+.3,float64,10,0.2,10,,True
+CD16+CD56+.3,float64,10,0.2,10,,True
+CD16+CD56-.3,float64,10,0.2,10,,True
+CD16-CD56+.3,float64,10,0.2,10,,True
+CD3+CD8+CD16+CD56+.3,float64,9,0.18,9,sparse;,False
+CD3+CD8+CD16+CD56-.3,float64,9,0.18,8,sparse;,False
+CD3+CD8+CD16-CD56+.3,float64,9,0.18,9,sparse;,False
+CD3+CD8+CD11b+.3,float64,9,0.18,9,sparse;,False
+CD3+CD8+.3,float64,10,0.2,10,,True
+4_CD3+CD8+abs,float64,0,0.0,0,sparse;const;,False
+CD3+CD8+CD16+.3,float64,8,0.16,8,sparse;,False
+CD16/56+CD28+.3,float64,10,0.2,10,,True
+CD3+CD16/56+CD28+.3,float64,10,0.2,10,,True
+CD16/56+CD57+.3,float64,10,0.2,10,,True
+CD3+CD16/56+CD57+.3,float64,10,0.2,10,,True
+CD3+CD28+.3,float64,10,0.2,10,,True
+CD3+CD57+.3,float64,10,0.2,10,,True
+CD16/56+.3,float64,11,0.22,11,,True
+CD3+CD16/56+.3,float64,11,0.22,11,,True
+MON=CD14+CD16+.3,float64,11,0.22,11,,True
+MON=HLA-DR+.3,float64,11,0.22,11,,True
+MON=CD14+CD16-.3,float64,11,0.22,11,,True
+MON=14Low+CD16+.3,float64,11,0.22,11,,True
+CD14-CD64+.3,float64,1,0.02,1,sparse;const;,False
+CD3+_CD62L.3,float64,6,0.12,6,sparse;,False
+Treg_CD62L.3,float64,6,0.12,6,sparse;,False
+CD4+CD62L.3,float64,6,0.12,6,sparse;,False
+CD19+CD23.3,float64,4,0.08,4,sparse;,False
+Наивные В-лимфоциты_CD23.3,float64,4,0.08,4,sparse;,False
+В-памяти_CD23.3,float64,4,0.08,4,sparse;,False
+B2-клетки_CD23.3,float64,4,0.08,4,sparse;,False
+B1-клетки_CD23.3,float64,4,0.08,4,sparse;,False
+CD3+_CD57.3,float64,6,0.12,6,sparse;,False
+NKT_CD57.3,float64,6,0.12,6,sparse;,False
+NK_CD57.3,float64,6,0.12,6,sparse;,False
+CD3+_CD28.3,float64,6,0.12,5,sparse;,False
+NKT_CD28.3,float64,6,0.12,6,sparse;,False
+NK_CD28.3,float64,6,0.12,6,sparse;,False
+CD3+_CD38.3,float64,0,0.0,0,sparse;const;,False
+CD19+_CD38.3,float64,0,0.0,0,sparse;const;,False
+NK_CD38.3,float64,0,0.0,0,sparse;const;,False
+NKT_CD38.3,float64,0,0.0,0,sparse;const;,False
+Neutrophil_CD62L+.3,float64,6,0.12,6,sparse;,False
+Neutrophil_CD62L+_abs,float64,5,0.1,5,sparse;,False
+Neutrophil_CD23+.3,float64,4,0.08,4,sparse;,False
+Neutrophil_CD23+_abs4,float64,5,0.1,5,sparse;,False
+"Neu_CD11b+CD16Low, %.3",float64,5,0.1,5,sparse;,False
+Neu_CD11b+CD16Low.3,float64,5,0.1,5,sparse;,False
+"Neu_CD11b+CD16High, %.3",float64,5,0.1,5,sparse;,False
+Neu_CD11b+CD16High.3,float64,5,0.1,5,sparse;,False
+"Neu_CD57+, %.3",float64,6,0.12,6,sparse;,False
+Neu_CD57+.3,float64,6,0.12,6,sparse;,False
+"Neu_CD28+, %.3",float64,6,0.12,6,sparse;,False
+Neu_CD28+.3,float64,6,0.12,6,sparse;,False
+"Neu_HLA-DR+, %.3",float64,6,0.12,6,sparse;,False
+"Neu_HLA-DR+, abs.2",float64,5,0.1,5,sparse;,False
+Neu_HLA-DR+.3,float64,6,0.12,6,sparse;,False
+"Лимф=CD64+,%.3",float64,1,0.02,1,sparse;const;,False
+Лимф=CD64+.3,float64,1,0.02,1,sparse;const;,False
+"Neu=CD64+,%.3",float64,1,0.02,1,sparse;const;,False
+"Neu=CD64+,abs4",float64,0,0.0,0,sparse;const;,False
+Neu=CD64+.3,float64,1,0.02,1,sparse;const;,False
+"Neu=HLA-DR+CD64+,%.3",float64,1,0.02,1,sparse;const;,False
+"Neu=CD64+CD16Low,%.3",float64,0,0.0,0,sparse;const;,False
+"Neu=CD64+CD16High,%.3",float64,1,0.02,1,sparse;const;,False
+"Mon=CD64+,%.3",float64,1,0.02,1,sparse;const;,False
+Mon=CD64+.3,float64,1,0.02,1,sparse;const;,False
+"Mon=HLA-DR+CD64+,%.3",float64,1,0.02,1,sparse;const;,False
+"Mon=CD14Low+CD16+CD64+,%.3",float64,1,0.02,1,sparse;const;,False
+Zr_neutr%.3,float64,0,0.0,0,sparse;const;,False
+IG%.3,float64,0,0.0,0,sparse;const;,False
+Eo%.3,float64,0,0.0,0,sparse;const;,False
+Mo_CD14lowCD16+.3,float64,0,0.0,0,sparse;const;,False
+Mo_CD14hiCD16+.3,float64,0,0.0,0,sparse;const;,False
+Mo_CD14hiCD16-.3,float64,0,0.0,0,sparse;const;,False
+fag_neutr%.3,float64,3,0.06,3,sparse;,False
+fag_neutr.3,float64,3,0.06,3,sparse;,False
+fag_mo%.3,float64,3,0.06,3,sparse;,False
+fag_mo.3,float64,3,0.06,3,sparse;,False
+fag_IG%.3,float64,0,0.0,0,sparse;const;,False
+fag_IG.3,float64,0,0.0,0,sparse;const;,False
+fag_Eo%.3,float64,0,0.0,0,sparse;const;,False
+fag_Eo.3,float64,0,0.0,0,sparse;const;,False
+fag_Mo_CD14lowCD16+%.3,float64,0,0.0,0,sparse;const;,False
+fag_Mo_CD14lowCD16+.3,float64,0,0.0,0,sparse;const;,False
+fag_Mo_CD14hiCD16+%.3,float64,0,0.0,0,sparse;const;,False
+fag_Mo_CD14hiCD16+.3,float64,0,0.0,0,sparse;const;,False
+fag_Mo_CD14hiCD16-%.3,float64,0,0.0,0,sparse;const;,False
+fag_Mo_CD14hiCD16-.3,float64,0,0.0,0,sparse;const;,False
+fag_neut_hi %.3,float64,3,0.06,3,sparse;,False
+fag_neut_hi.3,float64,3,0.06,2,sparse;,False
+fag_neut_low%.3,float64,3,0.06,3,sparse;,False
+fag_neut_low.3,float64,3,0.06,3,sparse;,False
+fag_mon_hi%.3,float64,3,0.06,3,sparse;,False
+fag_mon_hi.3,float64,3,0.06,3,sparse;,False
+fag_mon_low%.3,float64,3,0.06,3,sparse;,False
+fag_mon_low.3,float64,3,0.06,3,sparse;,False
+Tсп Люм.3,float64,6,0.12,6,sparse;,False
+Iсп Люм.3,float64,6,0.12,6,sparse;,False
+Sсп Люм.3,float64,6,0.12,6,sparse;,False
+Tинд Люм.3,float64,6,0.12,6,sparse;,False
+Iинд Люм.3,float64,6,0.12,6,sparse;,False
+Sинд Люм.3,float64,6,0.12,6,sparse;,False
+ИА Люм.3,float64,6,0.12,6,sparse;,False
+Tсп Люц.3,float64,6,0.12,6,sparse;,False
+Iсп Люц.3,float64,6,0.12,6,sparse;,False
+Sсп Люц.3,float64,6,0.12,6,sparse;,False
+Tинд Люц.3,float64,6,0.12,6,sparse;,False
+Iинд Люц.3,float64,6,0.12,6,sparse;,False
+Sинд Люц.3,float64,6,0.12,6,sparse;,False
+ИА Люц.3,float64,6,0.12,6,sparse;,False
+sex,float64,50,1.0,2,,True
+Пол,float64,50,1.0,2,,True
