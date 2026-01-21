@@ -1,0 +1,26 @@
+{
+  "cohort": "ihd",
+  "source_file": "Baza-s-kontrolem-vmeste-2-Ishemicheschkaia-bolezn-serdtsa.xlsx",
+  "sheet": "Ишемическая болезнь сердца",
+  "n_rows": 148,
+  "n_cols": 222,
+  "parsed_date_cols": [],
+  "dropped_sparse_cols": [],
+  "detected": {
+    "patient_id_col": "Пор.№",
+    "sex_col": "пол",
+    "age_col": "возраст",
+    "visit_dt_col": null
+  },
+  "fixed_mixed_object_cols": [
+    "пол",
+    "Диагноз",
+    "Резист хотя бы в 1 точке",
+    "Р стали после КШ",
+    "Р в 2 точках",
+    "Были резист, стали чувств",
+    "1 точка (резистентность к АСК 0-нет, 1-да",
+    "sex"
+  ],
+  "parquet_path": "data_parquet\\ihd.parquet"
+}

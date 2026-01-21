@@ -1,0 +1,785 @@
+﻿column
+Л №
+Дата
+Диагноз
+По CD64
+Пол
+Точка исследования
+Количество санаций на момент исследования
+Сопутствующая патология
+Продолжительность заболевания до госпитализации
+Причина перитонита
+Продолжительность пребывания в РО (сут.)
+Продолжительность ИВЛ (Ч.)
+Продолжительность пребывания в ХО (сут.)
+Продолжительность лечения в ЦРБ
+продолжительность пребывания в РО (сут.) ЦРБ
+продолж-ть ИВЛ (Ч.) ЦРБ
+продол-ть пребыв. в ХО (сут.) ЦРБ
+Количество операций
+Послеоперационные осложнения
+SAPS II
+SOFA
+SIRS
+max SIRS ПОП
+MIP
+ИБП
+Осложнения
+Возбудитель
+Степень тяжести
+Исход
+ИД течение
+ИД этиология
+ИД уровень
+ПКТ
+Лейкоциты
+СОЭ
+юные %
+юные
+пал/яд %
+пал/яд
+сегм/ яд %
+сегм/ яд
+"Нейтрофилы, абс"
+баз. %
+баз.
+эоз. %
+эоз.
+мон. %
+мон.
+лимф. %
+лимф.
+IgA
+IgG
+IgM
+IgE
+IL-1
+IL-1B
+IL-2
+IL-4
+IL-10
+INF-A
+INF-G
+FNO
+TNF
+Hu IL-2
+Hu IL-4
+Hu IL-6
+Hu IL-8
+Hu IL-10
+Hu GM-CSF
+Hu IFN-g
+Hu TNF-a
+CD3+CD25+
+CD3+CD4+CD127Low+CD25High+CD62l+
+CD3+CD4+CD62l+
+CD3+CD4+CD25+
+CD3+
+CD3+CD62l+
+CD3+CD4+CD127Low+CD25High+
+CD3+CD4+
+CD3+CD4+abs
+NeutCD62L+
+MonoCD62L+
+CD19+
+CD19+CD38+
+CD19+CD27+CD23+
+CD19+CD27-CD23+
+CD19+CD5+CD23+
+CD19+CD5-CD23+
+CD19+CD27-
+CD19+CD27+
+CD27-/CD27+
+CD19+CD27+CD38+
+CD19+CD27-CD38+
+CD19+CD5+
+CD19+CD5-
+CD5-/CD5+
+CD19+CD5+CD38+
+CD19+CD5-CD38+
+CD19+CD23+
+CD3+CD56+CD16-CD11b-
+CD3+CD56+CD16-CD11b+
+CD3+CD56-CD16+
+CD3+CD56+CD16+
+CD3+CD56+CD16+CD11b+
+CD3+CD56-CD16+CD11b+
+CD3+CD56+CD16-CD11b+.1
+CD3+CD56+CD16-
+CD16+CD56+CD11b+
+CD16+CD56-CD11b+
+CD16-CD56+CD11b+
+CD16+CD56+
+CD16+CD56-
+CD16-CD56+
+CD3+CD8+CD16+CD56+
+CD3+CD8+CD16+CD56-
+CD3+CD8+CD16-CD56+
+CD3+CD8+CD11b+
+CD3+CD8+
+CD3+CD8+abs
+CD3+CD8+CD16+
+CD16/56+CD28+
+CD3+CD16/56+CD28+
+CD16/56+CD57+
+CD3+CD16/56+CD57+
+CD3+CD28+
+CD3+CD57+
+CD16/56+
+CD3+CD16/56+
+MON=CD14+CD16+
+MON=HLA-DR+
+MON=CD14+CD16-
+MON=14Low+CD16+
+CD14-CD64+
+CD3+_CD62L
+Treg_CD62L
+CD4+CD62L
+CD19+CD23
+Наивные В-лимфоциты_CD23
+В-памяти_CD23
+B2-клетки_CD23
+B1-клетки_CD23
+CD3+_CD57
+NKT_CD57
+NK_CD57
+CD3+_CD28
+NKT_CD28
+NK_CD28
+CD3+_CD38
+CD19+_CD38
+NK_CD38
+NKT_CD38
+Neutrophil_CD62L+
+Neutrophil_CD62L+_abs1
+Neutrophil_CD23+
+Neutrophil_CD23+_abs1
+"Neu_CD11b+CD16Low, %"
+Neu_CD11b+CD16Low
+"Neu_CD11b+CD16High, %"
+Neu_CD11b+CD16High
+"Neu_CD57+, %"
+Neu_CD57+
+"Neu_CD28+, %"
+Neu_CD28+
+"Neu_HLA-DR+, %"
+"Neu_HLA-DR+, abs"
+Neu_HLA-DR+
+"Лимф=CD64+,%"
+Лимф=CD64+
+"Neu=CD64+,%"
+"Neu=CD64+,abs"
+Neu=CD64+
+"Neu=HLA-DR+CD64+,%"
+"Neu=CD64+CD16Low,%"
+"Neu=CD64+CD16High,%"
+"Mon=CD64+,%"
+Mon=CD64+
+"Mon=HLA-DR+CD64+,%"
+"Mon=CD14Low+CD16+CD64+,%"
+Zr_neutr%
+IG%
+Eo%
+Mo_CD14lowCD16+
+Mo_CD14hiCD16+
+Mo_CD14hiCD16-
+fag_neutr%
+fag_neutr
+fag_mo%
+fag_mo
+fag_IG%
+fag_IG
+fag_Eo%
+fag_Eo
+fag_Mo_CD14lowCD16+%
+fag_Mo_CD14lowCD16+
+fag_Mo_CD14hiCD16+%
+fag_Mo_CD14hiCD16+
+fag_Mo_CD14hiCD16-%
+fag_Mo_CD14hiCD16-
+fag_neut_hi %
+fag_neut_hi
+fag_neut_low%
+fag_neut_low
+fag_mon_hi%
+fag_mon_hi
+fag_mon_low%
+fag_mon_low
+Tсп Люм
+Iсп Люм
+Sсп Люм
+Tинд Люм
+Iинд Люм
+Sинд Люм
+ИА Люм
+Tсп Люц
+Iсп Люц
+Sсп Люц
+Tинд Люц
+Iинд Люц
+Sинд Люц
+ИА Люц
+Точка исследования.1
+Лейкоциты.1
+СОЭ.1
+юные %.1
+юные.1
+пал/яд %.1
+пал/яд.1
+сегм/ яд %.1
+сегм/ яд.1
+Neutrophil_abs_2
+баз. %.1
+баз..1
+эоз. %.1
+эоз..1
+мон. %.1
+мон..1
+лимф. %.1
+лимф..1
+IgA.1
+IgG.1
+IgM.1
+IgE.1
+IL-1.1
+IL-1B.1
+IL-2.1
+IL-4.1
+IL-10.1
+INF-A.1
+INF-G.1
+FNO.1
+TNF.1
+Hu IL-2.1
+Hu IL-4.1
+Hu IL-6.1
+Hu IL-8.1
+Hu IL-10.1
+Hu GM-CSF.1
+Hu IFN-g.1
+Hu TNF-a.1
+CD3+CD25+.1
+CD3+CD4+CD127Low+CD25High+CD62l+.1
+CD3+CD4+CD62l+.1
+CD3+CD4+CD25+.1
+CD3+.1
+CD3+CD62l+.1
+CD3+CD4+CD127Low+CD25High+.1
+CD3+CD4+.1
+CD3+CD4+abs.1
+NeutCD62L+.1
+MonoCD62L+.1
+CD19+.1
+CD19+CD38+.1
+CD19+CD27+CD23+.1
+CD19+CD27-CD23+.1
+CD19+CD5+CD23+.1
+CD19+CD5-CD23+.1
+CD19+CD27-.1
+CD19+CD27+.1
+CD27-/CD27+.1
+CD19+CD27+CD38+.1
+CD19+CD27-CD38+.1
+CD19+CD5+.1
+CD19+CD5-.1
+CD5-/CD5+.1
+CD19+CD5+CD38+.1
+CD19+CD5-CD38+.1
+CD19+CD23+.1
+CD3+CD56+CD16-CD11b-.1
+CD3+CD56+CD16-CD11b+.2
+CD3+CD56-CD16+.1
+CD3+CD56+CD16+.1
+CD3+CD56+CD16+CD11b+.1
+CD3+CD56-CD16+CD11b+.1
+CD3+CD56+CD16-CD11b+.3
+CD3+CD56+CD16-.1
+CD16+CD56+CD11b+.1
+CD16+CD56-CD11b+.1
+CD16-CD56+CD11b+.1
+CD16+CD56+.1
+CD16+CD56-.1
+CD16-CD56+.1
+CD3+CD8+CD16+CD56+.1
+CD3+CD8+CD16+CD56-.1
+CD3+CD8+CD16-CD56+.1
+CD3+CD8+CD11b+.1
+CD3+CD8+.1
+CD3+CD8+abs.1
+CD3+CD8+CD16+.1
+CD16/56+CD28+.1
+CD3+CD16/56+CD28+.1
+CD16/56+CD57+.1
+CD3+CD16/56+CD57+.1
+CD3+CD28+.1
+CD3+CD57+.1
+CD16/56+.1
+CD3+CD16/56+.1
+MON=CD14+CD16+.1
+MON=HLA-DR+.1
+MON=CD14+CD16-.1
+MON=14Low+CD16+.1
+CD14-CD64+.1
+CD3+_CD62L.1
+Treg_CD62L.1
+CD4+CD62L.1
+CD19+CD23.1
+Наивные В-лимфоциты_CD23.1
+В-памяти_CD23.1
+B2-клетки_CD23.1
+B1-клетки_CD23.1
+CD3+_CD57.1
+NKT_CD57.1
+NK_CD57.1
+CD3+_CD28.1
+NKT_CD28.1
+NK_CD28.1
+CD3+_CD38.1
+CD19+_CD38.1
+NK_CD38.1
+NKT_CD38.1
+Neutrophil_CD62L+.1
+Neutrop62L+_abs
+Neutrophil_CD23+.1
+Neutrophil_CD23+_abs2
+"Neu_CD11b+CD16Low, %.1"
+Neu_CD11b+CD16Low.1
+"Neu_CD11b+CD16High, %.1"
+Neu_CD11b+CD16High.1
+"Neu_CD57+, %.1"
+Neu_CD57+.1
+"Neu_CD28+, %.1"
+Neu_CD28+.1
+"Neu_HLA-DR+, %.1"
+"Neu_HLA-DR+, abs2"
+Neu_HLA-DR+.1
+"Лимф=CD64+,%.1"
+Лимф=CD64+.1
+"Neu=CD64+,%.1"
+"Neu=CD64+,abs2"
+Neu=CD64+.1
+"Neu=HLA-DR+CD64+,%.1"
+"Neu=CD64+CD16Low,%.1"
+"Neu=CD64+CD16High,%.1"
+"Mon=CD64+,%.1"
+Mon=CD64+.1
+"Mon=HLA-DR+CD64+,%.1"
+"Mon=CD14Low+CD16+CD64+,%.1"
+Zr_neutr%.1
+IG%.1
+Eo%.1
+Mo_CD14lowCD16+.1
+Mo_CD14hiCD16+.1
+Mo_CD14hiCD16-.1
+fag_neutr%.1
+fag_neutr.1
+fag_mo%.1
+fag_mo.1
+fag_IG%.1
+fag_IG.1
+fag_Eo%.1
+fag_Eo.1
+fag_Mo_CD14lowCD16+%.1
+fag_Mo_CD14lowCD16+.1
+fag_Mo_CD14hiCD16+%.1
+fag_Mo_CD14hiCD16+.1
+fag_Mo_CD14hiCD16-%.1
+fag_Mo_CD14hiCD16-.1
+fag_neut_hi %.1
+fag_neut_hi.1
+fag_neut_low%.1
+fag_neut_low.1
+fag_mon_hi%.1
+fag_mon_hi.1
+fag_mon_low%.1
+fag_mon_low.1
+Tсп Люм.1
+Iсп Люм.1
+Sсп Люм.1
+Tинд Люм.1
+Iинд Люм.1
+Sинд Люм.1
+ИА Люм.1
+Tсп Люц.1
+Iсп Люц.1
+Sсп Люц.1
+Tинд Люц.1
+Iинд Люц.1
+Sинд Люц.1
+ИА Люц.1
+Точка исследования.2
+Лейкоциты.2
+СОЭ.2
+юные %.2
+юные.2
+пал/яд %.2
+пал/яд.2
+сегм/ яд %.2
+сегм/ яд.2
+Neutrophil_abs
+баз. %.2
+баз..2
+эоз. %.2
+эоз..2
+мон. %.2
+мон..2
+лимф. %.2
+лимф..2
+IgA.2
+IgG.2
+IgM.2
+IgE.2
+IL-1.2
+IL-1B.2
+IL-2.2
+IL-4.2
+IL-10.2
+INF-A.2
+INF-G.2
+FNO.2
+TNF.2
+Hu IL-2.2
+Hu IL-4.2
+Hu IL-6.2
+Hu IL-8.2
+Hu IL-10.2
+Hu GM-CSF.2
+Hu IFN-g.2
+Hu TNF-a.2
+CD3+CD25+.2
+CD3+CD4+CD127Low+CD25High+CD62l+.2
+CD3+CD4+CD62l+.2
+CD3+CD4+CD25+.2
+CD3+.2
+CD3+CD62l+.2
+CD3+CD4+CD127Low+CD25High+.2
+CD3+CD4+.2
+3_CD3+CD4+abs
+NeutCD62L+.2
+MonoCD62L+.2
+CD19+.2
+CD19+CD38+.2
+CD19+CD27+CD23+.2
+CD19+CD27-CD23+.2
+CD19+CD5+CD23+.2
+CD19+CD5-CD23+.2
+CD19+CD27-.2
+CD19+CD27+.2
+CD27-/CD27+.2
+CD19+CD27+CD38+.2
+CD19+CD27-CD38+.2
+CD19+CD5+.2
+CD19+CD5-.2
+CD5-/CD5+.2
+CD19+CD5+CD38+.2
+CD19+CD5-CD38+.2
+CD19+CD23+.2
+CD3+CD56+CD16-CD11b-.2
+CD3+CD56+CD16-CD11b+.4
+CD3+CD56-CD16+.2
+CD3+CD56+CD16+.2
+CD3+CD56+CD16+CD11b+.2
+CD3+CD56-CD16+CD11b+.2
+CD3+CD56+CD16-CD11b+.5
+CD3+CD56+CD16-.2
+CD16+CD56+CD11b+.2
+CD16+CD56-CD11b+.2
+CD16-CD56+CD11b+.2
+CD16+CD56+.2
+CD16+CD56-.2
+CD16-CD56+.2
+CD3+CD8+CD16+CD56+.2
+CD3+CD8+CD16+CD56-.2
+CD3+CD8+CD16-CD56+.2
+CD3+CD8+CD11b+.2
+CD3+CD8+.2
+3_CD3+CD8+abs
+CD3+CD8+CD16+.2
+CD16/56+CD28+.2
+CD3+CD16/56+CD28+.2
+CD16/56+CD57+.2
+CD3+CD16/56+CD57+.2
+CD3+CD28+.2
+CD3+CD57+.2
+CD16/56+.2
+CD3+CD16/56+.2
+MON=CD14+CD16+.2
+MON=HLA-DR+.2
+MON=CD14+CD16-.2
+MON=14Low+CD16+.2
+CD14-CD64+.2
+CD3+_CD62L.2
+Treg_CD62L.2
+CD4+CD62L.2
+CD19+CD23.2
+Наивные В-лимфоциты_CD23.2
+В-памяти_CD23.2
+B2-клетки_CD23.2
+B1-клетки_CD23.2
+CD3+_CD57.2
+NKT_CD57.2
+NK_CD57.2
+CD3+_CD28.2
+NKT_CD28.2
+NK_CD28.2
+CD3+_CD38.2
+CD19+_CD38.2
+NK_CD38.2
+NKT_CD38.2
+Neutrophil_CD62L+.2
+Neutrophil_CD62L+_abs3
+Neutrophil_CD23+.2
+Neutrophil_CD23+_abs
+"Neu_CD11b+CD16Low, %.2"
+Neu_CD11b+CD16Low.2
+"Neu_CD11b+CD16High, %.2"
+Neu_CD11b+CD16High.2
+"Neu_CD57+, %.2"
+Neu_CD57+.2
+"Neu_CD28+, %.2"
+Neu_CD28+.2
+"Neu_HLA-DR+, %.2"
+"Neu_HLA-DR+, abs.1"
+Neu_HLA-DR+.2
+"Лимф=CD64+,%.2"
+Лимф=CD64+.2
+"Neu=CD64+,%.2"
+"Neu=CD64+,abs.1"
+Neu=CD64+.2
+"Neu=HLA-DR+CD64+,%.2"
+"Neu=CD64+CD16Low,%.2"
+"Neu=CD64+CD16High,%.2"
+"Mon=CD64+,%.2"
+Mon=CD64+.2
+"Mon=HLA-DR+CD64+,%.2"
+"Mon=CD14Low+CD16+CD64+,%.2"
+Zr_neutr%.2
+IG%.2
+Eo%.2
+Mo_CD14lowCD16+.2
+Mo_CD14hiCD16+.2
+Mo_CD14hiCD16-.2
+fag_neutr%.2
+fag_neutr.2
+fag_mo%.2
+fag_mo.2
+fag_IG%.2
+fag_IG.2
+fag_Eo%.2
+fag_Eo.2
+fag_Mo_CD14lowCD16+%.2
+fag_Mo_CD14lowCD16+.2
+fag_Mo_CD14hiCD16+%.2
+fag_Mo_CD14hiCD16+.2
+fag_Mo_CD14hiCD16-%.2
+fag_Mo_CD14hiCD16-.2
+fag_neut_hi %.2
+fag_neut_hi.2
+fag_neut_low%.2
+fag_neut_low.2
+fag_mon_hi%.2
+fag_mon_hi.2
+fag_mon_low%.2
+fag_mon_low.2
+Tсп Люм.2
+Iсп Люм.2
+Sсп Люм.2
+Tинд Люм.2
+Iинд Люм.2
+Sинд Люм.2
+ИА Люм.2
+Tсп Люц.2
+Iсп Люц.2
+Sсп Люц.2
+Tинд Люц.2
+Iинд Люц.2
+Sинд Люц.2
+ИА Люц.2
+Точка исследования.3
+Лейкоциты.3
+СОЭ.3
+юные %.3
+юные.3
+пал/яд %.3
+пал/яд.3
+сегм/ яд %.3
+сегм/ яд.3
+Neutrophil_abs.1
+баз. %.3
+баз..3
+эоз. %.3
+эоз..3
+мон. %.3
+мон..3
+лимф. %.3
+лимф..3
+IgA.3
+IgG.3
+IgM.3
+IgE.3
+IL-1.3
+IL-1B.3
+IL-2.3
+IL-4.3
+IL-10.3
+INF-A.3
+INF-G.3
+FNO.3
+TNF.3
+Hu IL-2.3
+Hu IL-4.3
+Hu IL-6.3
+Hu IL-8.3
+Hu IL-10.3
+Hu GM-CSF.3
+Hu IFN-g.3
+Hu TNF-a.3
+CD3+CD25+.3
+CD3+CD4+CD127Low+CD25High+CD62l+.3
+CD3+CD4+CD62l+.3
+CD3+CD4+CD25+.3
+CD3+.3
+CD3+CD62l+.3
+CD3+CD4+CD127Low+CD25High+.3
+CD3+CD4+.3
+4_CD3+CD4+abs
+NeutCD62L+.3
+MonoCD62L+.3
+CD19+.3
+CD19+CD38+.3
+CD19+CD27+CD23+.3
+CD19+CD27-CD23+.3
+CD19+CD5+CD23+.3
+CD19+CD5-CD23+.3
+CD19+CD27-.3
+CD19+CD27+.3
+CD27-/CD27+.3
+CD19+CD27+CD38+.3
+CD19+CD27-CD38+.3
+CD19+CD5+.3
+CD19+CD5-.3
+CD5-/CD5+.3
+CD19+CD5+CD38+.3
+CD19+CD5-CD38+.3
+CD19+CD23+.3
+CD3+CD56+CD16-CD11b-.3
+CD3+CD56+CD16-CD11b+.6
+CD3+CD56-CD16+.3
+CD3+CD56+CD16+.3
+CD3+CD56+CD16+CD11b+.3
+CD3+CD56-CD16+CD11b+.3
+CD3+CD56+CD16-CD11b+.7
+CD3+CD56+CD16-.3
+CD16+CD56+CD11b+.3
+CD16+CD56-CD11b+.3
+CD16-CD56+CD11b+.3
+CD16+CD56+.3
+CD16+CD56-.3
+CD16-CD56+.3
+CD3+CD8+CD16+CD56+.3
+CD3+CD8+CD16+CD56-.3
+CD3+CD8+CD16-CD56+.3
+CD3+CD8+CD11b+.3
+CD3+CD8+.3
+4_CD3+CD8+abs
+CD3+CD8+CD16+.3
+CD16/56+CD28+.3
+CD3+CD16/56+CD28+.3
+CD16/56+CD57+.3
+CD3+CD16/56+CD57+.3
+CD3+CD28+.3
+CD3+CD57+.3
+CD16/56+.3
+CD3+CD16/56+.3
+MON=CD14+CD16+.3
+MON=HLA-DR+.3
+MON=CD14+CD16-.3
+MON=14Low+CD16+.3
+CD14-CD64+.3
+CD3+_CD62L.3
+Treg_CD62L.3
+CD4+CD62L.3
+CD19+CD23.3
+Наивные В-лимфоциты_CD23.3
+В-памяти_CD23.3
+B2-клетки_CD23.3
+B1-клетки_CD23.3
+CD3+_CD57.3
+NKT_CD57.3
+NK_CD57.3
+CD3+_CD28.3
+NKT_CD28.3
+NK_CD28.3
+CD3+_CD38.3
+CD19+_CD38.3
+NK_CD38.3
+NKT_CD38.3
+Neutrophil_CD62L+.3
+Neutrophil_CD62L+_abs
+Neutrophil_CD23+.3
+Neutrophil_CD23+_abs4
+"Neu_CD11b+CD16Low, %.3"
+Neu_CD11b+CD16Low.3
+"Neu_CD11b+CD16High, %.3"
+Neu_CD11b+CD16High.3
+"Neu_CD57+, %.3"
+Neu_CD57+.3
+"Neu_CD28+, %.3"
+Neu_CD28+.3
+"Neu_HLA-DR+, %.3"
+"Neu_HLA-DR+, abs.2"
+Neu_HLA-DR+.3
+"Лимф=CD64+,%.3"
+Лимф=CD64+.3
+"Neu=CD64+,%.3"
+"Neu=CD64+,abs4"
+Neu=CD64+.3
+"Neu=HLA-DR+CD64+,%.3"
+"Neu=CD64+CD16Low,%.3"
+"Neu=CD64+CD16High,%.3"
+"Mon=CD64+,%.3"
+Mon=CD64+.3
+"Mon=HLA-DR+CD64+,%.3"
+"Mon=CD14Low+CD16+CD64+,%.3"
+Zr_neutr%.3
+IG%.3
+Eo%.3
+Mo_CD14lowCD16+.3
+Mo_CD14hiCD16+.3
+Mo_CD14hiCD16-.3
+fag_neutr%.3
+fag_neutr.3
+fag_mo%.3
+fag_mo.3
+fag_IG%.3
+fag_IG.3
+fag_Eo%.3
+fag_Eo.3
+fag_Mo_CD14lowCD16+%.3
+fag_Mo_CD14lowCD16+.3
+fag_Mo_CD14hiCD16+%.3
+fag_Mo_CD14hiCD16+.3
+fag_Mo_CD14hiCD16-%.3
+fag_Mo_CD14hiCD16-.3
+fag_neut_hi %.3
+fag_neut_hi.3
+fag_neut_low%.3
+fag_neut_low.3
+fag_mon_hi%.3
+fag_mon_hi.3
+fag_mon_low%.3
+fag_mon_low.3
+Tсп Люм.3
+Iсп Люм.3
+Sсп Люм.3
+Tинд Люм.3
+Iинд Люм.3
+Sинд Люм.3
+ИА Люм.3
+Tсп Люц.3
+Iсп Люц.3
+Sсп Люц.3
+Tинд Люц.3
+Iинд Люц.3
+Sинд Люц.3
+ИА Люц.3

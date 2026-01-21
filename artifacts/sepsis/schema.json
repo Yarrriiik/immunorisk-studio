@@ -1,0 +1,27 @@
+{
+  "cohort": "sepsis",
+  "source_file": "Baza-s-kontrolem-vmeste-5-Sepsis.xlsx",
+  "sheet": "Сепсис",
+  "n_rows": 62,
+  "n_cols": 90,
+  "parsed_date_cols": [
+    "Дата анализа",
+    "Дата анализа.1"
+  ],
+  "dropped_sparse_cols": [],
+  "detected": {
+    "patient_id_col": "№",
+    "sex_col": "Пол",
+    "age_col": "Возраст",
+    "visit_dt_col": "Дата анализа"
+  },
+  "fixed_mixed_object_cols": [
+    "Пол",
+    "Диагноз",
+    "Статус",
+    "ФИО",
+    "Диагноз.1",
+    "sex"
+  ],
+  "parquet_path": "data_parquet\\sepsis.parquet"
+}

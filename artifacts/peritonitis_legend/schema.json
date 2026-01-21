@@ -1,0 +1,38 @@
+{
+  "cohort": "peritonitis_legend",
+  "source_file": "Baza-s-kontrolem-vmeste-7-Legenda-Peritonit.xlsx",
+  "sheet": "(База 6) Легенда Перитонит",
+  "n_rows": 17,
+  "n_cols": 23,
+  "parsed_date_cols": [],
+  "dropped_sparse_cols": [],
+  "detected": {
+    "patient_id_col": "№",
+    "sex_col": "Пол",
+    "age_col": null,
+    "visit_dt_col": null
+  },
+  "fixed_mixed_object_cols": [
+    "Пол",
+    "Сопутствующая патология",
+    "Продолжительность заболевания до госпитализации",
+    "Причина перитонита",
+    "Продолжительность лечения в ЦРБ",
+    "Количество операций",
+    "Послеоперационные осложнения",
+    "SAPS II",
+    "SOFA",
+    "SIRS",
+    "MIP",
+    "Осложнения",
+    "Возбудитель",
+    "Степень тяжести",
+    "Исход",
+    "ИД течение",
+    "ИД этиология",
+    "ИД уровень",
+    "ПКТ",
+    "sex"
+  ],
+  "parquet_path": "data_parquet\\peritonitis_legend.parquet"
+}

@@ -1,0 +1,62 @@
+{
+  "cohort": "peritonitis",
+  "source_file": "Baza-s-kontrolem-vmeste-6-Peritonit.xlsx",
+  "sheet": "(База 6) Перитонит",
+  "n_rows": 696,
+  "n_cols": 751,
+  "parsed_date_cols": [
+    "Дата"
+  ],
+  "dropped_sparse_cols": [
+    "ПКТ",
+    "IL-1",
+    "IL-10",
+    "INF-A",
+    "TNF",
+    "Hu IL-2",
+    "CD19+CD38+",
+    "IL-1.1",
+    "IL-10.1",
+    "INF-A.1",
+    "TNF.1",
+    "Hu IL-2.1",
+    "IL-1.2",
+    "IL-10.2",
+    "INF-A.2",
+    "TNF.2",
+    "Hu IL-2.2",
+    "Hu IL-4.2",
+    "Hu IL-6.2",
+    "Hu GM-CSF.2",
+    "Hu IFN-g.2",
+    "Hu TNF-a.2",
+    "CD19+CD38+.2",
+    "IL-1.3",
+    "IL-10.3",
+    "INF-A.3",
+    "TNF.3",
+    "Hu IL-2.3",
+    "Hu IL-4.3",
+    "Hu IL-6.3",
+    "Hu GM-CSF.3",
+    "Hu IFN-g.3",
+    "Hu TNF-a.3",
+    "CD19+CD38+.3"
+  ],
+  "detected": {
+    "patient_id_col": "Л №",
+    "sex_col": "Пол",
+    "age_col": null,
+    "visit_dt_col": "Дата"
+  },
+  "fixed_mixed_object_cols": [
+    "Л №",
+    "Диагноз",
+    "По CD64",
+    "Послеоперационные осложнения",
+    "Осложнения",
+    "Исход",
+    "patient_id"
+  ],
+  "parquet_path": "data_parquet\\peritonitis.parquet"
+}

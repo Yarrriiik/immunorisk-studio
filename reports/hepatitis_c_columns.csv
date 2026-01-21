@@ -1,0 +1,1184 @@
+﻿column
+Unnamed: 0
+генотип
+Диагноз
+вирусная нагрузка
+МЕ/мл
+Вирусная_Кач
+АЛТ
+АЛТ_Качест
+АСТ
+Вирус и АЛТ
+Фиброз
+Фиброз_Кач
+"Эластичность печени, кПа"
+Изменение фиброза
+билирубин
+тромбоциты
+Лейкоциты
+Лейкоциты_Кач
+сегменты
+Сегменты_Кач
+Сегменты_Абс
+Сегм_Абс_Кач
+базофилы
+Базофилы_Кач
+эозинофилы
+Эозинофилы_Кач
+моноциты
+Моноциты_Кач
+Моноциты_Абс
+Мон_Абс_Кач
+лимфоциты
+Лимфоциты_Кач
+Лимфоциты_Абс
+Лимф_Абс_Кач
+Тип ответа
+Характер ответа
+В-лимфоциты
+"B-cells, abs"
+NK-клетки
+"NK-cells, abs"
+Т-лимфоциты
+"T-cells, abs"
+ЦТЛ
+"cyt_T-cells, abs"
+Тхелперы
+"Th-cells, abs"
+ИРИ
+CD4-CD8-
+"CD4-CD8-, abs"
+1NKT
+"1NKT, abs"
+2NKT
+"2NKT, abs"
+ИС1
+ИС2
+CD3+
+Th
+Т-хелперы от Т-лимф
+CD4- Tcyt
+CD4- Tcyt от Т-лимф
+T-reg
+Трег от Тхелперов
+Expres T-reg_CD62L
+Expres T-reg_CD62L на Трег
+T-regCD62L
+T-regCD62L на Трег
+CD3+CD45R0-
+CD3+CD45R0+
+CD3+CD45R0- от Т-лимфоцитов
+CD3+CD45R0+ от Т-лимфоцитов
+Expres CD3+_CD25
+CD3+CD25+
+CD25 на Т-лимф
+CD3+CD45R+CD62L-
+CD3+CD45R+CD62L+
+CD3+CD45R0-CD62L-
+CD3+CD45R-CD62L+
+CD3+CD45R+CD62L- на Т-лимф
+CD3+CD45R+CD62L+ на Т-лимф
+CD3+CD45R0-CD62L- на Т-лимф
+CD3+CD45R-CD62L+ на Т-лимф
+CD3+CD45R0+CD62L-CD25+
+CD3+CD45R0+CD62L+CD25+
+CD3+CD45R0-CD62L-CD25+
+CD3+CD45R0-CD62L+CD25+
+CD3+CD45R0+CD62L-CD25+ на Тм
+CD3+CD45R0+CD62L+CD25+ на Тм
+CD3+CD45R0-CD62L-CD25+ на Тм
+CD3+CD45R0-CD62L+CD25+ на Тм
+Expres CD3+CD45R0+CD62L+CD25+
+Expres CD3+CD45R0-CD62L-CD25+
+Expres CD3+CD45R0-CD62L+CD25+
+Exp CD3+CD4+CD45R0+CD62L-CD25+
+CD3+CD4+CD45R0+CD62L-
+CD3+CD4+CD45R0+CD62L+
+CD3+CD4+CD45R0-CD62L-
+CD3+CD4+CD45R0-CD62L+
+CD3+CD4+CD45R0+CD62L- на хелперах
+CD3+CD4+CD45R0+CD62L+на хелперах
+CD3+CD4+CD45R0-CD62L-на хелперах
+CD3+CD4+CD45R0-CD62L+на хелперах
+CD3+CD4+CD45R0+CD62L-CD25+
+CD3+CD4+CD45R0+CD62L+CD25+
+CD3+CD4+CD45R0-CD62L-CD25+
+CD3+CD4+CD45R0-CD62L+CD25+
+Exp CD3+CD4+CD45R0+CD62L+CD25+
+Exp CD3+CD4+CD45R0-CD62L-CD25+
+Exp CD3+CD4+CD45R0-CD62L+CD25+
+Expres CD3+CD4-CD45R0+CD62-CD25+
+CD3+CD4+CD45R0+CD62L-CD25+ на Тм хелперах
+CD3+CD4+CD45R0+CD62L+CD25+на Тм хелперах
+CD3+CD4+CD45R0-CD62L-CD25+на Тм хелперах
+CD3+CD4+CD45R0-CD62L+CD25+на Тм хелперах
+CD3+CD4-CD45R0+CD62L-
+CD3+CD4-CD45R0+CD62L+
+CD3+CD4-CD45R0-CD62L-
+CD3+CD4-CD45R0-CD62L+
+CD3+CD4-CD45R0+CD62L- на Tcyt
+CD3+CD4-CD45R0+CD62L+на Tcyt
+CD3+CD4-CD45R0-CD62L-на Tcyt
+CD3+CD4-CD45R0-CD62L+на Tcyt
+CD3+CD4-CD45R0+CD62L-CD25+
+CD3+CD4-CD45R0+CD62L+CD25+
+CD3+CD4-CD45R0-CD62L-CD25+
+CD3+CD4-CD45R0-CD62L+CD25+
+CD3+CD4-CD45R0+CD62L-CD25+ на ЦТЛ
+CD3+CD4-CD45R0+CD62L+CD25+на ЦТЛ
+CD3+CD4-CD45R0-CD62L-CD25+на ЦТЛ
+CD3+CD4-CD45R0-CD62L+CD25+на ЦТЛ
+T-reg CD45R0+CD62L-
+T-reg CD45R0+CD62L+
+T-reg CD45R0-CD62L-
+T-reg CD45R0-CD62L+
+T-reg CD45R0+CD62L-на Трег
+T-reg CD45R0+CD62L+на Трег
+T-reg CD45R0-CD62L-на Трег
+T-reg CD45R0-CD62L+на Трег
+T-reg CD45R0+CD62L-CD25+
+T-reg CD45R0+CD62L+CD25+
+T-reg CD45R0-CD62L-CD25+
+T-reg CD45R0-CD62L+CD25+
+CD3+CD4+CD25+
+CD3+CD4-CD25+
+CD3+CD4+CD25+ на Тхелп
+CD3+CD4-CD25+ на ЦТЛ
+Expres CD3+CD4+CD25+
+Expres CD3+CD4-CD25+
+Expres CD3+CD45R0+CD62L-CD25+
+ExpresCD3+CD4-CD45R0+CD62L+CD25+
+ExpresCD3+CD4-CD45R0-CD62L-CD25+
+ExpresCD3+CD4-CD45R0-CD62L+CD25+
+Expres Treg CD54R0+CD62L-CD25+
+Expres Treg CD54R0+CD62L+CD25+
+Expres Treg CD54R0-CD62L-CD25+
+Expres Treg CD54R0-CD62L+CD25+
+B-cells
+CD19+CD5+
+CD19+CD5-
+CD19+CD5+ от В-лимф
+CD19+CD5- от В-лимф
+CD19+CD27+
+CD19+CD27-
+CD19+CD27+ от В-лимф
+CD19+CD27- от В-лимф
+CD19+CD23+
+CD19+CD23+ на В-лимф
+CD19+CD5+CD23+
+CD19+CD27+CD23+
+CD19+CD27-CD23+
+CD19+CD5-CD23+
+B-cells CD5+27-
+B-cells CD5+27+
+B-cells CD5-27-
+B-cells CD5-27+
+NK
+NK 56+16-
+NK 56+16+
+NK 56dim16-
+NK 56dim16+
+NK 56+16- от НК
+NK 56+16+от НК
+NK 56dim16-от НК
+NK 56dim16+от НК
+NK 62L+57- exp 57
+NK 62L+57+ exp 57
+NK 62L-57- exp 57
+NK 62L-57+ exp 57
+NK 62L+57-
+NK 62L+57+
+NK 62L-57-
+NK 62L-57+
+NK 56+94- exp 94
+NK 56+94+ exp 94
+NK 56dim94- exp 94
+NK 56dim94+ exp 94
+NK 56+94-
+NK 56+94+
+NK 56dim94-
+NK 56dim94+
+NK CD57- exp 57
+NK CD57- exp 57.1
+NK CD57-
+NK CD57+
+NK CD57- от НК
+NK CD57+от НК
+NK 56+16- CD57- exp 57
+NK 56+16- CD57+ exp 57
+NK 56+16- CD57-
+NK 56+16- CD57+
+NK 56+16+CD57+ exp 57
+NK 56+16+CD57+ exp 57.1
+NK 56+16+ CD57-
+NK 56+16+ CD57+
+NK 56dim16- CD57- exp 57
+NK 56dim16- CD57+ exp 57
+NK 56dim16- CD57-
+NK 56dim16- CD57+
+NK 56dim16+ CD57- exp 57
+NK 56dim16+ CD57+ exp 57
+NK 56dim16+ CD57-
+NK 56dim16+ CD57+
+NK CD8- exp 8
+NK CD8+ exp 8
+NK CD8-
+NK CD8+
+NK CD8- НК
+NK CD8+ НК
+NK 56+16- CD8- exp 8
+NK 56+16- CD8+ exp 8
+NK 56+16- CD8-
+NK 56+16- CD8+
+NK 56+16+ CD8- exp 8
+NK 56+16+ CD8+ exp 8
+NK 56+16+ CD8-
+NK 56+16+ CD8+
+NK 56dim16- CD8- exp 8
+NK 56dim16- CD8+ exp 8
+NK 56dim16- CD8-
+NK 56dim16- CD8+
+NK 56dim16+ CD8- exp 8
+NK 56dim16+ CD8+ exp 8
+NK 56dim16+ CD8-
+NK 56dim16+ CD8+
+Tcyt
+Tcyt 57+62L- exp 57
+Tcyt 57+62L+ exp 57
+Tcyt 57-62L- exp 57
+Tcyt 57-62L+ exp 57
+Tcyt 57+62L-
+Tcyt 57+62L+
+Tcyt 57-62L-
+Tcyt 57-62L+
+Tcyt 57+62L- на ЦТЛ
+Tcyt 57+62L+на ЦТЛ
+Tcyt 57-62L-на ЦТЛ
+Tcyt 57-62L+на ЦТЛ
+Tcyt 57+94- exp 57
+Tcyt 57+94+ exp 57
+Tcyt 57-94- exp 57
+Tcyt 57-94+ exp 57
+Tcyt 57+94-
+Tcyt 57+94+
+Tcyt 57-94-
+Tcyt 57-94+
+Tcyt 57+94-на ЦТЛ
+Tcyt 57+94+на ЦТЛ
+Tcyt 57-94-на ЦТЛ
+Tcyt 57-94+на ЦТЛ
+Tcyt 57+56- exp 57
+Tcyt 57+56+ exp 57
+Tcyt 57-56- exp 57
+Tcyt 57-56+ exp 57
+Tcyt 57+56-
+Tcyt 57+56+
+Tcyt 57-56-
+Tcyt 57-56+
+Tcyt 57+56-на ЦТЛ
+Tcyt 57+56+на ЦТЛ
+Tcyt 57-56-на ЦТЛ
+Tcyt 57-56+на ЦТЛ
+NKT
+NKT 62L+57- exp 57
+NKT 62L+57+ exp 57
+NKT 62L-57- exp 57
+NKT 62L-57+ exp 57
+NKT 62L+57-
+NKT 62L+57+
+NKT 62L-57-
+NKT 62L-57+
+NKT 62L+57- от НКТ
+NKT 62L+57+от НКТ
+NKT 62L-57-от НКТ
+NKT 62L-57+от НКТ
+NKT 94+57- exp 57
+NKT 94+57+ exp 57
+NKT 94-57- exp 57
+NKT 94-57+ exp 57
+NKT 94+57-
+NKT 94+57+
+NKT 94-57-
+NKT 94-57+
+NKT 94+57-от НКТ
+NKT 94+57+от НКТ
+NKT 94-57-от НКТ
+NKT 94-57+от НКТ
+NKT 8+57- exp 57
+NKT 8+57+ exp 57
+NKT 8-57- exp 57
+NKT 8-57+ exp 57
+NKT 8+57-
+NKT 8+57+
+NKT 8-57-
+NKT 8-57+
+NKT 8+57-от НКТ
+NKT 8+57+от НКТ
+NKT 8-57-от НКТ
+NKT 8-57+от НКТ
+Tcyt.1
+Tcyt 38-73- exp CD73
+Tcyt 38-73- exp CD38
+Tcyt 38-73+ exp CD73
+Tcyt 38-73+ exp CD38
+Tcyt 38++73- exp CD73
+Tcyt 38++73- exp CD38
+Tcyt 38++73+ exp CD73
+Tcyt 38++73+ exp CD38
+Tcyt 38++73-
+Tcyt 38++73+
+Tcyt 38+73-
+Tcyt 38+73+
+Tcyt 38-73-
+Tcyt 38-73+
+Tcyt 38++73-от ЦТЛ
+Tcyt 38++73+от ЦТЛ
+Tcyt 38+73-от ЦТЛ
+Tcyt 38+73+от ЦТЛ
+Tcyt 38-73-от ЦТЛ
+Tcyt 38-73+ от ЦТЛ
+Tcyt 39+73- exp CD73
+Tcyt 39+73- exp CD39
+Tcyt 39+73+ exp CD73
+Tcyt 39+73+ exp CD39
+Tcyt 39-73- exp CD73
+Tcyt 39-73- exp CD39
+Tcyt 39-73+ exp CD73
+Tcyt 39-73+ exp CD39
+Tcyt 39+73-
+Tcyt 39+73+
+Tcyt 39-73-
+Tcyt 39-73+
+Tcyt 39+73-от ЦТЛ
+Tcyt 39+73+от ЦТЛ
+Tcyt 39-73-от ЦТЛ
+Tcyt 39-73+от ЦТЛ
+Th.1
+Th 38-39- exp CD39
+Th 38-39- exp CD38
+Th 38-39+ exp CD39
+Th 38-39+ exp CD38
+Th 38++39- exp CD39
+Th 38++39- exp CD38
+Th 38++39+ exp CD39
+Th 38++39+ exp CD38
+Th 38++39-
+Th 38++39+
+Th 38+39-
+Th 38+39+
+Th 38-39-
+Th 38-39+
+Th 38++39- от Тхелп
+Th 38++39+от Тхелп
+Th 38+39-от Тхелп
+Th 38+39+от Тхелп
+Th 38-39-от Тхелп
+Th 38-39+от Тхелп
+Th 39+73- exp CD73
+Th 39+73- exp CD39
+Th 39+73+ exp CD73
+Th 39+73+ exp CD39
+Th 39-73- exp CD73
+Th 39-73- exp CD39
+Th 39-73+ exp CD73
+Th 39-73+ exp CD39
+Th 39+73-
+Th 39+73+
+Th 39-73-
+Th 39-73+
+Th 39+73-от Тхелп
+Th 39+73+от Тхелп
+Th 39-73-от Тхелп
+Th 39-73+от Тхелп
+NK.1
+NK 38+73- exp CD73
+NK 38+73- exp CD38
+NK 38+73+ exp CD73
+NK 38+73+ exp CD38
+NK 38-73- exp CD73
+NK 38-73- exp CD38
+NK 38-73+ exp CD73
+NK 38-73+ exp CD38
+NK 38+73-
+NK 38+73+
+NK 38-73-
+NK 38-73+
+NK 38+73- от НК
+NK 38+73+от НК
+NK 38-73-от НК
+NK 38-73+от НК
+NKT.1
+NKT 38+73- exp CD73
+NKT 38+73- exp CD38
+NKT 38+73+ exp CD73
+NKT 38+73+ exp CD38
+NKT 38-73- exp CD73
+NKT 38-73- exp CD38
+NKT 38-73+ exp CD73
+NKT 38-73+ exp CD38
+NKT 38+73-
+NKT 38+73+
+NKT 38-73-
+NKT 38-73+
+NKT 38+73- от НКТ
+NKT 38+73+ от НКТ
+NKT 38-73- от НКТ
+NKT 38-73+ от НКТ
+CD3+.1
+CD3+.2
+T+B+NK
+Monocytes
+Ne
+Mono CD14+CD16-
+Mono CD14+CD16+
+Mono CD14-CD16+
+Mono CD14+CD16- на моноц
+Mono CD14+CD16+на моноц
+Mono CD14-CD16+на моноц
+Mono CD64+
+Mono CD64-
+Mono CD195+
+Mono CD195-
+Mono CD195+ мон
+Mono CD195- мон
+Var442
+Mono CD184+
+Mono CD184-
+Mono CD184+ мон
+Mono CD184- мон
+Var447
+Mono HLA-DR+
+Mono HLA-DR-
+Mono HLA-DR+ на мон
+Mono HLA-DR- на мон
+Var452
+Expres Mono CD64+
+Expres Mono CD195+
+Expres Mono CD184+
+Expres Mono HLA-DR+
+Ne 64+
+Ne 64-
+Var459
+Expres Ne 64+
+Expres CD14+CD16-CD64+
+CD14+CD16-CD64+
+CD14+CD16-CD64-
+CD14+CD16-CD64+ мон
+CD14+CD16-CD64-мон
+CD14+CD16-CD195+
+CD14+CD16-CD195-
+CD14+CD16-CD195+мон
+CD14+CD16-CD195-мон
+CD14+CD16-CD184+
+CD14+CD16-CD184-
+CD14+CD16-CD184+мон
+CD14+CD16-CD184-мон
+CD14+CD16-HLA-DR+
+CD14+CD16-HLA-DR-
+CD14+CD16-HLA-DR+мон
+CD14+CD16-HLA-DR-мон
+Expres CD14+CD16-CD64-
+Expres CD14+CD16-CD195+
+Expres CD14+CD16-CD184+
+Expres CD14+CD16-HLA-DR+
+CD14+CD16+CD64+
+CD14+CD16+CD64-
+CD14+CD16+CD64+мон
+CD14+CD16+CD64-мон
+CD14+CD16+CD195+
+CD14+CD16+CD195-
+CD14+CD16+CD195+мон
+CD14+CD16+CD195-мон
+CD14+CD16+CD184+
+CD14+CD16+CD184-
+CD14+CD16+CD184+мон
+CD14+CD16+CD184-мон
+CD14+CD16+HLA-DR+
+CD14+CD16+HLA-DR-
+CD14+CD16+HLA-DR+мон
+CD14+CD16+HLA-DR-мон
+Expres CD14+CD16+CD64+
+Expres CD14+CD16+CD195+
+Expres CD14+CD16+CD184+
+Expres CD14+CD16+HLA-DR+
+Expres CD14-CD16+CD64+
+CD14-CD16+CD64+
+CD14-CD16+CD64-
+CD14-CD16+CD64+мон
+CD14-CD16+CD64-мон
+CD14-CD16+CD195+
+CD14-CD16+CD195-
+CD14-CD16+CD195+мон
+CD14-CD16+CD195-мон
+CD14-CD16+CD184+
+CD14-CD16+CD184-
+CD14-CD16+CD184+мон
+CD14-CD16+CD184-мон
+CD14-CD16+HLA-DR
+CD14-CD16+HLA-DR-
+CD14-CD16+HLA-Drмон
+CD14-CD16+HLA-DR-мон
+Expres CD14-CD16+CD195+
+Expres CD14-CD16+CD184+
+Expres CD14-CD16+HLA-DR
+Mono CD45R0+CD62L-
+Mono CD45R0+CD62L+
+Mono CD45R0-CD62L-
+Mono CD45R0-CD62L+
+MonoCD25+
+EXP MonoCD25+
+Mono CD38+CD39-
+Mono CD38+CD39+
+Mono CD38-CD39-
+Mono CD38-CD39+
+Mon CD94+CD57-
+Mon CD94+CD57+
+Mon CD94-CD57-
+Mon CD94-CD57+
+Neut CD94+CD57-
+Neut CD94+CD57+
+Neut CD94-CD57-
+Neut CD94-CD57+
+Ne CD62L-
+Ne CD62L+
+Expres Ne CD62L+
+вирусная нагрузка 2
+АЛТ2
+АЛТ2_Кач
+Фиброз2
+Фиброз_Кач2
+Изме_Фиброза
+Изм_Фиброза_Кач
+"Эластичность печени, кПа_2"
+билирубин_2
+тромбоциты_2
+Лейкоциты_2
+Лейкоциты_Кач_2
+сегменты_2
+Сегменты_Кач_2
+Сегменты_Абс_2
+Сегм_Абс_Кач_2
+базофилы_2
+Базофилы_кач_2
+эозинофилы_2
+Эозинофилы_Кач_2
+моноциты_2
+Моноциты_Кач_2
+Моноциты_абс_2
+Мон_Абс_Кач_2
+лимфоциты_2
+Лимфоциты_Кач_2
+Лимфоциты_абс_2
+Лимф_Абс_Кач_2
+Тип ответа_2
+Характер ответа_2
+В-лимфоциты_2
+"B-cells, abs_2"
+NK-клетки_2
+"NK_2, abs"
+Т-лимфоциты2
+"Tcells2, abs"
+ЦТЛ2
+"cytTcells2, abs"
+Тхелперы2
+"Thelp2, abs"
+ИРИ2
+CD4-CD8-_2
+"CD4-CD8-_2, abs"
+NKT1_2
+"NKT1_2, abs"
+NKT2_2
+"NKT2_2, abs"
+CD3+.3
+Th.2
+Т-хелперы от Т-лимф.1
+к исходу В
+CD3+CD4-(Tcyt)
+CD3+CD4-(Tcyt) от Т-лимф
+к исходу В.1
+T-reg.1
+Трег от Тхелперов.1
+Expres T-reg_CD62L.1
+T-regCD62L.1
+T-regCD62L на Трег.1
+CD3+CD45R0-.1
+CD3+CD45R0+.1
+CD3+CD45R0- от Т-лимфоцитов.1
+CD3+CD45R0+ от Т-лимфоцитов.1
+CD3+CD45R0- от Т-лимфоцитов к исходу
+CD3+CD45R0+ от Т-лимфоцитов к исходу
+Expres CD3+_CD25.1
+CD3+CD25+.1
+CD25 на Т-лимф.1
+CD3+CD45R+CD62L-.1
+CD3+CD45R+CD62L+.1
+CD3+CD45R0-CD62L-.1
+CD3+CD45R-CD62L+.1
+CD3+CD45R+CD62L- на Т-лимф.1
+CD3+CD45R+CD62L+ на Т-лимф.1
+CD3+CD45R0-CD62L- на Т-лимф.1
+CD3+CD45R-CD62L+ на Т-лимф.1
+к исходу CD3+CD45R+CD62L- на Т-лимф
+к исходу CD3+CD45R+CD62L+ на Т-лимф
+к исходу CD3+CD45R0-CD62L- на Т-лимф
+к исходу CD3+CD45R-CD62L+ на Т-лимф
+CD3+CD4+CD45R0+CD62L-.1
+CD3+CD4+CD45R0+CD62L+.1
+CD3+CD4+CD45R0-CD62L-.1
+CD3+CD4+CD45R0-CD62L+.1
+CD3+CD4+CD45R0+CD62L- на Тхелп
+CD3+CD4+CD45R0+CD62L+на Тхелп
+CD3+CD4+CD45R0-CD62L-на Тхелп
+CD3+CD4+CD45R0-CD62L+на Тхелп
+CD3+CD4+CD45R0+CD62L- на Тхелп к исходу
+CD3+CD4+CD45R0+CD62L+на Тхелпк исходу
+CD3+CD4+CD45R0-CD62L-на Тхелпк исходу
+CD3+CD4+CD45R0-CD62L+на Тхелпк исходу
+CD3+CD4-CD45R0+CD62L-.1
+CD3+CD4-CD45R0+CD62L+.1
+CD3+CD4-CD45R0-CD62L-.1
+CD3+CD4-CD45R0-CD62L+.1
+CD3+CD4-CD45R0+CD62L- на ЦТЛ
+CD3+CD4-CD45R0+CD62L+на ЦТЛ
+CD3+CD4-CD45R0-CD62L-на ЦТЛ
+CD3+CD4-CD45R0-CD62L+на ЦТЛ
+CD3+CD4-CD45R0+CD62L- на ЦТЛ к исходу
+CD3+CD4-CD45R0+CD62L+на ЦТЛ к исходу
+CD3+CD4-CD45R0-CD62L-на ЦТЛ к исходу
+CD3+CD4-CD45R0-CD62L+на ЦТЛ к исходу
+T-reg CD45R0+CD62L-.1
+T-reg CD45R0+CD62L+.1
+T-reg CD45R0-CD62L-.1
+T-reg CD45R0-CD62L+.1
+Expres CD3+CD4+CD25+.1
+CD3+CD4+CD25+.1
+Expres CD3+CD4-CD25+.1
+CD3+CD4-CD25+.1
+Expres CD3+CD45R0+CD62L-CD25+.1
+CD3+CD45R0+CD62L-CD25+.1
+Expres CD3+CD45R0+CD62L+CD25+.1
+CD3+CD45R0+CD62L+CD25+.1
+Expres CD3+CD45R0-CD62L-CD25+.1
+CD3+CD45R0-CD62L-CD25+.1
+Expres CD3+CD45R0-CD62L+CD25+.1
+CD3+CD45R0-CD62L+CD25+.1
+Exp CD3+CD4+CD45R0+CD62L-CD25+.1
+CD3+CD4+CD45R0+CD62L-CD25+.1
+Exp CD3+CD4+CD45R0+CD62L+CD25+.1
+CD3+CD4+CD45R0+CD62L+CD25+.1
+Exp CD3+CD4+CD45R0-CD62L-CD25+.1
+CD3+CD4+CD45R0-CD62L-CD25+.1
+Exp CD3+CD4+CD45R0-CD62L+CD25+.1
+CD3+CD4+CD45R0-CD62L+CD25+.1
+Expres CD3+CD4-CD45R0+CD62-CD25+.1
+CD3+CD4-CD45R0+CD62L-CD25+.1
+ExpresCD3+CD4-CD45R0+CD62L+CD25+.1
+CD3+CD4-CD45R0+CD62L+CD25+.1
+ExpresCD3+CD4-CD45R0-CD62L-CD25+.1
+CD3+CD4-CD45R0-CD62L-CD25+.1
+ExpresCD3+CD4-CD45R0-CD62L+CD25+.1
+CD3+CD4-CD45R0-CD62L+CD25+.1
+Expres Treg CD54R0+CD62L-CD25+.1
+T-reg CD45R0+CD62L-CD25+.1
+Expres Treg CD54R0+CD62L+CD25+.1
+T-reg CD45R0+CD62L+CD25+.1
+Expres Treg CD54R0-CD62L-CD25+.1
+T-reg CD45R0-CD62L-CD25+.1
+Expres Treg CD54R0-CD62L+CD25+.1
+T-reg CD45R0-CD62L+CD25+.1
+B-cells.1
+к исходу
+CD19+CD5+.1
+CD19+CD5-.1
+CD19+CD5+ от В-лимф.1
+CD19+CD5- от В-лимф.1
+CD19+CD5+ от В-лимф к исходу
+CD19+CD5- от В-лимф к исходу
+CD19+CD27+.1
+CD19+CD27-.1
+CD19+CD27+ от В-лимф.1
+CD19+CD27- от В-лимф.1
+CD19+CD27+ от В-лимф к исходу
+CD19+CD27- от В-лимф к исходу
+CD19+CD23+.1
+CD19+CD23+ на В-лимф.1
+CD19+CD23+ на В-лимф к исходу
+CD19+CD5+CD23+.1
+ExpCD19+CD5+CD23+
+CD19+CD27+CD23+.1
+ExpCD19+CD27+CD23+
+CD19+CD27-CD23+.1
+ExpCD19+CD27-CD23+
+CD19+CD5-CD23+.1
+ExpCD19+CD5-CD23+
+B-cells CD5+27-.1
+B-cells CD5+27+.1
+B-cells CD5-27-.1
+B-cells CD5-27+.1
+NK.2
+к исходу.1
+NK 56+16-.1
+NK 56+16+.1
+NK 56dim16-.1
+NK 56dim16+.1
+NK 56+16- от НК.1
+NK 56+16+от НК.1
+NK 56dim16-от НК.1
+NK 56dim16+от НК.1
+NK 56+16- от НК к исходу
+NK 56+16+от НК к исходу
+NK 56dim16-от НК к исходу
+NK 56dim16+от НК к исходу
+NK 62L+57- exp 57.1
+NK 62L+57+ exp 57.1
+NK 62L-57- exp 57.1
+NK 62L-57+ exp 57.1
+NK 62L+57-.1
+NK 62L+57+.1
+NK 62L-57-.1
+NK 62L-57+.1
+NK 56+94- exp 94.1
+NK 56+94+ exp 94.1
+NK 56dim94- exp 94.1
+NK 56dim94+ exp 94.1
+NK 56+94-.1
+NK 56+94+.1
+NK 56dim94-.1
+NK 56dim94+.1
+NK CD57- exp 57.2
+NK CD57- exp 57.3
+NK CD57-.1
+NK CD57+.1
+NK CD57- от НК.1
+NK CD57+от НК.1
+NK CD57- от НК к исходу
+NK CD57+от НК к исходу
+NK 56+16- CD57- exp 57.1
+NK 56+16- CD57+ exp 57.1
+NK 56+16- CD57-.1
+NK 56+16- CD57+.1
+NK 56+16+CD57+ exp 57.2
+NK 56+16+CD57+ exp 57.3
+NK 56+16+ CD57-.1
+NK 56+16+ CD57+.1
+NK 56dim16- CD57- exp 57.1
+NK 56dim16- CD57+ exp 57.1
+NK 56dim16- CD57-.1
+NK 56dim16- CD57+.1
+NK 56dim16+ CD57- exp 57.1
+NK 56dim16+ CD57+ exp 57.1
+NK 56dim16+ CD57-.1
+NK 56dim16+ CD57+.1
+NK CD8- exp 8.1
+NK CD8+ exp 8.1
+NK CD8-.1
+NK CD8+.1
+NK CD8- НК.1
+NK CD8+ НК.1
+NK CD8- НК к исходу
+NK CD8+ НК к исходу
+NK 56+16- CD8- exp 8.1
+NK 56+16- CD8+ exp 8.1
+NK 56+16- CD8-.1
+NK 56+16- CD8+.1
+NK 56+16+ CD8- exp 8.1
+NK 56+16+ CD8+ exp 8.1
+NK 56+16+ CD8-.1
+NK 56+16+ CD8+.1
+NK 56dim16- CD8- exp 8.1
+NK 56dim16- CD8+ exp 8.1
+NK 56dim16- CD8-.1
+NK 56dim16- CD8+.1
+NK 56dim16+ CD8- exp 8.1
+NK 56dim16+ CD8+ exp 8.1
+NK 56dim16+ CD8-.1
+NK 56dim16+ CD8+.1
+Tcyt.2
+к исходу.2
+Tcyt 57+62L- exp 57.1
+Tcyt 57+62L+ exp 57.1
+Tcyt 57-62L- exp 57.1
+Tcyt 57-62L+ exp 57.1
+Tcyt 57+62L-.1
+Tcyt 57+62L+.1
+Tcyt 57-62L-.1
+Tcyt 57-62L+.1
+Tcyt 57+62L- на ЦТЛ.1
+Tcyt 57+62L+на ЦТЛ.1
+Tcyt 57-62L-на ЦТЛ.1
+Tcyt 57-62L+на ЦТЛ.1
+Tcyt 57+62L- на ЦТЛ к исходу
+Tcyt 57+62L+на ЦТЛк исходу
+Tcyt 57-62L-на ЦТЛ к исходу
+Tcyt 57-62L+на ЦТЛ к исходу
+Tcyt 57+94- exp 57.1
+Tcyt 57+94+ exp 57.1
+Tcyt 57-94- exp 57.1
+Tcyt 57-94+ exp 57.1
+Tcyt 57+94-.1
+Tcyt 57+94+.1
+Tcyt 57-94-.1
+Tcyt 57-94+.1
+Tcyt 57+94-на ЦТЛ.1
+Tcyt 57+94+на ЦТЛ.1
+Tcyt 57-94-на ЦТЛ.1
+Tcyt 57-94+на ЦТЛ.1
+Tcyt 57+94-на ЦТЛ к исходу
+Tcyt 57+94+на ЦТЛ к исходу
+Tcyt 57-94-на ЦТЛ к исходу
+Tcyt 57-94+на ЦТЛ к исходу
+Tcyt 57+56- exp 57.1
+Tcyt 57+56+ exp 57.1
+Tcyt 57-56- exp 57.1
+Tcyt 57-56+ exp 57.1
+Tcyt 57+56-.1
+Tcyt 57+56+.1
+Tcyt 57-56-.1
+Tcyt 57-56+.1
+Tcyt 57+56-на ЦТЛ.1
+Tcyt 57+56+на ЦТЛ.1
+Tcyt 57-56-на ЦТЛ.1
+Tcyt 57-56+на ЦТЛ.1
+Tcyt 57+56-на ЦТЛ к исходу
+Tcyt 57+56+на ЦТЛ к исходу
+Tcyt 57-56-на ЦТЛ к исходу
+Tcyt 57-56+на ЦТЛ к исходу
+NKT.2
+NKT 62L+57- exp 57.1
+NKT 62L+57+ exp 57.1
+NKT 62L-57- exp 57.1
+NKT 62L-57+ exp 57.1
+NKT 62L+57-.1
+NKT 62L+57+.1
+NKT 62L-57-.1
+NKT 62L-57+.1
+NKT 62L+57- от НКТ.1
+NKT 62L+57+от НКТ.1
+NKT 62L-57-от НКТ.1
+NKT 62L-57+от НКТ.1
+NKT 62L+57- от НКТ к исходу
+NKT 62L+57+от НКТ к исходу
+NKT 62L-57-от НКТ к исходу
+NKT 62L-57+от НКТ к исходу
+NKT 94+57- exp 57.1
+NKT 94+57+ exp 57.1
+NKT 94-57- exp 57.1
+NKT 94-57+ exp 57.1
+NKT 94+57-.1
+NKT 94+57+.1
+NKT 94-57-.1
+NKT 94-57+.1
+NKT 94+57-от НКТ.1
+NKT 94+57+от НКТ.1
+NKT 94-57-от НКТ.1
+NKT 94-57+от НКТ.1
+NKT 94+57-от НКТ к исходу
+NKT 94+57+от НКТ к исходу
+NKT 94-57-от НКТ к исходу
+NKT 94-57+от НКТ к исходу
+NKT 8+57- exp 57.1
+NKT 8+57+ exp 57.1
+NKT 8-57- exp 57.1
+NKT 8-57+ exp 57.1
+NKT 8+57-.1
+NKT 8+57+.1
+NKT 8-57-.1
+NKT 8-57+.1
+NKT 8+57-от НКТ.1
+NKT 8+57+от НКТ.1
+NKT 8-57-от НКТ.1
+NKT 8-57+от НКТ.1
+NKT 8+57-от НКТ к исходу
+NKT 8+57+от НКТ к исходу
+NKT 8-57-от НКТ к исходу
+NKT 8-57+от НКТ к исходу
+Tcyt.3
+Tcyt к исходу
+Tcyt 38-73- exp CD73.1
+Tcyt 38-73- exp CD38.1
+Tcyt 38-73+ exp CD73.1
+Tcyt 38-73+ exp CD38.1
+Tcyt 38++73- exp CD73.1
+Tcyt 38++73- exp CD38.1
+Tcyt 38++73+ exp CD73.1
+Tcyt 38++73+ exp CD38.1
+Tcyt 38++73-.1
+Tcyt 38++73+.1
+Tcyt 38+73-.1
+Tcyt 38+73+.1
+Tcyt 38-73-.1
+Tcyt 38-73+.1
+Tcyt 38++73-от ЦТЛ.1
+Tcyt 38++73+от ЦТЛ.1
+Tcyt 38+73-от ЦТЛ.1
+Tcyt 38+73+от ЦТЛ.1
+Tcyt 38-73-от ЦТЛ.1
+Tcyt 38-73+ от ЦТЛ.1
+Tcyt 38++73-от ЦТЛ к исходу
+Tcyt 38++73+от ЦТЛ к исходу
+Tcyt 38+73-от ЦТЛ к исходу
+Tcyt 38+73+от ЦТЛ к исходу
+Tcyt 38-73-от ЦТЛ к исходу
+Tcyt 38-73+ от ЦТЛ к исходу
+Tcyt 39+73- exp CD73.1
+Tcyt 39+73- exp CD39.1
+Tcyt 39+73+ exp CD73.1
+Tcyt 39+73+ exp CD39.1
+Tcyt 39-73- exp CD73.1
+Tcyt 39-73- exp CD39.1
+Tcyt 39-73+ exp CD73.1
+Tcyt 39-73+ exp CD39.1
+Tcyt 39+73-.1
+Tcyt 39+73+.1
+Tcyt 39-73-.1
+Tcyt 39-73+.1
+Tcyt 39+73-от ЦТЛ.1
+Tcyt 39+73+от ЦТЛ.1
+Tcyt 39-73-от ЦТЛ.1
+Tcyt 39-73+от ЦТЛ.1
+Tcyt 39+73-от ЦТЛ к исходу
+Tcyt 39+73+от ЦТЛ к исходу
+Tcyt 39-73-от ЦТЛ к исходу
+Tcyt 39-73+от ЦТЛ к исходу
+Th.3
+Var952
+Th 38-39- exp CD39.1
+Th 38-39- exp CD38.1
+Th 38-39+ exp CD39.1
+Th 38-39+ exp CD38.1
+Th 38++39- exp CD39.1
+Th 38++39- exp CD38.1
+Th 38++39+ exp CD39.1
+Th 38++39+ exp CD38.1
+Th 38++39-.1
+Th 38++39+.1
+Th 38+39-.1
+Th 38+39+.1
+Th 38-39-.1
+Th 38-39+.1
+Th 38++39- от Тхелп.1
+Th 38++39+от Тхелп.1
+Th 38+39-от Тхелп.1
+Th 38+39+от Тхелп.1
+Th 38-39-от Тхелп.1
+Th 38-39+от Тхелп.1
+Th 38++39- от Тхелп к исходу
+Th 38++39+от Тхелп к исходу
+Th 38+39-от Тхелп к исходу
+Th 38+39+от Тхелп к исходу
+Th 38-39-от Тхелп к исходу
+Th 38-39+от Тхелп к исходу
+Th 39+73- exp CD73.1
+Th 39+73- exp CD39.1
+Th 39+73+ exp CD73.1
+Th 39+73+ exp CD39.1
+Th 39-73- exp CD73.1
+Th 39-73- exp CD39.1
+Th 39-73+ exp CD73.1
+Th 39-73+ exp CD39.1
+Th 39+73-.1
+Th 39+73+.1
+Th 39-73-.1
+Th 39-73+.1
+Th 39+73-от Тхелп.1
+Th 39+73+от Тхелп.1
+Th 39-73-от Тхелп.1
+Th 39-73+от Тхелп.1
+Th 39+73-от Тхелп к исходу
+Th 39+73+от Тхелп к исходу
+Th 39-73-от Тхелп к исходу
+Th 39-73+от Тхелп к исходу
+NK.3
+к исходу.3
+NK 38+73- exp CD73.1
+NK 38+73- exp CD38.1
+NK 38+73+ exp CD73.1
+NK 38+73+ exp CD38.1
+NK 38-73- exp CD73.1
+NK 38-73- exp CD38.1
+NK 38-73+ exp CD73.1
+NK 38-73+ exp CD38.1
+NK 38+73-.1
+NK 38+73+.1
+NK 38-73-.1
+NK 38-73+.1
+NK 38+73- от НК.1
+NK 38+73+от НК.1
+NK 38-73-от НК.1
+NK 38-73+от НК.1
+NK 38+73- от НК к исходу
+NK 38+73+от НК к исходу
+NK 38-73-от НК к исходу
+NK 38-73+от НК к исходу
+NKT.3
+к исходу.4
+NKT 38+73- exp CD73.1
+NKT 38+73- exp CD38.1
+NKT 38+73+ exp CD73.1
+NKT 38+73+ exp CD38.1
+NKT 38-73- exp CD73.1
+NKT 38-73- exp CD38.1
+NKT 38-73+ exp CD73.1
+NKT 38-73+ exp CD38.1
+NKT 38+73-.1
+NKT 38+73+.1
+NKT 38-73-.1
+NKT 38-73+.1
+NKT 38+73- от НКТ.1
+NKT 38+73+ от НКТ.1
+NKT 38-73- от НКТ.1
+NKT 38-73+ от НКТ.1
+NKT 38+73- от НКТ к исходу
+NKT 38+73+ от НКТ к исходу
+NKT 38-73- от НКТ к исходу
+NKT 38-73+ от НКТ к исходу
+CD3+.4
+к исходу.5
+CD3+.5
+к исходу.6
+T+B+NK.1
+Monocytes.1
+к исходу.7
+Ne.1
+к исходу.8
+Mono CD14+CD16-.1
+Mono CD14+CD16+.1
+Mono CD14-CD16+.1
+Mono CD14+CD16- на моноц.1
+Mono CD14+CD16+на моноц.1
+Mono CD14-CD16+на моноц.1
+Mono CD14+CD16- на моноц к исходу
+Mono CD14+CD16+на моноц к исходу
+Mono CD14-CD16+на моноц к исходу
+Mono CD64+.1
+Mono CD64-.1
+Mono CD64+ к исходу
+Mono CD64- к исходу
+Expres Mono CD64+.1
+Mono CD195+.1
+Mono CD195-.1
+Mono CD195+ мон.1
+Mono CD195- мон.1
+Mono CD195+ мон к исходу
+Mono CD195- мон к исходу
+Expres Mono CD195+.1
+Mono CD184+.1
+Mono CD184-.1
+Mono CD184+ мон.1
+Mono CD184- мон.1
+Mono CD184+ мон к исходу
+Mono CD184- мон к исходу
+Expres Mono CD184+.1
+Mono HLA-DR+.1
+Mono HLA-DR-.1
+Mono HLA-DR+ на мон.1
+Mono HLA-DR- на мон.1
+Mono HLA-DR+ на мон к исходу
+Mono HLA-DR- на мон к исходу
+Expres Mono HLA-DR+.1
+Ne 64+.1
+Ne 64-.1
+Ne 64+ к исходу
+Ne 64- к исходу
+Expres Ne 64+.1
+Expres CD14+CD16-CD64+.1
+Expres CD14+CD16-CD64-.1
+CD14+CD16-CD64+.1
+CD14+CD16-CD64-.1
+CD14+CD16-CD64+ мон.1
+CD14+CD16-CD64-мон.1
+CD14+CD16-CD195+.1
+CD14+CD16-CD195-.1
+CD14+CD16-CD195+мон.1
+CD14+CD16-CD195-мон.1
+CD14+CD16-CD184+.1
+CD14+CD16-CD184-.1
+CD14+CD16-CD184+мон.1
+CD14+CD16-CD184-мон.1
+CD14+CD16-HLA-DR+.1
+CD14+CD16-HLA-DR-.1
+CD14+CD16-HLA-DR+ мон
+CD14+CD16-HLA-DR-мон.1
+Expres CD14+CD16-CD184+.1
+Expres CD14+CD16-CD195+.1
+Expres CD14+CD16-HLA-DR+.1
+Expres CD14+CD16+CD64+.1
+CD14+CD16+CD64+.1
+CD14+CD16+CD64-.1
+CD14+CD16+CD64+ мон
+CD14+CD16+CD64-мон.1
+CD14+CD16+CD195+.1
+CD14+CD16+CD195-.1
+CD14+CD16+CD195+ мон
+CD14+CD16+CD195-мон.1
+CD14+CD16+CD184+.1
+CD14+CD16+CD184-.1
+CD14+CD16+CD184+мон.1
+CD14+CD16+CD184-мон.1
+CD14+CD16+HLA-DR+.1
+CD14+CD16+HLA-DR-.1
+CD14+CD16+HLA-DR+мон.1
+CD14+CD16+HLA-DR-мон.1
+Expres CD14+CD16+CD195+.1
+Expres CD14+CD16+CD184+.1
+Expres CD14+CD16+HLA-DR+.1
+Expres CD14-CD16+CD64+.1
+CD14-CD16+CD64+.1
+CD14-CD16+CD64-.1
+CD14-CD16+CD64+ мон
+CD14-CD16+CD64-мон.1
+CD14-CD16+CD195+.1
+CD14-CD16+CD195-.1
+CD14-CD16+CD195+мон.1
+CD14-CD16+CD195-мон.1
+CD14-CD16+CD184+.1
+CD14-CD16+CD184-.1
+CD14-CD16+CD184+мон.1
+CD14-CD16+CD184-мон.1
+CD14-CD16+HLA-DR.1
+CD14-CD16+HLA-DR-.1
+CD14-CD16+HLA-DR мон
+CD14-CD16+HLA-DR- мон
+Expres CD14-CD16+CD195+.1
+Expres CD14-CD16+CD184+.1
+Expres CD14-CD16+HLA-DR.1
+Mono CD45R0+CD62L-.1
+Mono CD45R0+CD62L+.1
+Mono CD45R0-CD62L-.1
+Mono CD45R0-CD62L+.1
+Mono CD45R0+CD62L- к исходу
+Mono CD45R0+CD62L+к исходу
+Mono CD45R0-CD62L-к исходу
+Mono CD45R0-CD62L+к исходу
+MonoCD25+.1
+EXP MonoCD25+.1
+Mono CD38+CD39-.1
+Mono CD38+CD39+.1
+Mono CD38-CD39-.1
+Mono CD38-CD39+.1
+Mono CD38+CD39- к исходу
+Mono CD38+CD39+ к исходу
+Mono CD38-CD39-к исходу
+Mono CD38-CD39+к исходу
+Mon CD94+CD57-.1
+Mon CD94+CD57+.1
+Mon CD94-CD57-.1
+Mon CD94-CD57+.1
+Mon CD94+CD57-к исходу
+Mon CD94+CD57+к исходу
+Mon CD94-CD57-к исходу
+Mon CD94-CD57+к исходу
+Neut CD94+CD57-.1
+Neut CD94+CD57+.1
+Neut CD94-CD57-.1
+Neut CD94-CD57+.1
+Neut CD94+CD57- к исходу
+Neut CD94+CD57+ к исходу
+Neut CD94-CD57- к исходу
+Neut CD94-CD57+ к исходу
+Ne CD62L-.1
+Ne CD62L+.1
+Ne CD62L- к исходу
+Ne CD62L+ к исходу
+Expres Ne CD62L+.1
+Var1192

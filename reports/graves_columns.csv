@@ -1,0 +1,893 @@
+﻿column
+ID
+Возраст
+Group
+Только медикамент
+Хирургия
+РЙТ
+Метод лечения
+1-й_визит
+Медикамент. гипотиреоз
+Впервые
+Рецидив
+Длительность приема тирозола (мес.)
+Отмена Тиамазола за 2 недели до РЙТ
+"Доза 131I, Мбк"
+Впервые_Рецидив
+Медик_Радикал
+Только_Медик
+К патенту
+V_ЩЖ
+Рост
+Вес
+ИМТ
+ТТГ_1
+св.Т3_1
+cв.Т4_1
+Т3/Т4_1
+АТ_ТПО_1
+АТ_R_TTГ_1
+Краевая резорбция коллоида
+Дистр изменения стромы
+Пролиф
+П_Сандерсона
+Сосоч. стр-ры
+Склерот. измен.
+Расстр. кровообращ.
+Кровоизлияния
+Фест фолликулы
+Лимф фолликулы
+Лимфоидн. инфильтрация
+Аргирофильная сеть
+Коллоид высокой/средней плотности
+Коллоид жидкий/отсутствует
+Площадь ядер кв мкм
+L1_абс
+п1
+с1
+э1
+б1
+м1
+л1
+Лимф1_абс
+Нв1
+Эр1
+Тр1
+СОЭ 1
+CD3+
+CD+_abs
+Th
+Th_abs
+CD3+CD4-(Tcyt)
+Tcyt_abs
+CD4+/CD8+
+T-reg
+Treg_abs
+Th_Treg
+Expres T-reg_CD62L
+T-regCD62L
+CD3+CD45R0-
+CD3+CD45R0+
+Expres CD3+_CD25
+CD3+CD25+
+CD3+CD45R+CD62L-
+CD3+CD45R+CD62L+
+CD3+CD45R-CD62L-
+CD3+CD45R-CD62L+
+CD3+CD4+CD45R0+CD62L-
+CD3+CD4+CD45R0+CD62L+
+CD3+CD4+CD45R0-CD62L-
+CD3+CD4+CD45R0-CD62L+
+CD3+CD4-CD45R0+CD62L-
+CD3+CD4-CD45R0+CD62L+
+CD3+CD4-CD45R0-CD62L-
+CD3+CD4-CD45R0-CD62L+
+T-reg CD45R0+CD62L-
+T-reg CD45R0+CD62L+
+T-reg CD45R0-CD62L-
+T-reg CD45R0-CD62L+
+Expres CD3+CD4+CD25+
+CD3+CD4+CD25+
+Expres CD3+CD4-CD25+
+CD3+CD4-CD25+
+Expres CD3+CD45R0+CD62L-CD25+
+CD3+CD45R0+CD62L-CD25+
+Expres CD3+CD45R0+CD62L+CD25+
+CD3+CD45R0+CD62L+CD25+
+Expres CD3+CD45R0-CD62L-CD25+
+CD3+CD45R0-CD62L-CD25+
+Expres CD3+CD45R0-CD62L+CD25+
+CD3+CD45R0-CD62L+CD25+
+Exp CD3+CD4+CD45R0+CD62L-CD25+
+CD3+CD4+CD45R0+CD62L-CD25+
+Exp CD3+CD4+CD45R0+CD62L+CD25+
+CD3+CD4+CD45R0+CD62L+CD25+
+Exp CD3+CD4+CD45R0-CD62L-CD25+
+CD3+CD4+CD45R0-CD62L-CD25+
+Exp CD3+CD4+CD45R0-CD62L+CD25+
+CD3+CD4+CD45R0-CD62L+CD25+
+Expres CD3+CD4-CD45R0+CD62-CD25+
+CD3+CD4-CD45R0+CD62L-CD25+
+ExpresCD3+CD4-CD45R0+CD62L+CD25+
+CD3+CD4-CD45R0+CD62L+CD25+
+ExpresCD3+CD4-CD45R0-CD62L-CD25+
+CD3+CD4-CD45R0-CD62L-CD25+
+ExpresCD3+CD4-CD45R0-CD62L+CD25+
+CD3+CD4-CD45R0-CD62L+CD25+
+Expres Treg CD54R0+CD62L-CD25+
+T-reg CD45R0+CD62L-CD25+
+Expres Treg CD54R0+CD62L+CD25+
+T-reg CD45R0+CD62L+CD25+
+Expres Treg CD54R0-CD62L-CD25+
+T-reg CD45R0-CD62L-CD25+
+Expres Treg CD54R0-CD62L+CD25+
+T-reg CD45R0-CD62L+CD25+
+B-cells
+Bcells_abs
+CD19+CD5+
+CD19+CD27+
+CD19+CD23+
+Expres CD19+CD23+
+CD19+CD5-
+CD19+CD27-
+CD19+CD5+CD23+
+Expres CD19+CD5+CD23+
+CD19+CD27+CD23+
+Expres CD19+CD27+CD23+
+CD19+CD27-CD23+
+Expres CD19+CD27-CD23+
+CD19+CD5-CD23+
+Коэффициент
+Expres CD19+CD5-CD23+
+B-cells CD5+27-
+B-cells CD5+27+
+B-cells CD5-27-
+B-cells CD5-27+
+B rannie-naiv
+B aktiv-naiv
+B pre GC
+B GC
+B rannie-memory
+B pozdnie-memory
+T-cells
+T-cells_abs
+T-help
+T-help_abs
+T-cyt
+T-cyt_abs
+CD3+CD4+CD8+
+CD3+CD4-CD8-
+Tis_CD3+
+Tis_Th
+Tis_CD3+CD4-(Tcyt)
+Tis_T-reg
+Tis_Th_Treg
+Tis_Expres T-reg_CD62L
+Tis_T-regCD62L
+Tis_CD3+CD45R0-
+Tis_CD3+CD45R0+
+Tis_Expres CD3+_CD25
+Tis_CD3+CD25+
+Tis_CD3+CD45R+CD62L-
+Tis_CD3+CD45R+CD62L+
+Tis_CD3+CD45R-CD62L-
+Tis_CD3+CD45R-CD62L+
+Tis_CD3+CD4+CD45R0+CD62L-
+Tis_CD3+CD4+CD45R0+CD62L+
+Tis_CD3+CD4+CD45R0-CD62L-
+Tis_CD3+CD4+CD45R0-CD62L+
+Tis_CD3+CD4-CD45R0+CD62L-
+Tis_CD3+CD4-CD45R0+CD62L+
+Tis_CD3+CD4-CD45R0-CD62L-
+Tis_CD3+CD4-CD45R0-CD62L+
+Tis_T-reg CD45R0+CD62L-
+Tis_T-reg CD45R0+CD62L+
+Tis_T-reg CD45R0-CD62L-
+Tis_T-reg CD45R0-CD62L+
+Tis_Expres CD3+CD4+CD25+
+Tis_CD3+CD4+CD25+
+Tis_Expres CD3+CD4-CD25+
+Tis_CD3+CD4-CD25+
+Tis_Expres CD3+CD45R0+CD62L-CD25+
+Tis_CD3+CD45R0+CD62L-CD25+
+Tis_Expres CD3+CD45R0+CD62L+CD25+
+Tis_CD3+CD45R0+CD62L+CD25+
+Tis_Expres CD3+CD45R0-CD62L-CD25+
+Tis_CD3+CD45R0-CD62L-CD25+
+Tis_Expres CD3+CD45R0-CD62L+CD25+
+Tis_CD3+CD45R0-CD62L+CD25+
+Tis_Exp CD3+CD4+CD45R0+CD62L-CD25+
+Tis_CD3+CD4+CD45R0+CD62L-CD25+
+Tis_Exp CD3+CD4+CD45R0+CD62L+CD25+
+Tis_CD3+CD4+CD45R0+CD62L+CD25+
+Tis_Exp CD3+CD4+CD45R0-CD62L-CD25+
+Tis_CD3+CD4+CD45R0-CD62L-CD25+
+Tis_Exp CD3+CD4+CD45R0-CD62L+CD25+
+Tis_CD3+CD4+CD45R0-CD62L+CD25+
+Tis_Expres CD3+CD4-CD45R0+CD62-CD25+
+Tis_CD3+CD4-CD45R0+CD62L-CD25+
+Tis_ExpresCD3+CD4-CD45R0+CD62L+CD25+
+Tis_CD3+CD4-CD45R0+CD62L+CD25+
+Tis_ExpresCD3+CD4-CD45R0-CD62L-CD25+
+Tis_CD3+CD4-CD45R0-CD62L-CD25+
+Tis_ExpresCD3+CD4-CD45R0-CD62L+CD25+
+Tis_CD3+CD4-CD45R0-CD62L+CD25+
+Tis_Expres Treg CD54R0+CD62L-CD25+
+Tis_T-reg CD45R0+CD62L-CD25+
+Tis_Expres Treg CD54R0+CD62L+CD25+
+Tis_T-reg CD45R0+CD62L+CD25+
+Tis_Expres Treg CD54R0-CD62L-CD25+
+Tis_T-reg CD45R0-CD62L-CD25+
+Tis_Expres Treg CD54R0-CD62L+CD25+
+Tis_T-reg CD45R0-CD62L+CD25+
+Tis_B-cells
+Tis_CD19+CD5+
+Tis_CD19+CD27+
+Tis_CD19+CD23+
+Tis_Expres CD19+CD23+
+Tis_CD19+CD5-
+Tis_CD19+CD27-
+Tis_CD19+CD5+CD23+
+Tis_Expres CD19+CD5+CD23+
+Tis_CD19+CD27+CD23+
+Tis_Expres CD19+CD27+CD23+
+Tis_CD19+CD27-CD23+
+Tis_Expres CD19+CD27-CD23+
+Tis_CD19+CD5-CD23+
+Tis_Expres CD19+CD5-CD23+
+Tis_B-cells CD5+27-
+Tis_B-cells CD5+27+
+Tis_B-cells CD5-27-
+Tis_B-cells CD5-27+
+Tis_B rannie-naiv
+Tis_B aktiv-naiv
+Tis_B pre GC
+Tis_B GC
+Tis_B rannie-memory
+Tis_B pozdnie-memory
+Tis_T-cells
+Tis_T-help
+Tis_T-cyt
+Tis_CD4+/CD8+
+Tis_CD3+CD4+CD8+
+Tis_CD3+CD4-CD8-
+1_Tсп_люм
+1_Iсп_люм
+1_Sсп_люм
+1_Tзим_люм
+1_iзим_люм
+1_Sзим_люм
+1_ИА_люм
+1_Tсп_люц
+1_Iсп_люц
+1_Sсп_люц
+1_Tзим_люц
+1_iзим_люц
+1_Sзим_люц
+1_ИА_люц
+Tсп_люм_M1
+Iсп_люм_M1
+Sсп_люм_M1
+Tзим_люм_M1
+iзим_люм_M1
+Sзим_люм_M1
+ИА_люм_M1
+Tсп_люц_M1
+Iсп_люц_M1
+Sсп_люц_M1
+Tзим_люц_M1
+iзим_люц_M1
+Sзим_люц_M1
+ИА_люц_M1
+G6PDH_л_1
+G3PDH_л_1
+LDH_л_1
+NADPMDH_л_1
+NADPGDH_л_1
+NADPIDH_л_1
+MDH_л_1
+NADGDH_л_1
+NADIDH_л_1
+R_LDH_л_1
+R_MDH_л_1
+GR_л_1
+R_NADGDH_л_1
+R_NADPGDH_л_1
+G6PDH_н_1
+G3PDH_н_1
+LDH_н_1
+NADPMDH_н_1
+NADPGDH_н_1
+NADPIDH_н_1
+MDH_н_1
+NADGDH_н_1
+NADIDH_н_1
+R_LDH_н_1
+R_MDH_н_1
+GR_н_1
+R_NADGDH_н_1
+R_NADPGDH_н_1
+G6PDH_м
+G3PDH_м
+LDH_м
+NADPMDH_м
+NADPGDH_м
+NADPIDH_м
+MDH_м
+NADGDH_м
+NADIDH_м
+R_LDH _м
+R_MDH_м
+GR_м
+R_NADGDH_м
+R_NADPGDH_м
+2-й_визит
+ТТГ_2
+св.Т4_2
+св.Т3_2
+Т3/Т4_2
+АТ_R_TTГ_2
+L2_абс
+п2
+с2
+э2
+б2
+м2
+л2
+Лимф_абс_2
+Нв2
+Эр2
+Тр2
+СОЭ2
+CD3+.1
+CD3+_2_abs
+Th_2
+Th_2_abs
+CD3+CD4-_2
+CD3+CD4-_2_abs
+CD4+/CD8+_2
+T-reg_2
+T-reg_2_abs
+Expres T-reg_CD62L.1
+T-regCD62L.1
+CD3+CD45R0-.1
+CD3+CD45R0+.1
+Expres CD3+_CD25.1
+CD3+CD25+.1
+CD3+CD45R+CD62L-.1
+CD3+CD45R+CD62L+.1
+CD3+CD45R-CD62L-.1
+CD3+CD45R-CD62L+.1
+CD3+CD4+CD45R0+CD62L-.1
+CD3+CD4+CD45R0+CD62L+.1
+CD3+CD4+CD45R0-CD62L-.1
+CD3+CD4+CD45R0-CD62L+.1
+CD3+CD4-CD45R0+CD62L-.1
+CD3+CD4-CD45R0+CD62L+.1
+CD3+CD4-CD45R0-CD62L-.1
+CD3+CD4-CD45R0-CD62L+.1
+T-reg CD45R0+CD62L-.1
+T-reg CD45R0+CD62L+.1
+T-reg CD45R0-CD62L-.1
+T-reg CD45R0-CD62L+.1
+Expres CD3+CD4+CD25+.1
+CD3+CD4+CD25+.1
+Expres CD3+CD4-CD25+.1
+CD3+CD4-CD25+.1
+Expres CD3+CD45R0+CD62L-CD25+.1
+CD3+CD45R0+CD62L-CD25+.1
+Expres CD3+CD45R0+CD62L+CD25+.1
+CD3+CD45R0+CD62L+CD25+.1
+Expres CD3+CD45R0-CD62L-CD25+.1
+CD3+CD45R0-CD62L-CD25+.1
+Expres CD3+CD45R0-CD62L+CD25+.1
+CD3+CD45R0-CD62L+CD25+.1
+Exp CD3+CD4+CD45R0+CD62L-CD25+.1
+CD3+CD4+CD45R0+CD62L-CD25+.1
+Exp CD3+CD4+CD45R0+CD62L+CD25+.1
+CD3+CD4+CD45R0+CD62L+CD25+.1
+Exp CD3+CD4+CD45R0-CD62L-CD25+.1
+CD3+CD4+CD45R0-CD62L-CD25+.1
+Exp CD3+CD4+CD45R0-CD62L+CD25+.1
+CD3+CD4+CD45R0-CD62L+CD25+.1
+Expres CD3+CD4-CD45R0+CD62-CD25+.1
+CD3+CD4-CD45R0+CD62L-CD25+.1
+ExpresCD3+CD4-CD45R0+CD62L+CD25+.1
+CD3+CD4-CD45R0+CD62L+CD25+.1
+ExpresCD3+CD4-CD45R0-CD62L-CD25+.1
+CD3+CD4-CD45R0-CD62L-CD25+.1
+ExpresCD3+CD4-CD45R0-CD62L+CD25+.1
+CD3+CD4-CD45R0-CD62L+CD25+.1
+Expres Treg CD54R0+CD62L-CD25+.1
+T-reg CD45R0+CD62L-CD25+.1
+Expres Treg CD54R0+CD62L+CD25+.1
+T-reg CD45R0+CD62L+CD25+.1
+Expres Treg CD54R0-CD62L-CD25+.1
+T-reg CD45R0-CD62L-CD25+.1
+Expres Treg CD54R0-CD62L+CD25+.1
+T-reg CD45R0-CD62L+CD25+.1
+B-cells_2
+B-cells_2_abs
+CD19+CD5+.1
+CD19+CD27+.1
+CD19+CD23+.1
+Expres CD19+CD23+.1
+CD19+CD5-.1
+CD19+CD27-.1
+CD19+CD5+CD23+.1
+Expres CD19+CD5+CD23+.1
+CD19+CD27+CD23+.1
+Expres CD19+CD27+CD23+.1
+CD19+CD27-CD23+.1
+Expres CD19+CD27-CD23+.1
+CD19+CD5-CD23+.1
+Expres CD19+CD5-CD23+.1
+B-cells CD5+27-.1
+B-cells CD5+27+.1
+B-cells CD5-27-.1
+B-cells CD5-27+.1
+B rannie-naiv.1
+B aktiv-naiv.1
+B pre GC.1
+B GC.1
+B rannie-memory.1
+B pozdnie-memory.1
+T-cells_2_
+T-cells_2_abs2
+T-help_2_
+T-help_2_abs2
+T-cyt_2_
+T-cyt_2_abs2
+Th2/Tc2_2
+CD3+CD4+CD8+.1
+CD3+CD4-CD8-.1
+1_Tсп_люм.1
+1_Iсп_люм.1
+1_Sсп_люм.1
+1_Tзим_люм.1
+1_iзим_люм.1
+1_Sзим_люм.1
+1_ИА_люм.1
+1_Tсп_люц.1
+1_Iсп_люц.1
+1_Sсп_люц.1
+1_Tзим_люц.1
+1_iзим_люц.1
+1_Sзим_люц.1
+1_ИА_люц.1
+2_мTсп_люм
+2M_Iсп_люм
+2M_Sсп_люм
+2M_Tзим_люм
+2M_iзим_люм
+2M_Sзим_люм
+2M_ИА_люм
+2M_Tсп_люц
+2M_Iсп_люц
+2M_Sсп_люц
+2M_Tзим_люц
+2M_iзим_люц
+2M_Sзим_люц
+2M_ИА_люц
+G6PDH_л_1.1
+G3PDH_л_1.1
+LDH_л_1.1
+NADPMDH_л_1.1
+NADPGDH_л_1.1
+NADPIDH_л_1.1
+MDH_л_1.1
+NADGDH_л_1.1
+NADIDH_л_1.1
+R_LDH_л_1.1
+R_MDH_л_1.1
+GR_л_1.1
+R_NADGDH_л_1.1
+R_NADPGDH_л_1.1
+G6PDH_н_1.1
+G3PDH_н_1.1
+LDH_н_1.1
+NADPMDH_н_1.1
+NADPGDH_н_1.1
+NADPIDH_н_1.1
+MDH_н_1.1
+NADGDH_н_1.1
+NADIDH_н_1.1
+R_LDH_н_1.1
+R_MDH_н_1.1
+GR_н_1.1
+R_NADGDH_н_1.1
+R_NADPGDH_н_1.1
+G6PDH_м.1
+G3PDH_м.1
+LDH_м.1
+NADPMDH_м.1
+NADPGDH_м.1
+NADPIDH_м.1
+MDH_м.1
+NADGDH_м.1
+NADIDH_м.1
+R_LDH _м.1
+R_MDH_м.1
+GR_м.1
+R_NADGDH_м.1
+R_NADPGDH_м.1
+3-й_визит
+ТТГ_3
+св.Т4_3
+св. Т3_3
+Т3/Т4_3
+AT_R_ТТГ_3
+L3_абс
+п3
+с3
+э3
+б3
+м3
+л3
+Лимф3_абс
+Нв3
+Эр3
+Тр3
+СОЭ3
+CD3+_3_
+CD3+_3_abs3
+Th3_
+Th3_abs3
+CD3+CD4-(Tcyt)3_
+CD3+CD4-(Tcyt)3_abs
+CD4+_3/CD8+_3
+T-reg3_
+T-reg3_abs3
+Expres T-reg_CD62L.2
+T-regCD62L.2
+CD3+CD45R0-.2
+CD3+CD45R0+.2
+Expres CD3+_CD25.2
+CD3+CD25+.2
+CD3+CD45R+CD62L-.2
+CD3+CD45R+CD62L+.2
+CD3+CD45R-CD62L-.2
+CD3+CD45R-CD62L+.2
+CD3+CD4+CD45R0+CD62L-.2
+CD3+CD4+CD45R0+CD62L+.2
+CD3+CD4+CD45R0-CD62L-.2
+CD3+CD4+CD45R0-CD62L+.2
+CD3+CD4-CD45R0+CD62L-.2
+CD3+CD4-CD45R0+CD62L+.2
+CD3+CD4-CD45R0-CD62L-.2
+CD3+CD4-CD45R0-CD62L+.2
+T-reg CD45R0+CD62L-.2
+T-reg CD45R0+CD62L+.2
+T-reg CD45R0-CD62L-.2
+T-reg CD45R0-CD62L+.2
+Expres CD3+CD4+CD25+.2
+CD3+CD4+CD25+.2
+Expres CD3+CD4-CD25+.2
+CD3+CD4-CD25+.2
+Expres CD3+CD45R0+CD62L-CD25+.2
+CD3+CD45R0+CD62L-CD25+.2
+Expres CD3+CD45R0+CD62L+CD25+.2
+CD3+CD45R0+CD62L+CD25+.2
+Expres CD3+CD45R0-CD62L-CD25+.2
+CD3+CD45R0-CD62L-CD25+.2
+Expres CD3+CD45R0-CD62L+CD25+.2
+CD3+CD45R0-CD62L+CD25+.2
+Exp CD3+CD4+CD45R0+CD62L-CD25+.2
+CD3+CD4+CD45R0+CD62L-CD25+.2
+Exp CD3+CD4+CD45R0+CD62L+CD25+.2
+CD3+CD4+CD45R0+CD62L+CD25+.2
+Exp CD3+CD4+CD45R0-CD62L-CD25+.2
+CD3+CD4+CD45R0-CD62L-CD25+.2
+Exp CD3+CD4+CD45R0-CD62L+CD25+.2
+CD3+CD4+CD45R0-CD62L+CD25+.2
+Expres CD3+CD4-CD45R0+CD62-CD25+.2
+CD3+CD4-CD45R0+CD62L-CD25+.2
+ExpresCD3+CD4-CD45R0+CD62L+CD25+.2
+CD3+CD4-CD45R0+CD62L+CD25+.2
+ExpresCD3+CD4-CD45R0-CD62L-CD25+.2
+CD3+CD4-CD45R0-CD62L-CD25+.2
+ExpresCD3+CD4-CD45R0-CD62L+CD25+.2
+CD3+CD4-CD45R0-CD62L+CD25+.2
+Expres Treg CD54R0+CD62L-CD25+.2
+T-reg CD45R0+CD62L-CD25+.2
+Expres Treg CD54R0+CD62L+CD25+.2
+T-reg CD45R0+CD62L+CD25+.2
+Expres Treg CD54R0-CD62L-CD25+.2
+T-reg CD45R0-CD62L-CD25+.2
+Expres Treg CD54R0-CD62L+CD25+.2
+T-reg CD45R0-CD62L+CD25+.2
+B-cells3_
+B-cells3_abs3
+CD19+CD5+.2
+CD19+CD27+.2
+CD19+CD23+.2
+Expres CD19+CD23+.2
+CD19+CD5-.2
+CD19+CD27-.2
+CD19+CD5+CD23+.2
+Expres CD19+CD5+CD23+.2
+CD19+CD27+CD23+.2
+Expres CD19+CD27+CD23+.2
+CD19+CD27-CD23+.2
+Expres CD19+CD27-CD23+.2
+CD19+CD5-CD23+.2
+Expres CD19+CD5-CD23+.2
+B-cells CD5+27-.2
+B-cells CD5+27+.2
+B-cells CD5-27-.2
+B-cells CD5-27+.2
+B rannie-naiv.2
+B aktiv-naiv.2
+B pre GC.2
+B GC.2
+B rannie-memory.2
+B pozdnie-memory.2
+T-cells_3_
+T-cells_3_abs
+T-help_3_
+T-help_3_abs
+T-cyt_3_
+T-cyt_3_abs
+Th_3/Tc_3
+CD3+CD4+CD8+.2
+CD3+CD4-CD8-.2
+1_Tсп_люм.2
+1_Iсп_люм.2
+1_Sсп_люм.2
+1_Tзим_люм.2
+1_iзим_люм.2
+1_Sзим_люм.2
+1_ИА_люм.2
+1_Tсп_люц.2
+1_Iсп_люц.2
+1_Sсп_люц.2
+1_Tзим_люц.2
+1_iзим_люц.2
+1_Sзим_люц.2
+1_ИА_люц.2
+2_Tсп_люм
+3M_Iсп_люм
+3M_Sсп_люм
+3M_Tзим_люм
+3M_iзим_люм
+3M_Sзим_люм
+3M_ИА_люм
+3M_Tсп_люц
+3M_Iсп_люц
+3M_Sсп_люц
+3M_Tзим_люц
+3M_iзим_люц
+3M_Sзим_люц
+3М_ИА_люц
+G6PDH_л_1.2
+G3PDH_л_1.2
+LDH_л_1.2
+NADPMDH_л_1.2
+NADPGDH_л_1.2
+NADPIDH_л_1.2
+MDH_л_1.2
+NADGDH_л_1.2
+NADIDH_л_1.2
+R_LDH_л_1.2
+R_MDH_л_1.2
+GR_л_1.2
+R_NADGDH_л_1.2
+R_NADPGDH_л_1.2
+G6PDH_н_1.2
+G3PDH_н_1.2
+LDH_н_1.2
+NADPMDH_н_1.2
+NADPGDH_н_1.2
+NADPIDH_н_1.2
+MDH_н_1.2
+NADGDH_н_1.2
+NADIDH_н_1.2
+R_LDH_н_1.2
+R_MDH_н_1.2
+GR_н_1.2
+R_NADGDH_н_1.2
+R_NADPGDH_н_1.2
+G6PDH_м.2
+G3PDH_м.2
+LDH_м.2
+NADPMDH_м.2
+NADPGDH_м.2
+NADPIDH_м.2
+MDH_м.2
+NADGDH_м.2
+NADIDH_м.2
+R_LDH _м.2
+R_MDH_м.2
+GR_м.2
+R_NADGDH_м.2
+R_NADPGDH_м.2
+4_й_визит
+ТТГ_4
+св.Т4_4
+св.Т3_4
+Т3/Т4_4
+АТ_R_ТТГ_4
+L4_абс
+п4
+с4
+э4
+б4
+м4
+лимф4
+лимф4_абс
+Hb4
+Эр4
+Тр4
+СОЭ4
+CD3+_4_
+CD3+_4_abs4
+Th4_
+Th4_abs
+CD3+CD4-(Tcyt)4_
+CD3+CD4-(Tcyt)4_abs
+CD4/CD8_4
+T-reg4_
+T-reg4_abs
+Expres T-reg_CD62L.3
+T-regCD62L.3
+CD3+CD45R0-.3
+CD3+CD45R0+.3
+Expres CD3+_CD25.3
+CD3+CD25+.3
+CD3+CD45R+CD62L-.3
+CD3+CD45R+CD62L+.3
+CD3+CD45R-CD62L-.3
+CD3+CD45R-CD62L+.3
+CD3+CD4+CD45R0+CD62L-.3
+CD3+CD4+CD45R0+CD62L+.3
+CD3+CD4+CD45R0-CD62L-.3
+CD3+CD4+CD45R0-CD62L+.3
+CD3+CD4-CD45R0+CD62L-.3
+CD3+CD4-CD45R0+CD62L+.3
+CD3+CD4-CD45R0-CD62L-.3
+CD3+CD4-CD45R0-CD62L+.3
+T-reg CD45R0+CD62L-.3
+T-reg CD45R0+CD62L+.3
+T-reg CD45R0-CD62L-.3
+T-reg CD45R0-CD62L+.3
+Expres CD3+CD4+CD25+.3
+CD3+CD4+CD25+.3
+Expres CD3+CD4-CD25+.3
+CD3+CD4-CD25+.3
+Expres CD3+CD45R0+CD62L-CD25+.3
+CD3+CD45R0+CD62L-CD25+.3
+Expres CD3+CD45R0+CD62L+CD25+.3
+CD3+CD45R0+CD62L+CD25+.3
+Expres CD3+CD45R0-CD62L-CD25+.3
+CD3+CD45R0-CD62L-CD25+.3
+Expres CD3+CD45R0-CD62L+CD25+.3
+CD3+CD45R0-CD62L+CD25+.3
+Exp CD3+CD4+CD45R0+CD62L-CD25+.3
+CD3+CD4+CD45R0+CD62L-CD25+.3
+Exp CD3+CD4+CD45R0+CD62L+CD25+.3
+CD3+CD4+CD45R0+CD62L+CD25+.3
+Exp CD3+CD4+CD45R0-CD62L-CD25+.3
+CD3+CD4+CD45R0-CD62L-CD25+.3
+Exp CD3+CD4+CD45R0-CD62L+CD25+.3
+CD3+CD4+CD45R0-CD62L+CD25+.3
+Expres CD3+CD4-CD45R0+CD62-CD25+.3
+CD3+CD4-CD45R0+CD62L-CD25+.3
+ExpresCD3+CD4-CD45R0+CD62L+CD25+.3
+CD3+CD4-CD45R0+CD62L+CD25+.3
+ExpresCD3+CD4-CD45R0-CD62L-CD25+.3
+CD3+CD4-CD45R0-CD62L-CD25+.3
+ExpresCD3+CD4-CD45R0-CD62L+CD25+.3
+CD3+CD4-CD45R0-CD62L+CD25+.3
+Expres Treg CD54R0+CD62L-CD25+.3
+T-reg CD45R0+CD62L-CD25+.3
+Expres Treg CD54R0+CD62L+CD25+.3
+T-reg CD45R0+CD62L+CD25+.3
+Expres Treg CD54R0-CD62L-CD25+.3
+T-reg CD45R0-CD62L-CD25+.3
+Expres Treg CD54R0-CD62L+CD25+.3
+T-reg CD45R0-CD62L+CD25+.3
+B-cells4_
+B-cells4_abs
+CD19+CD5+.3
+CD19+CD27+.3
+CD19+CD23+.3
+Expres CD19+CD23+.3
+CD19+CD5-.3
+CD19+CD27-.3
+CD19+CD5+CD23+.3
+Expres CD19+CD5+CD23+.3
+CD19+CD27+CD23+.3
+Expres CD19+CD27+CD23+.3
+CD19+CD27-CD23+.3
+Expres CD19+CD27-CD23+.3
+CD19+CD5-CD23+.3
+Expres CD19+CD5-CD23+.3
+B-cells CD5+27-.3
+B-cells CD5+27+.3
+B-cells CD5-27-.3
+B-cells CD5-27+.3
+B rannie-naiv.3
+B aktiv-naiv.3
+B pre GC.3
+B GC.3
+B rannie-memory.3
+B pozdnie-memory.3
+T-cells_4_
+T-cells_4_abs4
+T-help_4_
+T-help_4_abs4
+T-cyt_4_
+T-cyt_4_abs4
+Th4/Tc4
+CD3+CD4+CD8+.3
+CD3+CD4-CD8-.3
+1_Tсп_люм.3
+1_Iсп_люм.3
+1_Sсп_люм.3
+1_Tзим_люм.3
+1_iзим_люм.3
+1_Sзим_люм.3
+1_ИА_люм.3
+1_Tсп_люц.3
+1_Iсп_люц.3
+1_Sсп_люц.3
+1_Tзим_люц.3
+1_iзим_люц.3
+1_Sзим_люц.3
+1_ИА_люц.3
+1_Tсп_люм.4
+4M_Iсп_люм
+4M_Sсп_люм
+4M_Tзим_люм
+4M_iзим_люм
+4M_Sзим_люм
+4M_ИА_люм
+4M_Tсп_люц
+4M_Iсп_люц
+4M_Sсп_люц
+4M_Tзим_люц
+4M_iзим_люц
+4M_Sзим_люц
+4M_ИА_люц
+G6PDH_л_1.3
+G3PDH_л_1.3
+LDH_л_1.3
+NADPMDH_л_1.3
+NADPGDH_л_1.3
+NADPIDH_л_1.3
+MDH_л_1.3
+NADGDH_л_1.3
+NADIDH_л_1.3
+R_LDH_л_1.3
+R_MDH_л_1.3
+GR_л_1.3
+R_NADGDH_л_1.3
+R_NADPGDH_л_1.3
+G6PDH_н_1.3
+G3PDH_н_1.3
+LDH_н_1.3
+NADPMDH_н_1.3
+NADPGDH_н_1.3
+NADPIDH_н_1.3
+MDH_н_1.3
+NADGDH_н_1.3
+NADIDH_н_1.3
+R_LDH_н_1.3
+R_MDH_н_1.3
+GR_н_1.3
+R_NADGDH_н_1.3
+R_NADPGDH_н_1.3
+G6PDH_м.3
+G3PDH_м.3
+LDH_м.3
+NADPMDH_м.3
+NADPGDH_м.3
+NADPIDH_м.3
+MDH_м.3
+NADGDH_м.3
+NADIDH_м.3
+R_LDH _м.3
+R_MDH_м.3
+GR_м.3
+R_NADGDH_м.3
+R_NADPGDH_м.3

@@ -1,0 +1,23 @@
+{
+  "cohort": "il2_postcovid",
+  "source_file": "Baza-s-kontrolem-vmeste-1-IL-2-i-postkovid.xlsx",
+  "sheet": "IL-2 и постковид",
+  "n_rows": 59,
+  "n_cols": 769,
+  "parsed_date_cols": [],
+  "dropped_sparse_cols": [],
+  "detected": {
+    "patient_id_col": "№",
+    "sex_col": "пол",
+    "age_col": null,
+    "visit_dt_col": null
+  },
+  "fixed_mixed_object_cols": [
+    "ВОЗ",
+    "Постковид",
+    "Группы",
+    "лейкоциты_Кач.",
+    "Лейк_Кач_2"
+  ],
+  "parquet_path": "data_parquet\\il2_postcovid.parquet"
+}
