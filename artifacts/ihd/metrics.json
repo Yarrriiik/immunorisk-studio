@@ -212,7 +212,13 @@
   "n_rows": 101,
   "n_features": 201,
   "test_size": 0.2,
+  "val_size": 0.2,
   "seed": 42,
-  "accuracy": 0.9047619047619048,
-  "f1": 0.5
+  "best_iteration": 99,
+  "accuracy": 1.0,
+  "f1": 1.0,
+  "best_thr": 0.2,
+  "pos_rate_val": 0.125,
+  "pos_rate_test": 0.14285714285714285,
+  "pred_pos_rate": 0.14285714285714285
 }

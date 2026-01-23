@@ -1,0 +1,49 @@
+{
+  "version": "0.1",
+  "cohorts": {
+    "sepsis": {
+      "task": "regression",
+      "target_col": "Шкала SOFA",
+      "target_name": "sofa_score",
+      "target_dtype": "float",
+      "allowed_range": null,
+      "required_features_min": ["age", "sex"],
+      "categorical_features": ["sex"]
+    },
+    "peritonitis": {
+      "task": "regression",
+      "target_col": "SOFA",
+      "target_name": "sofa_score",
+      "target_dtype": "float",
+      "allowed_range": null,
+      "required_features_min": [],
+      "categorical_features": []
+    },
+    "ihd": {
+      "task": "binary",
+      "target_col": "2 точка (резистентность 0-нет, 1-да)",
+      "target_name": "resistance",
+      "target_dtype": "int",
+      "classes": [0, 1],
+      "label_mapping": { "0": "нет", "1": "да" },
+      "required_features_min": [],
+      "categorical_features": []
+    },
+    "il2_postcovid": {
+      "task": "multiclass",
+      "target_col": "Постковид",
+      "target_name": "postcovid_class",
+      "target_dtype": "string",
+      "classes": [
+        "ПостКовид_1",
+        "ПостКовид_2",
+        "ПостКовид_3"
+      ],
+      "label_mapping": {
+        "ПостКовид_1": "ПостКовид 1",
+        "ПостКовид_2": "ПостКовид 2",
+        "ПостКовид_3": "ПостКовид 3"
+      }
+    }
+  }
+}

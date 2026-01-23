@@ -432,5 +432,7 @@
   "n_rows": 50,
   "n_features": 421,
   "test_size": 0.2,
-  "seed": 42
+  "val_size": 0.2,
+  "seed": 42,
+  "best_iteration": 795
 }
