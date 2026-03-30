@@ -1,0 +1,2 @@
+patient_id,cohort,risk,sofa,doctor,status,prediction,id,date
+P-001,Сепсис,Средний,6.556654980952187,Шкредов Сергей Александрович,Завершен,"{'cohort': 'sepsis', 'task': 'regression', 'pred': [6.556654980952187]}",P-001,31.01.2026 16:10

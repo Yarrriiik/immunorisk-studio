@@ -1,0 +1,252 @@
+{
+  "Dealtor": {
+    "username": "Dealtor",
+    "password_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "full_name": "Шкредов Сергей Александрович",
+    "specialization": "Иммунолог-инфекционист",
+    "created_at": "2026-01-31T15:58:12.444103",
+    "stats": {
+      "total_patients": 30,
+      "total_analyses": 30
+    },
+    "history": [
+      {
+        "patient_id": "P-001",
+        "cohort": "Сепсис",
+        "risk": "Средний",
+        "sofa": 6.556238852560718,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "sepsis",
+          "task": "regression",
+          "pred": [
+            6.556238852560718
+          ]
+        },
+        "id": "P-001",
+        "date": "02.03.2026 23:56"
+      },
+      {
+        "patient_id": "P-001",
+        "cohort": "Сепсис",
+        "risk": "Средний",
+        "sofa": 6.556238852560718,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "sepsis",
+          "task": "regression",
+          "pred": [
+            6.556238852560718
+          ]
+        },
+        "id": "P-002",
+        "date": "02.03.2026 23:58"
+      },
+      {
+        "patient_id": "P-001",
+        "cohort": "Сепсис",
+        "risk": "Средний",
+        "sofa": 6.577689476469011,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "sepsis",
+          "task": "regression",
+          "pred": [
+            6.577689476469011
+          ]
+        },
+        "id": "P-003",
+        "date": "02.03.2026 23:59"
+      },
+      {
+        "patient_id": "P-001",
+        "cohort": "ИБС",
+        "risk": "Низкий",
+        "sofa": 7,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "ihd",
+          "task": "classification",
+          "best_thr": 0.2,
+          "proba": [
+            0.14346417721966948
+          ],
+          "pred": [
+            0
+          ]
+        },
+        "id": "P-004",
+        "date": "03.03.2026 00:01"
+      },
+      {
+        "patient_id": "P-001",
+        "cohort": "Сепсис",
+        "risk": "Средний",
+        "sofa": 6.556238832446267,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "sepsis",
+          "task": "regression",
+          "pred": [
+            6.556238832446267
+          ]
+        },
+        "id": "P-005",
+        "date": "03.03.2026 00:05"
+      },
+      {
+        "patient_id": "LoLOlO",
+        "cohort": "Сепсис",
+        "risk": "Средний",
+        "sofa": 6.523532275591034,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "sepsis",
+          "task": "regression",
+          "pred": [
+            6.523532275591034
+          ]
+        },
+        "id": "P-006",
+        "date": "03.03.2026 00:05"
+      },
+      {
+        "patient_id": "LoLOlO",
+        "cohort": "Сепсис",
+        "risk": "Средний",
+        "sofa": 6.523532275591034,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "sepsis",
+          "task": "regression",
+          "pred": [
+            6.523532275591034
+          ]
+        },
+        "id": "P-007",
+        "date": "03.03.2026 00:06"
+      },
+      {
+        "patient_id": "LoLOlO",
+        "cohort": "Перитонит",
+        "risk": "Средний",
+        "sofa": 5.258583565674513,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "peritonitis",
+          "task": "regression",
+          "pred": [
+            5.258583565674513
+          ]
+        },
+        "id": "P-008",
+        "date": "03.03.2026 00:07"
+      },
+      {
+        "patient_id": "LoLOlO",
+        "cohort": "ИБС",
+        "risk": "Низкий",
+        "sofa": 7,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "ihd",
+          "task": "classification",
+          "best_thr": 0.2,
+          "proba": [
+            0.14125728237466226
+          ],
+          "pred": [
+            0
+          ]
+        },
+        "id": "P-009",
+        "date": "03.03.2026 00:08"
+      },
+      {
+        "patient_id": "LoLOlO",
+        "cohort": "IL-2 постковид",
+        "risk": "Низкий",
+        "sofa": 7,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "il2_postcovid",
+          "task": "multiclass",
+          "pred": [
+            "ПостКовид_2"
+          ],
+          "proba": [
+            [
+              0.21816202703835286,
+              0.15880921980631946,
+              0.4638433657701484,
+              0.15918538738517932
+            ]
+          ],
+          "top3": [
+            [
+              [
+                "ПостКовид_2",
+                0.4638433657701484
+              ],
+              [
+                "ПостКовид_0",
+                0.21816202703835286
+              ],
+              [
+                "ПостКовид_3",
+                0.15918538738517932
+              ]
+            ]
+          ]
+        },
+        "id": "P-010",
+        "date": "03.03.2026 00:08"
+      },
+      {
+        "patient_id": "P-001",
+        "cohort": "Перитонит",
+        "risk": "Средний",
+        "sofa": 5.258583565674513,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "peritonitis",
+          "task": "regression",
+          "pred": [
+            5.258583565674513
+          ]
+        },
+        "id": "P-011",
+        "date": "07.03.2026 16:02"
+      },
+      {
+        "patient_id": "P-001",
+        "cohort": "Перитонит",
+        "risk": "Низкий",
+        "sofa": 4.333231518461328,
+        "doctor": "Шкредов Сергей Александрович",
+        "status": "Завершен",
+        "prediction": {
+          "cohort": "peritonitis",
+          "task": "regression",
+          "pred": [
+            4.333231518461328
+          ]
+        },
+        "id": "P-012",
+        "date": "07.03.2026 16:17"
+      }
+    ],
+    "password_reset_by_admin_at": "2026-03-02T23:26:23.075574"
+  }
+}
