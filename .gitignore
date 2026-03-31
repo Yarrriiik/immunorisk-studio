@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+.pytest_cache/
+.mypy_cache/
+catboost_info/
+users_db.local.json
+history_export.csv
+drafts/
+*.log

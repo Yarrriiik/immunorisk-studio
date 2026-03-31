@@ -15,10 +15,10 @@
 - кол-во мамм (м) — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
 - Время ИК, мин — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
 - На работающем сердце — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
-- Периоперационный ИМ — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
-- ОНМК — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
-- Кровотечения — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
 - Курение — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
 - Артериальная гипертония — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
 - СД — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
 - Наличие ожирения — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
+- I степень ожирения — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
+- II степень ожирения — dtype=float64, nonnull_ratio=1.000, nonnull_count=101
+- III степень ожирения — dtype=float64, nonnull_ratio=1.000, nonnull_count=101

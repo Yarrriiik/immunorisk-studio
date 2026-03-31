@@ -38,6 +38,11 @@ def _is_unnamed(col: str) -> bool:
     return str(col).strip().lower().startswith("unnamed")
 
 
+def _should_drop_by_name(col: str, cfg: CohortTarget) -> bool:
+    col_lower = str(col).strip().lower()
+    return any(pattern.strip().lower() in col_lower for pattern in cfg.drop_name_contains)
+
+
 def _safe_train_test_split(
     X: pd.DataFrame,
     y: pd.Series,
@@ -141,13 +146,14 @@ def train_one(
             "cohort": cfg.cohort,
             "status": "missing_target_col",
             "target_col": cfg.target_col,
-            "columns": df.columns.tolist(),
+            "columns": list(df.columns),
         }
 
     # drop cols
-    for c in cfg.drop_cols:
-        if c in df.columns:
-            df = df.drop(columns=[c])
+    drop_candidates = [c for c in cfg.drop_cols if c in df.columns]
+    drop_candidates.extend([c for c in df.columns if _should_drop_by_name(c, cfg)])
+    if drop_candidates:
+        df = df.drop(columns=list(dict.fromkeys(drop_candidates)))
 
     # target
     if cfg.task == "regression":

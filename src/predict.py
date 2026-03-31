@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 from catboost import CatBoostClassifier, CatBoostRegressor
 
-from src.pipeline.feature_cleaning import make_unique_columns  # то же, что в train 
+from src.pipeline.feature_cleaning import make_unique_columns, sanitize_for_catboost  # то же, что в train 
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -64,14 +64,7 @@ def prepare_features(df_raw: pd.DataFrame, meta: Artifacts) -> pd.DataFrame:
             df[c] = np.nan
 
     X = df[meta.features].copy()
-
-    # привести категориальные
-    for c in meta.cat_features:
-        if c in X.columns:
-            # CatBoost нормально кушает строки; missing помечаем явно
-            X[c] = X[c].astype("string").fillna("__MISSING__")
-
-    return X
+    return sanitize_for_catboost(X, meta.cat_features)
 
 
 def predict_df(cohort: str, df_raw: pd.DataFrame, artifacts_dir: Path = ARTIFACTS_DIR) -> dict[str, Any]:

@@ -9,6 +9,9 @@ import numpy as np
 import pandas as pd
 
 
+CAT_MISSING_TOKEN = "NA"
+
+
 @dataclass(frozen=True)
 class FeaturePolicy:
     min_nonnull_frac: float = 0.20          # минимум 20% заполненности
@@ -82,7 +85,7 @@ def feature_stats(X: pd.DataFrame) -> pd.DataFrame:
 
 def sanitize_for_catboost(X: pd.DataFrame, cat_cols: list[str]) -> pd.DataFrame:
     # pandas.NA -> np.nan (иначе ловили NAType)
-    X = X.replace({pd.NA: np.nan})
+    X = X.mask(X.isna(), np.nan)
 
     # nullable числовые -> float64, чтобы пропуски стали np.nan
     for c in X.columns:
@@ -98,7 +101,7 @@ def sanitize_for_catboost(X: pd.DataFrame, cat_cols: list[str]) -> pd.DataFrame:
     # категориальные: только строки, пропуски -> "NA"
     for c in cat_cols:
         if c in X.columns:
-            X[c] = X[c].astype("string").fillna("NA")
+            X[c] = X[c].astype("string").fillna(CAT_MISSING_TOKEN)
 
     return X
 

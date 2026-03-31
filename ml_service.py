@@ -46,6 +46,54 @@ def get_model_cohort_name(gui_cohort: str) -> Optional[str]:
     return COHORT_MAPPING.get(gui_cohort)
 
 
+def _normalize_numeric_value(value: Any) -> float:
+    if value is None:
+        return np.nan
+    if isinstance(value, str):
+        value = value.strip().replace(",", ".")
+        if not value:
+            return np.nan
+    return float(value)
+
+
+def _normalize_categorical_value(feature: str, value: Any) -> str:
+    value_str = str(value).strip()
+    if feature.lower() in {"sex", "пол", "пол.1"}:
+        if value_str in {"Мужской", "М", "Male", "male", "m"}:
+            return "М"
+        if value_str in {"Женский", "Ж", "Female", "female", "f"}:
+            return "Ж"
+    return value_str
+
+
+def _set_feature_value(
+    df: pd.DataFrame,
+    feature: str,
+    value: Any,
+    cat_features_set: set[str],
+    *,
+    overwrite: bool = True,
+) -> bool:
+    if feature not in df.columns:
+        return False
+
+    current_value = df.loc[0, feature]
+    if not overwrite and pd.notna(current_value):
+        return False
+
+    if feature in cat_features_set:
+        if value is None or (isinstance(value, str) and not value.strip()):
+            return False
+        df.loc[0, feature] = _normalize_categorical_value(feature, value)
+        return True
+
+    try:
+        df.loc[0, feature] = _normalize_numeric_value(value)
+        return pd.notna(df.loc[0, feature])
+    except (ValueError, TypeError):
+        return False
+
+
 def prepare_patient_data(
     patient_data: Dict[str, Any],
     cohort: str
@@ -68,27 +116,35 @@ def prepare_patient_data(
     # This is a simplified mapping - in production, you'd want a more comprehensive mapping
     feature_mapping = {
         # Basic demographics
-        "age": ["Возраст", "age", "Возраст.1"],
-        "sex": ["sex", "Пол", "Пол.1"],
+        "age": ["Возраст", "возраст", "age", "Возраст.1", "лет"],
+        "sex": ["sex", "Sex", "Пол", "пол", "Пол.1"],
+        "glasgow": ["Шкала Глазго", "Шкала Глазго.1"],
+        "urea": ["Мочевина", "Мочевина.1", "БАК мочевина"],
+        "potassium": ["Калий", "Калий.1", "калий"],
+        "sodium": ["Натрий", "Натрий.1", "натрий"],
         
         # Common lab values
-        "leukocytes": ["WBC Лейкоциты", "Лейкоциты"],
-        "crp": ["С-реактивный белок (СРБ)", "С-реактивный белок (СРБ).1"],
+        "leukocytes": ["WBC Лейкоциты", "Лейкоциты", "ОАК лейкоциты", "Общие лейкоциты"],
+        "crp": ["С-реактивный белок (СРБ)", "С-реактивный белок (СРБ).1", "СРБ1, мг/л", "СРБ2"],
         "pct": ["Прокальцитонин"],  # May not be in all models
-        "sofa": ["Шкала SOFA", "Шкала SOFA.1"],
+        "sofa": ["Шкала SOFA", "Шкала SOFA.1", "SOFA"],
         "temperature": [],  # May not be directly in model
         
         # Blood counts
-        "platelets": ["PLT Тромбоциты", "PLT Тромбоциты.1"],
-        "neutrophils": ["Нейтрофилы", "Нейтрофилы.1"],
-        "lymphocytes": ["Лимфоциты", "Лимфоциты.1"],
-        "creatinine": ["Креатинин", "Креатинин.1"],
+        "platelets": ["PLT Тромбоциты", "PLT Тромбоциты.1", "тромбоциты"],
+        "neutrophils": ["Нейтрофилы", "Нейтрофилы.1", "нейтрофилы", "Нейтрофилы, абс"],
+        "lymphocytes": ["Лимфоциты", "Лимфоциты.1", "лимфоциты", "Лимфоциты, %", "Лимфоциты, абс"],
+        "creatinine": ["Креатинин", "Креатинин.1", "БАК креатинин"],
         "bilirubin": ["Билирубин общий", "Билирубин общий.1"],
     }
     
     # Fill in values from patient_data
     # Separate categorical and numeric features
     cat_features_set = set(artifacts.cat_features)
+
+    # First, copy direct feature values when the user enters exact model columns.
+    for feature, value in patient_data.items():
+        _set_feature_value(df, feature, value, cat_features_set)
     
     # First, handle all numeric features
     for gui_key, model_features in feature_mapping.items():
@@ -98,12 +154,7 @@ def prepare_patient_data(
             for feature in model_features:
                 if feature in artifacts.features and feature not in cat_features_set:
                     # Only set numeric features
-                    try:
-                        num_value = float(value) if value is not None else np.nan
-                        df.loc[0, feature] = num_value
-                    except (ValueError, TypeError):
-                        # If can't convert, leave as NaN
-                        pass
+                    _set_feature_value(df, feature, value, cat_features_set, overwrite=False)
     
     # Handle sex/gender mapping - only for categorical features
     if "sex" in patient_data:
@@ -111,10 +162,9 @@ def prepare_patient_data(
         # Map to model format
         sex_mapped = "М" if sex_value == "Мужской" else "Ж" if sex_value == "Женский" else str(sex_value)
         
-        for sex_feature in ["sex", "Пол", "Пол.1"]:
+        for sex_feature in ["sex", "Sex", "Пол", "пол", "Пол.1"]:
             if sex_feature in artifacts.features and sex_feature in cat_features_set:
-                # Only set for categorical features
-                df.loc[0, sex_feature] = str(sex_mapped)
+                _set_feature_value(df, sex_feature, sex_mapped, cat_features_set, overwrite=False)
     
     # Don't do any type conversion here - prepare_features in predict.py will handle it
     # It will:
@@ -188,3 +238,33 @@ def check_missing_features(
     
     df = prepare_patient_data(patient_data, cohort)
     return missing_columns_for_cohort(model_cohort, df)
+
+
+def get_input_coverage(patient_data: Dict[str, Any], cohort: str) -> Dict[str, Any]:
+    """Return how many model features are actually populated after GUI mapping."""
+    model_cohort = get_model_cohort_name(cohort)
+    if not model_cohort:
+        return {
+            "filled_count": 0,
+            "missing_count": 0,
+            "total_features": 0,
+            "coverage": 0.0,
+            "filled_features": [],
+            "missing_features": [],
+        }
+
+    artifacts = load_artifacts(model_cohort)
+    df = prepare_patient_data(patient_data, cohort)
+    row = df.iloc[0]
+    filled_features = [feature for feature in artifacts.features if pd.notna(row[feature])]
+    missing_features = [feature for feature in artifacts.features if pd.isna(row[feature])]
+    total_features = len(artifacts.features)
+
+    return {
+        "filled_count": len(filled_features),
+        "missing_count": len(missing_features),
+        "total_features": total_features,
+        "coverage": len(filled_features) / total_features if total_features else 0.0,
+        "filled_features": filled_features,
+        "missing_features": missing_features,
+    }

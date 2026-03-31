@@ -5,12 +5,14 @@ import plotly.graph_objects as go
 from datetime import datetime, timedelta
 import json
 import traceback
+from pathlib import Path
 
 from ml_service import (
     predict_patient,
     get_model_info,
     get_available_cohorts,
-    get_model_cohort_name
+    get_model_cohort_name,
+    get_input_coverage,
 )
 from auth_service import (
     register_user,
@@ -21,8 +23,9 @@ from auth_service import (
     get_user_stats,
     change_password,
     admin_reset_password,
+    clear_user_history,
 )
-from form_generator import generate_dynamic_form
+from form_generator import generate_dynamic_form, get_minimal_profile_status, get_input_examples
 from report_generator import generate_pdf_report, generate_csv_history, REPORTLAB_AVAILABLE
 
 # ===================== КОНФИГУРАЦИЯ СТРАНИЦЫ =====================
@@ -66,6 +69,7 @@ st.markdown("""
         border: 1px solid #dee2e6;
         margin-bottom: 1.5rem;
         text-align: center;
+        color: var(--dark);
     }
 
     .section-title {
@@ -102,6 +106,7 @@ st.markdown("""
         margin-bottom: 1rem;
         height: 100%;
         transition: transform 0.3s ease;
+        color: var(--dark);
     }
 
     .metric-card:hover {
@@ -116,7 +121,7 @@ st.markdown("""
     }
 
     .metric-label {
-        color: #666;
+        color: #4f5b67;
         font-size: 0.95rem;
         margin-bottom: 0.5rem;
         font-weight: 500;
@@ -144,6 +149,7 @@ st.markdown("""
         border: 2px solid #e9ecef;
         box-shadow: 0 2px 6px rgba(0,0,0,0.04);
         transition: all 0.2s ease;
+        color: var(--dark);
     }
 
     .factor-tile:hover {
@@ -171,7 +177,7 @@ st.markdown("""
     }
 
     .factor-value {
-        color: #666;
+        color: #4f5b67;
         font-size: 0.9rem;
         margin-bottom: 0.3rem;
     }
@@ -223,6 +229,14 @@ st.markdown("""
         border: 1px solid #dee2e6;
         box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         transition: transform 0.2s ease;
+        color: var(--dark);
+    }
+
+    .recommendation-card p,
+    .recommendation-card li,
+    .recommendation-card span,
+    .recommendation-card div {
+        color: inherit;
     }
 
     .recommendation-card:hover {
@@ -245,6 +259,7 @@ st.markdown("""
         border-radius: 12px;
         padding: 1.5rem;
         margin-top: 1.5rem;
+        color: var(--dark);
     }
 
     .whatif-controls {
@@ -284,6 +299,7 @@ st.markdown("""
         border: 1px solid #dee2e6;
         margin-bottom: 1.5rem;
         box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        color: var(--dark);
     }
 
     .cohort-info-banner {
@@ -321,6 +337,7 @@ st.markdown("""
         border: 1px solid #dee2e6;
         margin-bottom: 1rem;
         text-align: center;
+        color: var(--dark);
     }
 
     .stats-value {
@@ -330,7 +347,7 @@ st.markdown("""
     }
 
     .stats-label {
-        color: #666;
+        color: #4f5b67;
         font-size: 0.85rem;
         margin-top: 0.3rem;
     }
@@ -348,6 +365,7 @@ st.markdown("""
         align-items: center;
         flex-wrap: wrap;
         gap: 1rem;
+        color: var(--dark);
     }
 
     .patient-info-item {
@@ -357,7 +375,7 @@ st.markdown("""
     }
 
     .patient-info-label {
-        color: #666;
+        color: #4f5b67;
         font-size: 0.85rem;
     }
 
@@ -366,8 +384,158 @@ st.markdown("""
         color: var(--primary);
         font-size: 1rem;
     }
+
+    .history-detail-card {
+        background: white;
+        color: var(--dark);
+        padding: 1.2rem;
+        border-radius: 10px;
+        border: 1px solid #dee2e6;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .history-detail-title {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .history-detail-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+
+    .history-detail-label {
+        color: #5f6b7a;
+        font-size: 0.85rem;
+    }
+
+    .history-detail-value {
+        color: var(--dark);
+        font-weight: 600;
+    }
 </style>
 """, unsafe_allow_html=True)
+
+
+def parse_key_value_text(text: str) -> dict[str, object]:
+    parsed_data: dict[str, object] = {}
+    for line in text.splitlines():
+        if '=' not in line:
+            continue
+
+        key, value = line.split('=', 1)
+        key = key.strip()
+        value = value.strip()
+        if not key:
+            continue
+
+        try:
+            parsed_data[key] = float(value.replace(',', '.')) if '.' in value or ',' in value else int(value)
+        except ValueError:
+            parsed_data[key] = value
+
+    return parsed_data
+
+
+DRAFTS_DIR = Path("drafts")
+
+
+def patient_data_to_text(patient_data: dict[str, object]) -> str:
+    if not patient_data:
+        return ""
+    return "\n".join(f"{key} = {value}" for key, value in patient_data.items())
+
+
+def set_input_buffers(patient_data: dict[str, object]) -> None:
+    st.session_state.text_input_area = patient_data_to_text(patient_data)
+    st.session_state.json_input_area = json.dumps(patient_data, ensure_ascii=False, indent=2)
+
+
+def reset_input_widgets() -> None:
+    st.session_state.form_widget_nonce = st.session_state.get("form_widget_nonce", 0) + 1
+
+
+def get_draft_path(cohort: str, kind: str = "manual") -> Path:
+    cohort_slug = get_model_cohort_name(cohort) or "patient"
+    DRAFTS_DIR.mkdir(parents=True, exist_ok=True)
+    suffix = "draft" if kind == "manual" else "autosave"
+    return DRAFTS_DIR / f"{cohort_slug}_{suffix}.json"
+
+
+def patient_data_signature(patient_data: dict[str, object]) -> str:
+    return json.dumps(patient_data, ensure_ascii=False, sort_keys=True, default=str)
+
+
+def patient_data_diff(current_data: dict[str, object], saved_data: dict[str, object] | None) -> dict[str, int]:
+    saved_data = saved_data or {}
+    current_keys = set(current_data)
+    saved_keys = set(saved_data)
+    added = len(current_keys - saved_keys)
+    removed = len(saved_keys - current_keys)
+    changed = sum(1 for key in current_keys & saved_keys if current_data.get(key) != saved_data.get(key))
+    return {
+        "added": added,
+        "removed": removed,
+        "changed": changed,
+        "total": added + removed + changed,
+    }
+
+
+def save_draft(cohort: str, patient_data: dict[str, object], *, kind: str = "manual") -> Path:
+    draft_path = get_draft_path(cohort, kind)
+    payload = {
+        "cohort": cohort,
+        "kind": kind,
+        "saved_at": datetime.now().isoformat(timespec="seconds"),
+        "signature": patient_data_signature(patient_data),
+        "patient_data": patient_data,
+    }
+    draft_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return draft_path
+
+
+def load_draft_payload(cohort: str, kind: str = "manual") -> dict[str, object] | None:
+    draft_path = get_draft_path(cohort, kind)
+    if not draft_path.exists():
+        return None
+    return json.loads(draft_path.read_text(encoding="utf-8"))
+
+
+def load_draft(cohort: str, kind: str = "manual") -> dict[str, object] | None:
+    payload = load_draft_payload(cohort, kind)
+    if not payload:
+        return None
+    patient_data = payload.get("patient_data")
+    return patient_data if isinstance(patient_data, dict) else None
+
+
+def history_record_label(record: dict[str, object]) -> str:
+    analysis_id = str(record.get("analysis_id") or record.get("id") or "A-UNKNOWN")
+    patient_id = str(record.get("patient_id") or "P-UNKNOWN")
+    return f"{analysis_id} | {patient_id}"
+
+
+def matches_history_id(record_value: object, query: str) -> bool:
+    value = str(record_value or "").strip().lower()
+    query = query.strip().lower()
+    if not query:
+        return True
+    return value.startswith(query) or value == query
+
+
+def autosave_draft_if_needed(cohort: str, patient_data: dict[str, object]) -> tuple[bool, Path | None]:
+    if not patient_data:
+        return False, None
+
+    current_signature = patient_data_signature(patient_data)
+    autosave_payload = load_draft_payload(cohort, "autosave")
+    if autosave_payload and autosave_payload.get("signature") == current_signature:
+        return False, get_draft_path(cohort, "autosave")
+
+    saved_path = save_draft(cohort, patient_data, kind="autosave")
+    return True, saved_path
 
 # ===================== ИНИЦИАЛИЗАЦИЯ СЕССИИ =====================
 if 'authenticated' not in st.session_state:
@@ -385,11 +553,23 @@ if 'patient_data' not in st.session_state:
 if 'prediction_result' not in st.session_state:
     st.session_state.prediction_result = None
 if 'patient_id' not in st.session_state:
-    st.session_state.patient_id = "P-001"
+    st.session_state.patient_id = ""
 if 'show_login' not in st.session_state:
     st.session_state.show_login = True
 if 'show_register' not in st.session_state:
     st.session_state.show_register = False
+if 'text_input_area' not in st.session_state:
+    st.session_state.text_input_area = ""
+if 'json_input_area' not in st.session_state:
+    st.session_state.json_input_area = "{}"
+if 'input_example_variant' not in st.session_state:
+    st.session_state.input_example_variant = "Минимальный"
+if 'input_buffer_profile_key' not in st.session_state:
+    st.session_state.input_buffer_profile_key = ""
+if 'show_examples' not in st.session_state:
+    st.session_state.show_examples = False
+if 'form_widget_nonce' not in st.session_state:
+    st.session_state.form_widget_nonce = 0
 
 # ===================== ПРОВЕРКА АУТЕНТИФИКАЦИИ =====================
 # Проверка должна быть в самом начале, до всех остальных операций
@@ -411,7 +591,7 @@ if not st.session_state.authenticated:
         login_username = st.text_input("Имя пользователя", key="login_username")
         login_password = st.text_input("Пароль", type="password", key="login_password")
         
-        if st.button("Войти", use_container_width=True, type="primary"):
+        if st.button("Войти", width="stretch", type="primary"):
             success, user_data, message = login_user(login_username, login_password)
             if success:
                 st.session_state.authenticated = True
@@ -429,7 +609,7 @@ if not st.session_state.authenticated:
         reg_specialization = st.text_input("Специализация", key="reg_specialization", 
                                           value="Иммунолог-инфекционист")
         
-        if st.button("Зарегистрироваться", use_container_width=True, type="primary"):
+        if st.button("Зарегистрироваться", width="stretch", type="primary"):
             success, message = register_user(reg_username, reg_password, reg_full_name, reg_specialization)
             if success:
                 st.success(message)
@@ -445,7 +625,7 @@ if not st.session_state.authenticated:
         reset_new_pwd = st.text_input("Новый пароль", type="password", key="reset_new_pwd")
         reset_new_pwd_confirm = st.text_input("Повторите новый пароль", type="password", key="reset_new_pwd_confirm")
 
-        if st.button("Сбросить пароль", use_container_width=True, key="reset_pwd_button"):
+        if st.button("Сбросить пароль", width="stretch", key="reset_pwd_button"):
             if not reset_username or not admin_code or not reset_new_pwd or not reset_new_pwd_confirm:
                 st.error("Пожалуйста, заполните все поля для сброса пароля.")
             elif reset_new_pwd != reset_new_pwd_confirm:
@@ -470,7 +650,7 @@ cohorts = {
         "patients": 248,
         "features": 42,
         "type": "Регрессия",
-        "description": "Прогноз тяжести сепсиса по шкале SOFA на 72 часа",
+        "description": "Оценка тяжести сепсиса по доступным клинико-лабораторным данным",
         "available": True
     },
     "Перитонит": {
@@ -554,7 +734,7 @@ with st.sidebar:
         <div style="font-weight: bold; color: var(--primary); font-size: 1.1rem; margin-bottom: 0.3rem;">
             {user.get("full_name", "Пользователь") if user else "Пользователь"}
         </div>
-        <div style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">
+        <div style="color: #4f5b67; font-size: 0.9rem; margin-bottom: 0.5rem;">
             {user.get("specialization", "Врач") if user else "Врач"}
         </div>
     </div>
@@ -585,7 +765,7 @@ with st.sidebar:
         new_pwd = st.text_input("Новый пароль", type="password", key="change_pwd_new")
         new_pwd_confirm = st.text_input("Повторите новый пароль", type="password", key="change_pwd_confirm")
 
-        if st.button("Изменить пароль", use_container_width=True):
+        if st.button("Изменить пароль", width="stretch"):
             if not current_pwd or not new_pwd or not new_pwd_confirm:
                 st.error("Пожалуйста, заполните все поля для смены пароля.")
             elif new_pwd != new_pwd_confirm:
@@ -599,11 +779,12 @@ with st.sidebar:
 
     st.markdown("---")
 
-    if st.button("Выйти", use_container_width=True):
+    if st.button("Выйти", width="stretch"):
         st.session_state.authenticated = False
         st.session_state.current_user = None
         st.session_state.prediction_made = False
         st.session_state.show_history = False
+        st.session_state.show_examples = False
         st.rerun()
 
     st.divider()
@@ -637,6 +818,10 @@ with st.sidebar:
         st.session_state.selected_cohort = selected_cohort
         st.session_state.prediction_made = False
         st.session_state.prediction_result = None
+        st.session_state.patient_data = {}
+        set_input_buffers({})
+        reset_input_widgets()
+        st.session_state.show_examples = False
         st.rerun()
 
     # Информация о выбранной когорте (all shown cohorts have models)
@@ -658,13 +843,20 @@ with st.sidebar:
     # Быстрые действия
     st.markdown("### Быстрые действия")
 
-    if st.button("Новый анализ", use_container_width=True, type="primary"):
+    if st.button("Новый анализ", width="stretch", type="primary"):
         st.session_state.prediction_made = False
         st.session_state.show_history = False
+        st.session_state.show_examples = False
 
-    if st.button("История анализов", use_container_width=True):
+    if st.button("История анализов", width="stretch"):
         st.session_state.show_history = True
         st.session_state.prediction_made = True
+
+    if st.button("Библиотека примеров", width="stretch"):
+        st.session_state.show_examples = True
+        st.session_state.show_history = False
+        st.session_state.prediction_made = False
+        st.rerun()
 
 # Get user's personal history (only if authenticated)
 user = st.session_state.current_user
@@ -690,26 +882,29 @@ if st.session_state.show_history:
     st.markdown('<div class="section-title">История анализов</div>', unsafe_allow_html=True)
 
     # Фильтры для истории
-    col_filter1, col_filter2, col_filter3, col_filter4 = st.columns(4)
+    col_filter1, col_filter2, col_filter3, col_filter4, col_filter5 = st.columns(5)
 
     with col_filter1:
-        search_query = st.text_input("Поиск по ID пациента", placeholder="Введите ID...")
+        patient_search_query = st.text_input("Поиск по ID пациента", placeholder="Например: P-002")
 
     with col_filter2:
+        analysis_search_query = st.text_input("Поиск по ID анализа", placeholder="Например: A-002")
+
+    with col_filter3:
         cohort_filter = st.multiselect(
             "Фильтр по когорте",
             ["Все", "Сепсис", "Перитонит", "ИБС", "COVID-19", "Онкология", "IL-2 постковид", "Ревматоидный артрит"],
             default=["Все"]
         )
 
-    with col_filter3:
+    with col_filter4:
         risk_filter = st.multiselect(
             "Фильтр по риску",
             ["Все", "Высокий", "Средний", "Низкий"],
             default=["Все"]
         )
 
-    with col_filter4:
+    with col_filter5:
         date_range = st.date_input(
             "Период",
             [datetime.now() - timedelta(days=30), datetime.now()]
@@ -718,8 +913,17 @@ if st.session_state.show_history:
     # Применяем фильтры
     filtered_history = history_data.copy()
 
-    if search_query:
-        filtered_history = [h for h in filtered_history if search_query.lower() in h.get("patient_id", h.get("id", "")).lower()]
+    if patient_search_query:
+        filtered_history = [
+            h for h in filtered_history
+            if matches_history_id(h.get("patient_id", ""), patient_search_query)
+        ]
+
+    if analysis_search_query:
+        filtered_history = [
+            h for h in filtered_history
+            if matches_history_id(h.get("analysis_id", h.get("id", "")), analysis_search_query)
+        ]
 
     if "Все" not in cohort_filter:
         filtered_history = [h for h in filtered_history if h["cohort"] in cohort_filter]
@@ -753,6 +957,15 @@ if st.session_state.show_history:
 
         # Создаем DataFrame
         history_df = pd.DataFrame(filtered_history)
+        for column in ["id", "prediction"]:
+            if column in history_df.columns:
+                history_df = history_df.drop(columns=[column])
+
+        display_columns = [
+            column for column in ["analysis_id", "patient_id", "cohort", "risk", "sofa", "doctor", "status", "date"]
+            if column in history_df.columns
+        ]
+        history_df = history_df[display_columns]
 
         # Создаем стилизованный DataFrame с закругленными углами
         st.markdown('<div class="dataframe-container">', unsafe_allow_html=True)
@@ -761,7 +974,8 @@ if st.session_state.show_history:
         st.dataframe(
             history_df,
             column_config={
-                "id": st.column_config.TextColumn("ID пациента", width="small"),
+                "analysis_id": st.column_config.TextColumn("ID анализа", width="small"),
+                "patient_id": st.column_config.TextColumn("ID пациента", width="small"),
                 "date": st.column_config.TextColumn("Дата анализа", width="medium"),
                 "cohort": st.column_config.TextColumn("Когорта", width="small"),
                 "risk": st.column_config.TextColumn(
@@ -779,7 +993,7 @@ if st.session_state.show_history:
                 "status": st.column_config.TextColumn("Статус", width="medium")
             },
             hide_index=True,
-            use_container_width=True
+            width="stretch"
         )
 
         st.markdown('</div>', unsafe_allow_html=True)
@@ -791,10 +1005,14 @@ if st.session_state.show_history:
         col_action1, col_action2, col_action3 = st.columns(3)
 
         with col_action1:
-            selected_id = st.selectbox("Выберите запись для детального просмотра",
-                                       [""] + [h.get("patient_id", h.get("id", "")) for h in filtered_history])
+            history_options = [""] + [history_record_label(h) for h in filtered_history]
+            selected_id = st.selectbox("Выберите запись для детального просмотра", history_options)
             if selected_id:
-                selected_record = next((h for h in filtered_history if h.get("patient_id", h.get("id", "")) == selected_id), None)
+                selected_analysis_id = selected_id.split(" | ", 1)[0]
+                selected_record = next(
+                    (h for h in filtered_history if str(h.get("analysis_id", h.get("id", ""))) == selected_analysis_id),
+                    None,
+                )
                 if selected_record:
                     # Определяем цвет для риска
                     risk_color = ""
@@ -806,36 +1024,40 @@ if st.session_state.show_history:
                         risk_color = "#28a745"
 
                     st.markdown(f"""
-                    <div style="background: white; padding: 1.2rem; border-radius: 10px; border: 1px solid #dee2e6; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                        <div style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Детали записи:</div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+                    <div class="history-detail-card">
+                        <div class="history-detail-title">Детали записи:</div>
+                        <div class="history-detail-grid">
                             <div>
-                                <div style="color: #666; font-size: 0.85rem;">Пациент</div>
-                                <div style="font-weight: 600;">{selected_record.get('patient_id', selected_record.get('id', ''))}</div>
+                                <div class="history-detail-label">Пациент</div>
+                                <div class="history-detail-value">{selected_record.get('patient_id', 'P-UNKNOWN')}</div>
                             </div>
                             <div>
-                                <div style="color: #666; font-size: 0.85rem;">Дата</div>
-                                <div style="font-weight: 600;">{selected_record['date']}</div>
+                                <div class="history-detail-label">Анализ</div>
+                                <div class="history-detail-value">{selected_record.get('analysis_id', selected_record.get('id', 'A-UNKNOWN'))}</div>
                             </div>
                             <div>
-                                <div style="color: #666; font-size: 0.85rem;">Когорта</div>
-                                <div style="font-weight: 600;">{selected_record['cohort']}</div>
+                                <div class="history-detail-label">Дата</div>
+                                <div class="history-detail-value">{selected_record['date']}</div>
                             </div>
                             <div>
-                                <div style="color: #666; font-size: 0.85rem;">Риск</div>
-                                <div style="font-weight: 600; color: {risk_color};">{selected_record['risk']}</div>
+                                <div class="history-detail-label">Когорта</div>
+                                <div class="history-detail-value">{selected_record['cohort']}</div>
                             </div>
                             <div>
-                                <div style="color: #666; font-size: 0.85rem;">SOFA</div>
-                                <div style="font-weight: 600;">{selected_record['sofa']}</div>
+                                <div class="history-detail-label">Риск</div>
+                                <div class="history-detail-value" style="color: {risk_color};">{selected_record['risk']}</div>
                             </div>
                             <div>
-                                <div style="color: #666; font-size: 0.85rem;">Врач</div>
-                                <div style="font-weight: 600;">{selected_record['doctor']}</div>
+                                <div class="history-detail-label">SOFA</div>
+                                <div class="history-detail-value">{selected_record['sofa']}</div>
+                            </div>
+                            <div>
+                                <div class="history-detail-label">Врач</div>
+                                <div class="history-detail-value">{selected_record['doctor']}</div>
                             </div>
                             <div style="grid-column: span 2;">
-                                <div style="color: #666; font-size: 0.85rem;">Статус</div>
-                                <div style="font-weight: 600;">{selected_record['status']}</div>
+                                <div class="history-detail-label">Статус</div>
+                                <div class="history-detail-value">{selected_record['status']}</div>
                             </div>
                         </div>
                     </div>
@@ -853,23 +1075,91 @@ if st.session_state.show_history:
                     data=csv_content,
                     file_name=csv_filename,
                     mime="text/csv",
-                    use_container_width=True
+                    width="stretch"
                 )
             else:
                 st.info("Нет данных для экспорта")
 
         with col_action3:
             st.markdown("###")
-            if st.button("Очистить фильтры", use_container_width=True):
+            if st.button("Очистить фильтры", width="stretch"):
                 st.session_state.show_history = True
                 st.rerun()
+
+        clear_col1, clear_col2 = st.columns([1, 2])
+        with clear_col1:
+            if st.button("Очистить историю", width="stretch", type="secondary"):
+                success, message = clear_user_history(user["username"])
+                if success:
+                    st.session_state.current_user = {
+                        **user,
+                        "stats": get_user_stats(user["username"]),
+                        "history": get_user_history(user["username"]),
+                    }
+                    st.success(message)
+                    st.rerun()
+                else:
+                    st.error(message)
+        with clear_col2:
+            st.caption("Очищает историю анализов текущего пользователя и сбрасывает связанные счетчики.")
 
     else:
         st.warning("Записи не найдены по заданным фильтрам")
 
+        if st.button("Очистить историю", width="stretch"):
+            success, message = clear_user_history(user["username"])
+            if success:
+                st.session_state.current_user = {
+                    **user,
+                    "stats": get_user_stats(user["username"]),
+                    "history": get_user_history(user["username"]),
+                }
+                st.success(message)
+                st.rerun()
+            else:
+                st.error(message)
+
     # Кнопка возврата
-    if st.button("Вернуться к анализу", use_container_width=True):
+    if st.button("Вернуться к анализу", width="stretch"):
         st.session_state.show_history = False
+        st.rerun()
+
+# ===================== БИБЛИОТЕКА ПРИМЕРОВ =====================
+elif st.session_state.show_examples:
+    st.markdown('<div class="section-title">Библиотека примеров пациентов</div>', unsafe_allow_html=True)
+    st.caption("Здесь можно быстро загрузить минимальный или расширенный учебный кейс для любой доступной когорты.")
+
+    selected_library_cohort = st.selectbox(
+        "Когорта для примеров",
+        list(cohorts.keys()),
+        index=list(cohorts.keys()).index(st.session_state.selected_cohort) if st.session_state.selected_cohort in cohorts else 0,
+    )
+
+    lib_col1, lib_col2 = st.columns(2)
+    for col, variant_label, variant_key in [
+        (lib_col1, "Минимальный пример", "minimal"),
+        (lib_col2, "Расширенный пример", "extended"),
+    ]:
+        with col:
+            example = get_input_examples(selected_library_cohort, variant_key)
+            example_data = json.loads(example["json"])
+            st.markdown(f"### {variant_label}")
+            st.code(example["text"], language="text")
+            if st.button(f"Загрузить: {variant_label}", key=f"library_{selected_library_cohort}_{variant_key}", width="stretch"):
+                st.session_state.selected_cohort = selected_library_cohort
+                st.session_state.input_example_variant = "Расширенный" if variant_key == "extended" else "Минимальный"
+                st.session_state.patient_data = example_data
+                st.session_state.patient_id = str(example_data.get("patient_id", "P-001"))
+                set_input_buffers(example_data)
+                reset_input_widgets()
+                st.session_state.input_buffer_profile_key = f"{selected_library_cohort}:{variant_key}"
+                st.session_state.show_examples = False
+                st.session_state.show_history = False
+                st.session_state.prediction_made = False
+                st.rerun()
+
+    if st.button("Вернуться к вводу пациента", width="stretch"):
+        st.session_state.show_examples = False
         st.rerun()
 
 # ===================== РАЗДЕЛ: АНАЛИЗ ПАЦИЕНТА =====================
@@ -881,7 +1171,7 @@ elif not st.session_state.prediction_made:
     <div class="cohort-info-banner">
         <div style="font-weight: 600; color: var(--primary);">Выбрана когорта:</div>
         <div style="font-size: 1.1rem; font-weight: 600;">{st.session_state.selected_cohort}</div>
-        <div style="color: #666; font-size: 0.9rem;">{cohorts[st.session_state.selected_cohort]['description']}</div>
+        <div style="color: #4f5b67; font-size: 0.9rem;">{cohorts[st.session_state.selected_cohort]['description']}</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -893,12 +1183,116 @@ elif not st.session_state.prediction_made:
         label_visibility="collapsed"
     )
 
+    example_variant_label = st.radio(
+        "Тип примера",
+        ["Минимальный", "Расширенный"],
+        horizontal=True,
+        key="input_example_variant",
+    )
+    example_variant = "extended" if example_variant_label == "Расширенный" else "minimal"
+
+    input_examples = get_input_examples(st.session_state.selected_cohort, example_variant)
+    example_payload = json.loads(input_examples["json"])
+    current_buffer_profile_key = f"{st.session_state.selected_cohort}:{example_variant}"
+    if st.session_state.input_buffer_profile_key != current_buffer_profile_key and not st.session_state.patient_data:
+        st.session_state.input_buffer_profile_key = current_buffer_profile_key
+
+    current_input_json = json.dumps(st.session_state.patient_data, ensure_ascii=False, indent=2) if st.session_state.patient_data else "{}"
+    current_input_csv = pd.DataFrame([st.session_state.patient_data]).to_csv(index=False) if st.session_state.patient_data else ""
+    cohort_slug = get_model_cohort_name(st.session_state.selected_cohort) or "patient"
+    manual_draft_path = get_draft_path(st.session_state.selected_cohort, "manual")
+    autosave_path = get_draft_path(st.session_state.selected_cohort, "autosave")
+    draft_exists = manual_draft_path.exists()
+    autosave_exists = autosave_path.exists()
+    manual_draft_data = load_draft(st.session_state.selected_cohort, "manual")
+    autosave_payload = load_draft_payload(st.session_state.selected_cohort, "autosave")
+    manual_diff = patient_data_diff(st.session_state.patient_data, manual_draft_data)
+
+    st.markdown("### Быстрые действия с вводом")
+    action_col1, action_col2, action_col3, action_col4, action_col5, action_col6 = st.columns(6)
+
+    with action_col1:
+        if st.button("Загрузить пример", width="stretch"):
+            st.session_state.patient_data = example_payload.copy()
+            st.session_state.patient_id = example_payload.get("patient_id", "P-001")
+            set_input_buffers(example_payload)
+            reset_input_widgets()
+            st.session_state.input_buffer_profile_key = current_buffer_profile_key
+            st.success("Пример для выбранной когорты загружен в форму")
+            st.rerun()
+
+    with action_col2:
+        if st.button("Очистить ввод", width="stretch"):
+            st.session_state.patient_data = {}
+            st.session_state.patient_id = ""
+            set_input_buffers({})
+            reset_input_widgets()
+            st.session_state.input_buffer_profile_key = current_buffer_profile_key
+            st.success("Текущий ввод очищен")
+            st.rerun()
+
+    with action_col3:
+        if st.button("Сохранить черновик", width="stretch", disabled=not bool(st.session_state.patient_data)):
+            saved_path = save_draft(st.session_state.selected_cohort, st.session_state.patient_data, kind="manual")
+            st.success(f"Черновик сохранён: {saved_path}")
+
+    with action_col4:
+        if st.button("Загрузить черновик", width="stretch", disabled=not draft_exists):
+            draft_data = load_draft(st.session_state.selected_cohort, "manual")
+            if draft_data is not None:
+                st.session_state.patient_data = draft_data
+                st.session_state.patient_id = str(draft_data.get("patient_id", "P-001"))
+                set_input_buffers(draft_data)
+                reset_input_widgets()
+                st.session_state.input_buffer_profile_key = current_buffer_profile_key
+                st.success("Черновик загружен")
+                st.rerun()
+            else:
+                st.error("Не удалось прочитать черновик")
+
+    with action_col5:
+        st.download_button(
+            label="Экспорт JSON",
+            data=current_input_json,
+            file_name=f"{cohort_slug}_input.json",
+            mime="application/json",
+            width="stretch",
+            disabled=not bool(st.session_state.patient_data),
+        )
+
+    with action_col6:
+        st.download_button(
+            label="Экспорт CSV",
+            data=current_input_csv,
+            file_name=f"{cohort_slug}_input.csv",
+            mime="text/csv",
+            width="stretch",
+            disabled=not bool(st.session_state.patient_data),
+        )
+
+    if draft_exists:
+        st.caption(f"Ручной черновик: {manual_draft_path}")
+    elif st.session_state.patient_data:
+        st.caption("Ручной черновик ещё не сохранён")
+
+    if manual_diff["total"] == 0 and draft_exists:
+        st.success("Текущие данные совпадают с последним ручным сохранением")
+    elif st.session_state.patient_data and draft_exists:
+        st.info(
+            f"Изменения с прошлого ручного сохранения: +{manual_diff['added']} / ~{manual_diff['changed']} / -{manual_diff['removed']}"
+        )
+
+    if autosave_exists and autosave_payload:
+        st.caption(f"Автосохранение: {autosave_payload.get('saved_at', 'неизвестно')} -> {autosave_path}")
+
     if input_method == "Форма":
         # Dynamic form based on cohort model features
         st.session_state.patient_data = generate_dynamic_form(
             st.session_state.selected_cohort,
-            st.session_state.patient_data
+            st.session_state.patient_data,
+            st.session_state.form_widget_nonce,
         )
+        set_input_buffers(st.session_state.patient_data)
         if "patient_id" in st.session_state.patient_data:
             st.session_state.patient_id = st.session_state.patient_data["patient_id"]
 
@@ -906,35 +1300,13 @@ elif not st.session_state.prediction_made:
         text_input = st.text_area(
             "Введите данные пациента",
             height=250,
-            value="""patient_id = P-001
-age = 62
-sex = Мужской
-temperature = 38.5
-leukocytes = 14.2
-crp = 124
-pct = 2.4
-sofa = 7
-neutrophils = 82
-lymphocytes = 8"""
+            key="text_input_area"
         )
-        # Parse text input (simplified parser)
         if text_input:
-            parsed_data = {}
-            for line in text_input.split('\n'):
-                if '=' in line:
-                    key, value = line.split('=', 1)
-                    key = key.strip()
-                    value = value.strip()
-                    # Try to convert to number
-                    try:
-                        if '.' in value:
-                            parsed_data[key] = float(value)
-                        else:
-                            parsed_data[key] = int(value)
-                    except:
-                        parsed_data[key] = value
+            parsed_data = parse_key_value_text(text_input)
             if parsed_data:
-                st.session_state.patient_data.update(parsed_data)
+                st.session_state.patient_data = parsed_data.copy()
+                st.session_state.input_buffer_profile_key = current_buffer_profile_key
                 if "patient_id" in parsed_data:
                     st.session_state.patient_id = parsed_data["patient_id"]
 
@@ -942,25 +1314,15 @@ lymphocytes = 8"""
         json_input = st.text_area(
             "Введите данные пациента в формате JSON",
             height=250,
-            value='''{
-    "patient_id": "P-001",
-    "age": 62,
-    "sex": "Мужской",
-    "temperature": 38.5,
-    "leukocytes": 14.2,
-    "crp": 124,
-    "pct": 2.4,
-    "sofa": 7,
-    "neutrophils": 82,
-    "lymphocytes": 8
-}'''
+            key="json_input_area"
         )
         # Parse JSON input
         if json_input:
             try:
                 parsed_data = json.loads(json_input)
                 if parsed_data:
-                    st.session_state.patient_data.update(parsed_data)
+                    st.session_state.patient_data = parsed_data.copy()
+                    st.session_state.input_buffer_profile_key = current_buffer_profile_key
                     if "patient_id" in parsed_data:
                         st.session_state.patient_id = parsed_data["patient_id"]
             except json.JSONDecodeError as e:
@@ -979,21 +1341,106 @@ lymphocytes = 8"""
                         # Convert first row to dict
                         parsed_data = df_file.iloc[0].to_dict()
                         st.session_state.patient_data.update(parsed_data)
+                        st.session_state.input_buffer_profile_key = current_buffer_profile_key
+                        set_input_buffers(st.session_state.patient_data)
+                        st.success(f"Файл '{uploaded_file.name}' успешно загружен")
+                elif uploaded_file.name.endswith('.xlsx'):
+                    df_file = pd.read_excel(uploaded_file)
+                    if not df_file.empty:
+                        parsed_data = df_file.iloc[0].to_dict()
+                        st.session_state.patient_data.update(parsed_data)
+                        st.session_state.input_buffer_profile_key = current_buffer_profile_key
+                        set_input_buffers(st.session_state.patient_data)
+                        if "patient_id" in parsed_data:
+                            st.session_state.patient_id = parsed_data["patient_id"]
+                        st.success(f"Файл '{uploaded_file.name}' успешно загружен")
+                elif uploaded_file.name.endswith('.txt'):
+                    parsed_data = parse_key_value_text(uploaded_file.getvalue().decode('utf-8'))
+                    if parsed_data:
+                        st.session_state.patient_data.update(parsed_data)
+                        st.session_state.input_buffer_profile_key = current_buffer_profile_key
+                        set_input_buffers(st.session_state.patient_data)
+                        if "patient_id" in parsed_data:
+                            st.session_state.patient_id = parsed_data["patient_id"]
                         st.success(f"Файл '{uploaded_file.name}' успешно загружен")
                 elif uploaded_file.name.endswith('.json'):
                     parsed_data = json.load(uploaded_file)
                     if parsed_data:
                         st.session_state.patient_data.update(parsed_data)
+                        st.session_state.input_buffer_profile_key = current_buffer_profile_key
+                        set_input_buffers(st.session_state.patient_data)
                         if "patient_id" in parsed_data:
                             st.session_state.patient_id = parsed_data["patient_id"]
                         st.success(f"Файл '{uploaded_file.name}' успешно загружен")
             except Exception as e:
                 st.error(f"Ошибка при загрузке файла: {str(e)}")
 
+    autosave_saved, autosave_saved_path = autosave_draft_if_needed(
+        st.session_state.selected_cohort,
+        st.session_state.patient_data,
+    )
+    latest_manual_draft = load_draft(st.session_state.selected_cohort, "manual")
+    latest_manual_diff = patient_data_diff(st.session_state.patient_data, latest_manual_draft)
+
+    if autosave_saved and autosave_saved_path:
+        st.caption(f"Автосохранение обновлено: {autosave_saved_path}")
+
+    if latest_manual_diff["total"] == 0 and latest_manual_draft:
+        st.success("Изменений относительно последнего ручного сохранения нет")
+    elif st.session_state.patient_data and latest_manual_draft:
+        st.info(
+            f"Новые изменения относительно ручного черновика: +{latest_manual_diff['added']} / ~{latest_manual_diff['changed']} / -{latest_manual_diff['removed']}"
+        )
+    elif st.session_state.patient_data:
+        st.info("Можно сохранить текущий кейс как ручной черновик для дальнейшей работы")
+
+    profile_status = get_minimal_profile_status(st.session_state.selected_cohort, st.session_state.patient_data)
+    if st.session_state.patient_data:
+        missing_profile_preview = ", ".join(profile_status["missing_fields"][:5])
+        if profile_status["completion"] < 0.6:
+            st.warning(
+                f"Минимальный профиль заполнен на {profile_status['completion'] * 100:.1f}% "
+                f"({len(profile_status['filled_fields'])} из {profile_status['total_fields']} полей)."
+            )
+        else:
+            st.success(
+                f"Минимальный профиль заполнен на {profile_status['completion'] * 100:.1f}% "
+                f"({len(profile_status['filled_fields'])} из {profile_status['total_fields']} полей)."
+            )
+
+        if missing_profile_preview:
+            st.caption(f"Поля минимального профиля, которые ещё стоит проверить: {missing_profile_preview}")
+
+    coverage_info = get_input_coverage(st.session_state.patient_data, st.session_state.selected_cohort)
+    total_features = coverage_info["total_features"]
+    filled_count = coverage_info["filled_count"]
+    coverage_ratio = coverage_info["coverage"]
+
+    if total_features and st.session_state.patient_data:
+        missing_preview = ", ".join(coverage_info["missing_features"][:5])
+        if coverage_ratio < 0.15:
+            st.warning(
+                f"Заполнено только {filled_count} из {total_features} признаков "
+                f"({coverage_ratio * 100:.1f}%). Прогноз будет очень грубым приближением."
+            )
+        elif coverage_ratio < 0.4:
+            st.info(
+                f"Заполнено {filled_count} из {total_features} признаков "
+                f"({coverage_ratio * 100:.1f}%). Для более надежного результата заполните больше полей."
+            )
+        elif st.session_state.patient_data:
+            st.success(
+                f"Заполнено {filled_count} из {total_features} признаков "
+                f"({coverage_ratio * 100:.1f}%)."
+            )
+
+        if missing_preview:
+            st.caption(f"Примеры незаполненных признаков: {missing_preview}")
+
     # Кнопка запуска анализа
     col_btn1, col_btn2, col_btn3 = st.columns([1, 2, 1])
     with col_btn2:
-        if st.button("Запустить анализ пациента", use_container_width=True, type="primary"):
+        if st.button("Запустить анализ пациента", width="stretch", type="primary"):
             # Model should always be available since we filtered cohorts
             if st.session_state.selected_cohort not in available_cohort_list:
                 st.error(f"Модель не доступна для когорты '{st.session_state.selected_cohort}'. Выберите другую когорту.")
@@ -1030,7 +1477,7 @@ lymphocytes = 8"""
                             sofa_value = prediction_result["pred"][0]
                         
                         analysis_record = {
-                            "patient_id": st.session_state.patient_id,
+                            "patient_id": str(st.session_state.patient_data.get("patient_id") or st.session_state.patient_id or "P-UNKNOWN"),
                             "cohort": st.session_state.selected_cohort,
                             "risk": risk_level,
                             "sofa": sofa_value,
@@ -1196,7 +1643,7 @@ else:
         <div class="metric-card">
             <div class="metric-label">Качество модели</div>
             <div class="metric-value">{quality_value:.2f}</div>
-            <div class="metric-delta delta-positive">{quality_label} на валидации</div>
+            <div class="metric-delta delta-positive">{quality_label} на тестовом сплите</div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -1205,20 +1652,20 @@ else:
         if pred_result["task"] == "regression":
             pred_value = pred_result["pred"][0] if pred_result["pred"] else 0
             if pred_value >= 8:
-                time_info = "12-24 ч"
-                time_label = "критический период"
+                interpretation_value = "Высокий"
+                interpretation_label = "условная категория по прогнозу SOFA"
             elif pred_value >= 5:
-                time_info = "24-48 ч"
-                time_label = "требует внимания"
+                interpretation_value = "Средний"
+                interpretation_label = "условная категория по прогнозу SOFA"
             else:
-                time_info = "48+ ч"
-                time_label = "стабильное состояние"
+                interpretation_value = "Низкий"
+                interpretation_label = "условная категория по прогнозу SOFA"
             
             st.markdown(f"""
             <div class="metric-card">
-                <div class="metric-label">Ожидаемое время</div>
-                <div class="metric-value">{time_info}</div>
-                <div class="metric-delta delta-positive">{time_label}</div>
+                <div class="metric-label">Категория прогноза</div>
+                <div class="metric-value">{interpretation_value}</div>
+                <div class="metric-delta delta-positive">{interpretation_label}</div>
             </div>
             """, unsafe_allow_html=True)
         else:
@@ -1231,7 +1678,8 @@ else:
             """, unsafe_allow_html=True)
 
     # ===================== БЛОК: ПРОГНОЗ ДИНАМИКИ =====================
-    st.markdown('<div class="subsection-title">Прогноз динамики</div>', unsafe_allow_html=True)
+    st.markdown('<div class="subsection-title">Визуализация прогноза</div>', unsafe_allow_html=True)
+    st.caption("Для регрессии ниже показана учебная визуализация между текущим значением и прогнозом модели, а не отдельная временная модель на 72 часа.")
 
     # Создаем график прогноза (только для регрессии)
     if pred_result["task"] == "regression":
@@ -1279,8 +1727,8 @@ else:
             )
 
         fig.update_layout(
-            title=f"Динамика {cohorts[st.session_state.selected_cohort]['target']} на следующие 72 часа",
-            xaxis_title="Часы с текущего момента",
+            title=f"Иллюстрация перехода к прогнозу {cohorts[st.session_state.selected_cohort]['target']}",
+            xaxis_title="Условная шкала визуализации",
             yaxis_title=cohorts[st.session_state.selected_cohort]['target'],
             template="plotly_white",
             height=400,
@@ -1289,7 +1737,7 @@ else:
             paper_bgcolor='white'
         )
 
-        st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': True})
+        st.plotly_chart(fig, width="stretch", config={'displayModeBar': True})
     elif pred_result["task"] == "classification":
         # Show probability bar chart
         proba = pred_result.get("proba", [0])[0] if pred_result.get("proba") else 0
@@ -1317,7 +1765,7 @@ else:
             height=300,
             template="plotly_white"
         )
-        st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': True})
+        st.plotly_chart(fig, width="stretch", config={'displayModeBar': True})
     else:  # multiclass
         # Show top-3 predictions
         top3 = pred_result.get("top3", [[("", 0)]])[0] if pred_result.get("top3") else [("", 0)]
@@ -1340,7 +1788,7 @@ else:
             height=300,
             template="plotly_white"
         )
-        st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': True})
+        st.plotly_chart(fig, width="stretch", config={'displayModeBar': True})
 
     # ===================== БЛОК: ЧТО-ЕСЛИ АНАЛИЗ =====================
     st.markdown('<div class="subsection-title">Что-если анализ</div>', unsafe_allow_html=True)
@@ -1394,7 +1842,7 @@ else:
 
     with col_whatif3:
         st.markdown("###")
-        if st.button("Пересчитать", use_container_width=True):
+        if st.button("Пересчитать", width="stretch"):
             # Create modified patient data
             modified_data = patient_data.copy()
             if whatif_param == "Прокальцитонин":
@@ -1409,6 +1857,9 @@ else:
             try:
                 with st.spinner("Пересчет..."):
                     new_prediction = predict_patient(modified_data, st.session_state.selected_cohort)
+                    st.session_state.patient_data = modified_data
+                    set_input_buffers(modified_data)
+                    reset_input_widgets()
                     st.session_state.prediction_result = new_prediction
                     st.success("Прогноз пересчитан!")
                     st.rerun()
@@ -1502,7 +1953,8 @@ else:
             """, unsafe_allow_html=True)
 
     # Рекомендации
-    st.markdown('<div class="subsection-title" style="margin-top: 2.5rem;">Рекомендации</div>', unsafe_allow_html=True)
+    st.markdown('<div class="subsection-title" style="margin-top: 2.5rem;">Учебные рекомендации</div>', unsafe_allow_html=True)
+    st.warning("Ниже приведен общий учебный шаблон рекомендаций. Это не персонализированное медицинское назначение и не заменяет решение врача.")
 
     col_rec1, col_rec2 = st.columns(2)
 
@@ -1510,7 +1962,7 @@ else:
         st.markdown("""
         <div class="recommendation-card">
             <div class="recommendation-title">Мониторинг и наблюдение</div>
-            <ul style="margin: 0; padding-left: 1.2rem; color: #495057;">
+            <ul style="margin: 0; padding-left: 1.2rem; color: inherit;">
                 <li>Усилить мониторинг витальных функций (каждые 6 часов)</li>
                 <li>Контроль газового состава крови каждые 12 часов</li>
                 <li>Ежедневный контроль показателей функции почек</li>
@@ -1520,7 +1972,7 @@ else:
 
         <div class="recommendation-card">
             <div class="recommendation-title">Диагностические мероприятия</div>
-            <ul style="margin: 0; padding-left: 1.2rem; color: #495057;">
+            <ul style="margin: 0; padding-left: 1.2rem; color: inherit;">
                 <li>Повторный анализ крови с лейкоцитарной формулой через 24 часа</li>
                 <li>Контрольный анализ на прокальцитонин через 48 часов</li>
                 <li>УЗИ брюшной полости при сохранении симптоматики</li>
@@ -1533,7 +1985,7 @@ else:
         st.markdown("""
         <div class="recommendation-card">
             <div class="recommendation-title">Терапевтические рекомендации</div>
-            <ul style="margin: 0; padding-left: 1.2rem; color: #495057;">
+            <ul style="margin: 0; padding-left: 1.2rem; color: inherit;">
                 <li>Рассмотреть раннее начало антибиотикотерапии широкого спектра</li>
                 <li>Провести цитокиновый профиль для оценки риска цитокинового шторма</li>
                 <li>Консультация реаниматолога для решения вопроса о переводе в ОРИТ</li>
@@ -1543,7 +1995,7 @@ else:
 
         <div class="recommendation-card">
             <div class="recommendation-title">Прогноз и дальнейшие действия</div>
-            <ul style="margin: 0; padding-left: 1.2rem; color: #495057;">
+            <ul style="margin: 0; padding-left: 1.2rem; color: inherit;">
                 <li>Критический период: следующие 24-48 часов</li>
                 <li>Ожидаемое время улучшения: 72-96 часов при адекватной терапии</li>
                 <li>Плановый осмотр через 24 часа</li>
@@ -1557,7 +2009,7 @@ else:
     col_actions1, col_actions2, col_actions3, col_actions4 = st.columns(4)
 
     with col_actions1:
-        if st.button("Сохранить", use_container_width=True):
+        if st.button("Сохранить", width="stretch"):
             st.success("Отчет сохранен в истории пациента")
 
     with col_actions2:
@@ -1578,7 +2030,7 @@ else:
                     data=pdf_buffer.getvalue(),
                     file_name=pdf_filename,
                     mime="application/pdf",
-                    use_container_width=True
+                    width="stretch"
                 )
             else:
                 st.error("Ошибка при генерации PDF")
@@ -1586,19 +2038,19 @@ else:
             st.warning("Библиотека reportlab не установлена. Установите: pip install reportlab")
 
     with col_actions3:
-        if st.button("Новый анализ", use_container_width=True):
+        if st.button("Новый анализ", width="stretch"):
             st.session_state.prediction_made = False
             st.rerun()
 
     with col_actions4:
-        if st.button("В историю", use_container_width=True):
+        if st.button("В историю", width="stretch"):
             st.session_state.show_history = True
             st.rerun()
 
 # ===================== ФУТЕР =====================
 st.divider()
 st.markdown("""
-<div style="text-align: center; color: #666; font-size: 0.9rem; padding: 1rem 0;">
+<div style="text-align: center; color: #aeb7c2; font-size: 0.9rem; padding: 1rem 0;">
     <p>Immunorisk Studio v1.0 • Система интеллектуального моделирования иммунного ответа</p>
     <p>© 2026 Immunorisk Research Group • Отчет по прогрессу от 21.01.2026</p>
 </div>

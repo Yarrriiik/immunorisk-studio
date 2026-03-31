@@ -1,0 +1,17 @@
+{
+  "patient_id": "P-001",
+  "age": 62,
+  "sex": "Мужской",
+  "sofa": 7,
+  "glasgow": 14,
+  "leukocytes": 14.2,
+  "neutrophils": 82,
+  "lymphocytes": 8,
+  "crp": 124,
+  "platelets": 180,
+  "creatinine": 110,
+  "urea": 9.2,
+  "bilirubin": 18,
+  "potassium": 4.3,
+  "sodium": 138
+}

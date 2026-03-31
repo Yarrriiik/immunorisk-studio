@@ -222,20 +222,19 @@ def generate_csv_history(history_data: list[Dict[str, Any]]) -> bytes:
     """
     if not history_data:
         # Return empty CSV with headers
-        headers = "ID пациента,Дата анализа,Когорта,Уровень риска,SOFA,Врач,Статус\n"
+        headers = "ID анализа,ID пациента,Дата анализа,Когорта,Уровень риска,SOFA,Врач,Статус\n"
         return headers.encode('utf-8-sig')
     
     df = pd.DataFrame(history_data)
     
-    # Map column names - handle both "id" and "patient_id"
-    if "id" in df.columns and "patient_id" not in df.columns:
-        df["patient_id"] = df["id"]
-    elif "patient_id" not in df.columns:
-        # If neither exists, try to create from available data
-        df["patient_id"] = df.get("id", "N/A")
+    if "analysis_id" not in df.columns:
+        df["analysis_id"] = df.get("id", "A-UNKNOWN")
+
+    if "patient_id" not in df.columns:
+        df["patient_id"] = "P-UNKNOWN"
     
     # Ensure we have the right columns
-    csv_columns = ["patient_id", "date", "cohort", "risk", "sofa", "doctor", "status"]
+    csv_columns = ["analysis_id", "patient_id", "date", "cohort", "risk", "sofa", "doctor", "status"]
     
     # Select only available columns
     available_columns = [col for col in csv_columns if col in df.columns]
@@ -247,6 +246,7 @@ def generate_csv_history(history_data: list[Dict[str, Any]]) -> bytes:
     
     # Rename columns for better readability
     column_mapping = {
+        "analysis_id": "ID анализа",
         "patient_id": "ID пациента",
         "date": "Дата анализа",
         "cohort": "Когорта",
